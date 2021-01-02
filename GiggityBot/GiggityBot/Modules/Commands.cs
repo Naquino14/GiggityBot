@@ -71,7 +71,6 @@ namespace GiggityBot.Modules
             await Task.Delay(500);
             embedBuilder.WithTitle("Commands");
             embedBuilder.WithImageUrl("https://media.discordapp.net/attachments/734949688754700482/794991036309045348/quag.gif");
-            embedBuilder.AddField("q!fart", "funny fart lol xd", true);
             embedBuilder.AddField("q!ping", "returns the ping", true);
             embedBuilder.WithColor(Discord.Color.Red);
             await Task.Delay(100);
@@ -93,18 +92,18 @@ namespace GiggityBot.Modules
 
         #region other functions
 
-        private async void GigCheck()
+        private void GigCheck()
         {
             if ((timeSinceLastGigCheck + 20000 <= DateTime.Now.Millisecond) || timeSinceLastGigCheck == 0)
             {
                 Console.WriteLine("fired");
                 Console.WriteLine(timeSinceLastGigCheck);
-                await Giggity();
+                Giggity();
+                timeSinceLastGigCheck = DateTime.Now.Millisecond;
             } else
             {
                 Console.WriteLine("nofire");
             }
-            timeSinceLastGigCheck = DateTime.Now.Millisecond;
         }
 
         #endregion
