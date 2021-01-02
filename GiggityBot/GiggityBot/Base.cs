@@ -77,7 +77,8 @@ namespace GiggityBot
         {
             Console.WriteLine("Starting...");
             await _client.SetStatusAsync(UserStatus.DoNotDisturb);
-            await _client.SetGameAsync("doing your mom", null, ActivityType.CustomStatus);
+            await _client.SetGameAsync("with your mom", null, ActivityType.Playing);
+            Console.WriteLine("Finished starting up...");
         }
     }
 }
