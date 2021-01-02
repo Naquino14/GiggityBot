@@ -24,7 +24,7 @@ namespace GiggityBot.Modules
 
         #region global variables
 
-        private bool gigityCheck = true;
+        private bool gigityCheck;
 
         #endregion
 
@@ -48,6 +48,7 @@ namespace GiggityBot.Modules
                         await _commands.Giggity();
                         _commands.gigityCheck = false;
                         Thread gigityCheckThread = new Thread(WaitThenReactivateGigity.WaitThenReactivateGigityCheck);
+                        gigityCheckThread.Start();
                         break;
                     }
 

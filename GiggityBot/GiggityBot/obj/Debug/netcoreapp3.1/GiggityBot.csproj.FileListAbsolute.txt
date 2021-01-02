@@ -22,3 +22,4 @@ D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\obj\Debug\netcore
 D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\obj\Debug\netcoreapp3.1\GiggityBot.pdb
 D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\obj\Debug\netcoreapp3.1\GiggityBot.genruntimeconfig.cache
 D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\obj\Debug\netcoreapp3.1\GiggityBot.csproj.CoreCompileInputs.cache
+D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
