@@ -18,18 +18,12 @@ namespace GiggityBot.Resources
         {
             await InitFunny();
         }
-        public async Task GetArray(ArrayTypes arrayType)
-        {
 
-        }
-
-        private Enum ArrayTypes
-        {
-
-        }
         private async Task InitFunny()
         {
-
+            funnyWords.Add("__test");
+            funnyWords.Add("test__");
         }
+
     }
 }

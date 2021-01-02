@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iGexx7IBIMvs5fTIxqoz3ix6jqMjfzw+7iuTdiONBFtjD6h7Q3TV3LN7u4iyjvqCrrL2eVe9vqxCLyGSvAf6+A==",
+  "dgSpecHash": "x11G82+ge6iYUIeEvSxgVz1/j9J/e41FvoJHFJmC1yK8U+w3nwkhx1lJS2UO36TKfRvhawYuhsgmlk6YGU3AJQ==",
   "success": true,
   "projectFilePath": "D:\\CSharp Projects\\GiggityBot\\GiggityBot\\GiggityBot\\GiggityBot\\GiggityBot.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\naqui\\.nuget\\packages\\discord.net.rest\\2.2.0\\discord.net.rest.2.2.0.nupkg.sha512",
     "C:\\Users\\naqui\\.nuget\\packages\\discord.net.webhook\\2.2.0\\discord.net.webhook.2.2.0.nupkg.sha512",
     "C:\\Users\\naqui\\.nuget\\packages\\discord.net.websocket\\2.2.0\\discord.net.websocket.2.2.0.nupkg.sha512",
+    "C:\\Users\\naqui\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
     "C:\\Users\\naqui\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.1\\microsoft.extensions.dependencyinjection.5.0.1.nupkg.sha512",
     "C:\\Users\\naqui\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\naqui\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
