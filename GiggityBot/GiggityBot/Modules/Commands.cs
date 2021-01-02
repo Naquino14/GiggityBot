@@ -1,22 +1,43 @@
-﻿using Discord.Commands;
-using Discord.WebSocket;
-using System;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 using System.Threading.Tasks;
+using Discord;
+using Discord.Commands;
+using Discord.WebSocket;
+using GiggityBot.Resources;
 
 namespace GiggityBot.Modules
 {
     public class Commands : ModuleBase<SocketCommandContext>
     {
+        #region required variables
         private Discord.EmbedBuilder embedBuilder = new Discord.EmbedBuilder();
+        private SocketUserMessage _message;
+        private SocketCommandContext _context;
+        private WordArrays wordArrays;
+        #endregion
 
-        public static async Task Scan(Discord.WebSocket.SocketUserMessage message)
+        #region global variables
+        
+
+
+        #endregion
+
+
+        public static async Task Scan(Discord.WebSocket.SocketUserMessage message, Discord.Commands.SocketCommandContext context) // scans all messages
         {
             Commands _commands = new Commands();
-            if (message.Content.Contains("giggity"))
+            _commands._context = context;
+            _commands._message = message;
+            _commands.wordArrays = Base._wordArrays;
+
+            if (message.Content.Contains("giggity") && _commands._context != null) // if giggity is said
                 await _commands.Giggity();
+            if (message.Content.Contains("/fart"))
+                await _commands.Fart();
         }
 
         #region prefix commands
@@ -35,7 +56,7 @@ namespace GiggityBot.Modules
             await ReplyAsync("lol jkjk");
             await Task.Delay(500);
             embedBuilder.WithTitle("Commands");
-            embedBuilder.WithImageUrl("https://media.discordapp.net/attachments/734949688754700482/794991036309045348/quag.gif");
+            embedBuilder.WithImageUrl("Resources/Images/quag.gif");
             embedBuilder.AddField("q!fart", "funny fart lol xd", true);
             embedBuilder.AddField("q!ping", "returns the ping", true);
             embedBuilder.WithColor(Discord.Color.Red);
@@ -43,19 +64,15 @@ namespace GiggityBot.Modules
             await ReplyAsync("", false, embedBuilder.Build());
         }
 
-        [Command("fart")]
-        public async Task Fart()
-        {
-            await ReplyAsync("gian pls send fart copypasta");
-        }
-
         #endregion
 
         #region scan commands
 
-        private async Task Giggity()
+        private async Task Giggity() => await _context.Channel.SendMessageAsync("giggity giggity goo");
+        private async Task Fart()
         {
-            await ReplyAsync("giggity goo"); 
+            string _user = _context.User.Username;
+            await _context.Channel.SendMessageAsync("**[ATTENTION ALL PERSONELL]:** " + _user + " has relieved himself of his pain, and has fumed a gigantic **FART!**");
         }
 
         #endregion

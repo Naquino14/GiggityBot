@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "JlrL55WJTGh1iayk6X8AkV+wdw3rVqRiOetUzX8IXQ2rqevn9w43q4HEyt/bkjlpUqGWWTncuNgCmAskjiK4Bg==",
+  "dgSpecHash": "iGexx7IBIMvs5fTIxqoz3ix6jqMjfzw+7iuTdiONBFtjD6h7Q3TV3LN7u4iyjvqCrrL2eVe9vqxCLyGSvAf6+A==",
   "success": true,
   "projectFilePath": "D:\\CSharp Projects\\GiggityBot\\GiggityBot\\GiggityBot\\GiggityBot\\GiggityBot.csproj",
   "expectedPackageFiles": [
@@ -17,6 +17,7 @@
     "C:\\Users\\naqui\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
     "C:\\Users\\naqui\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\naqui\\.nuget\\packages\\system.collections.immutable\\1.3.1\\system.collections.immutable.1.3.1.nupkg.sha512",
+    "C:\\Users\\naqui\\.nuget\\packages\\system.collections.nongeneric\\4.3.0\\system.collections.nongeneric.4.3.0.nupkg.sha512",
     "C:\\Users\\naqui\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",
     "C:\\Users\\naqui\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",
     "C:\\Users\\naqui\\.nuget\\packages\\system.interactive.async\\4.0.0\\system.interactive.async.4.0.0.nupkg.sha512",
