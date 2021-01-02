@@ -5,6 +5,7 @@ using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
 using Microsoft.Extensions.DependencyInjection;
+using GiggityBot.Modules;
 
 namespace GiggityBot
 {
@@ -12,7 +13,7 @@ namespace GiggityBot
     {
         static void Main(string[] args) => new Base().RunBotAsync().GetAwaiter().GetResult();
 
-        private DiscordSocketClient _client;
+        public static DiscordSocketClient _client;
         private CommandService _commands;
         private IServiceProvider _services;
 
@@ -34,6 +35,9 @@ namespace GiggityBot
             await _client.LoginAsync(TokenType.Bot, token);
 
             await _client.StartAsync();
+
+            await Task.Delay(3000);
+            await StartBot();
 
             await Task.Delay(-1);
         }
@@ -65,6 +69,15 @@ namespace GiggityBot
                     Console.WriteLine(result.Error);
             }
 
+            await Commands.Scan(message);
+
+        }
+
+        private async Task StartBot()
+        {
+            Console.WriteLine("Starting...");
+            await _client.SetStatusAsync(UserStatus.DoNotDisturb);
+            await _client.SetGameAsync("doing your mom", null, ActivityType.CustomStatus);
         }
     }
 }
