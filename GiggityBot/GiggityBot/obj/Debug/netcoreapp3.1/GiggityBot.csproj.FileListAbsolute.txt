@@ -1,0 +1,13 @@
+D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\bin\Debug\netcoreapp3.1\GiggityBot.exe
+D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\obj\Debug\netcoreapp3.1\GiggityBot.csprojAssemblyReference.cache
+D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\obj\Debug\netcoreapp3.1\GiggityBot.AssemblyInfoInputs.cache
+D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\obj\Debug\netcoreapp3.1\GiggityBot.AssemblyInfo.cs
+D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\bin\Debug\netcoreapp3.1\Discord.Net.Commands.dll
+D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\bin\Debug\netcoreapp3.1\Discord.Net.Core.dll
+D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\bin\Debug\netcoreapp3.1\Discord.Net.Rest.dll
+D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\bin\Debug\netcoreapp3.1\Discord.Net.Webhook.dll
+D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\bin\Debug\netcoreapp3.1\Discord.Net.WebSocket.dll
+D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\bin\Debug\netcoreapp3.1\System.Interactive.Async.dll
+D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\bin\Debug\netcoreapp3.1\System.Linq.Async.dll
+D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\obj\Debug\netcoreapp3.1\GiggityBot.csproj.CopyComplete
