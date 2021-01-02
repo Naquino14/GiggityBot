@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Diagnostics;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -24,7 +25,8 @@ namespace GiggityBot.Modules
 
         #region global variables
 
-        private bool gigityCheck;
+        private bool gigityCheck = true;
+        private long timeSinceLastGigCheck;
 
         #endregion
 
@@ -41,16 +43,14 @@ namespace GiggityBot.Modules
                 await _commands.Giggity();
             if (message.Content.Contains("/fart"))
                 await _commands.Fart();
-            if (_commands.gigityCheck)
-                foreach (string word in _commands.wordArrays.funnyWords)
-                    if (message.Content == word)
-                    {
-                        await _commands.Giggity();
-                        _commands.gigityCheck = false;
-                        Thread gigityCheckThread = new Thread(WaitThenReactivateGigity.WaitThenReactivateGigityCheck);
-                        gigityCheckThread.Start();
-                        break;
-                    }
+            foreach (string word in _commands.wordArrays.funnyWords)
+            {
+                if (message.Content == word)
+                {
+                    _commands.GigCheck();
+                    break;
+                }
+            } 
 
         }
 
@@ -93,15 +93,21 @@ namespace GiggityBot.Modules
 
         #region other functions
 
+        private async void GigCheck()
+        {
+            if ((timeSinceLastGigCheck + 20000 <= DateTime.Now.Millisecond) || timeSinceLastGigCheck == 0)
+            {
+                Console.WriteLine("fired");
+                Console.WriteLine(timeSinceLastGigCheck);
+                await Giggity();
+            } else
+            {
+                Console.WriteLine("nofire");
+            }
+            timeSinceLastGigCheck = DateTime.Now.Millisecond;
+        }
 
         #endregion
-        public class WaitThenReactivateGigity
-        {
-            public static void WaitThenReactivateGigityCheck()
-            {
-                Thread.Sleep(20000);
-                commands.gigityCheck = true;
-            }
-        }
+       
     }
 }
