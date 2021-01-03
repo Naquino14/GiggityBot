@@ -21,12 +21,12 @@ namespace GiggityBot.Modules
         private SocketCommandContext _context;
         private WordArrays wordArrays;
         public static Commands commands; // ex use only
+        private Random random;
         #endregion
 
         #region global variables
 
-        private bool gigityCheck = true;
-        private long timeSinceLastGigCheck;
+
 
         #endregion
 
@@ -93,7 +93,18 @@ namespace GiggityBot.Modules
 
         #region scan commands
 
-        private async Task Giggity() => await _context.Channel.SendMessageAsync("giggity giggity goo");
+        private async Task Giggity()
+        {
+            random = new Random();
+            int randC = random.Next(0, 100); // 75% chance that it dont do anything
+            if (randC > 25)
+                return;
+
+            int arM = wordArrays.funnyResponses.Count;
+            int rand = random.Next(0, arM);
+            string randS = (string)wordArrays.funnyResponses[rand];
+            await _context.Channel.SendMessageAsync(randS);
+        }
         private async Task Fart()
         {
             string _user = _context.User.Username;
@@ -101,7 +112,18 @@ namespace GiggityBot.Modules
         }
 
         private async Task Bike() => await _context.Channel.SendMessageAsync("https://cdn.discordapp.com/attachments/388795923360120834/795146188432080926/bike.mp4");
-        private async Task Booba() => await _context.Channel.SendFileAsync("I agree, booba kinda pog doe.");
+        private async Task Booba()
+        {
+            random = new Random();
+            int randC = random.Next(0, 100); // 75% chance that it dont do anything
+            if (randC > 25)
+                return;
+
+            int arM = wordArrays.hotBoobResponse.Count;
+            int rand = random.Next(0, arM);
+            string randS = (string) wordArrays.hotBoobResponse[rand];
+            await _context.Channel.SendMessageAsync(randS);
+        }
 
         #endregion
 
