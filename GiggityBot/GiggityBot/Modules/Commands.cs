@@ -47,7 +47,7 @@ namespace GiggityBot.Modules
             {
                 if (message.Content == word)
                 {
-                    _commands.GigCheck();
+                    await _commands.Giggity();
                     break;
                 }
             } 
@@ -92,19 +92,7 @@ namespace GiggityBot.Modules
 
         #region other functions
 
-        private void GigCheck()
-        {
-            if ((timeSinceLastGigCheck + 20000 <= DateTime.Now.Millisecond) || timeSinceLastGigCheck == 0)
-            {
-                Console.WriteLine("fired");
-                Console.WriteLine(timeSinceLastGigCheck);
-                Giggity();
-                timeSinceLastGigCheck = DateTime.Now.Millisecond;
-            } else
-            {
-                Console.WriteLine("nofire");
-            }
-        }
+
 
         #endregion
        
