@@ -42,7 +42,7 @@ namespace GiggityBot
             await Task.Delay(3000);
             await StartBot();
 
-            await Task.Delay(-1);
+            await Task.Delay(-1); // delay indefinitelly
         }
 
         private Task _client_Log(LogMessage arg) // da logger :flushed:
@@ -83,7 +83,7 @@ namespace GiggityBot
             await _client.SetGameAsync("with your mom", null, ActivityType.Playing);
 
             _wordArrays = new WordArrays();
-            await _wordArrays.InitArrays();
+            _wordArrays.InitArrays();
             
             Console.WriteLine("Finished starting up...");
         }

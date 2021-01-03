@@ -31,26 +31,36 @@ namespace GiggityBot.Modules
         #endregion
 
 
-        public static async Task Scan(Discord.WebSocket.SocketUserMessage message, Discord.Commands.SocketCommandContext context) // scans all messages
+        public static async Task Scan(SocketUserMessage message, SocketCommandContext context) // scans all messages
         {
             Commands _commands = new Commands();
+            commands = _commands;
             _commands._context = context;
             _commands._message = message;
             _commands.wordArrays = Base._wordArrays;
-            commands = _commands;
 
             if (message.Content.Contains("giggity")) // if giggity is said
                 await _commands.Giggity();
-            if (message.Content.Contains("/fart"))
+            if (message.Content.Contains("/fart")) // if /fart is said
                 await _commands.Fart();
-            foreach (string word in _commands.wordArrays.funnyWords)
+
+            foreach (string word in _commands.wordArrays.funnyWords) // giggity response triggers
             {
-                if (message.Content == word)
+                if (message.Content.Contains(word))
                 {
                     await _commands.Giggity();
                     break;
                 }
-            } 
+            }
+            
+            foreach (string word in _commands.wordArrays.hotBoob)
+            {
+                if (message.Content.Contains(word))
+                {
+                    await _commands.Booba();
+                    break;
+                }
+            }
 
         }
 
@@ -66,7 +76,7 @@ namespace GiggityBot.Modules
         public async Task Help()
         {
             await ReplyAsync("fuck off loser");
-            await Task.Delay(8000);
+            await Task.Delay(4000);
             await ReplyAsync("lol jkjk");
             await Task.Delay(500);
             embedBuilder.WithTitle("Commands");
@@ -87,6 +97,9 @@ namespace GiggityBot.Modules
             string _user = _context.User.Username;
             await _context.Channel.SendMessageAsync("**[ATTENTION ALL PERSONELL]:** " + _user + " has relieved himself of his pain, and has fumed a gigantic **FART!**");
         }
+
+        private async Task Bike() => await _context.Channel.SendMessageAsync("https://cdn.discordapp.com/attachments/388795923360120834/795146188432080926/bike.mp4");
+        private async Task Booba() => await _context.Channel.SendFileAsync("I agree, booba kinda pog doe.");
 
         #endregion
 

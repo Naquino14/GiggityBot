@@ -14,15 +14,25 @@ namespace GiggityBot.Resources
     class WordArrays
     {
         public ArrayList funnyWords = new ArrayList();
-        public async Task InitArrays()
+        public ArrayList hotBoob = new ArrayList();
+        public void InitArrays()
         {
-            await InitFunny();
+            InitFunny();
+            InitBooba();
         }
 
-        private async Task InitFunny()
+        private void InitFunny()
         {
-            funnyWords.Add("__test");
-            funnyWords.Add("test__");
+            funnyWords.Add("sex");
+            funnyWords.Add("cum");
+            funnyWords.Add("pee pee");
+        }
+        private void InitBooba()
+        {
+            hotBoob.Add("boober");
+            hotBoob.Add("honkers");
+            hotBoob.Add("booba");
+            hotBoob.Add("milkers");
         }
 
     }
