@@ -43,6 +43,8 @@ namespace GiggityBot.Modules
                 await _commands.Giggity();
             if (message.Content.Contains("/fart")) // if /fart is said
                 await _commands.Fart();
+            if (message.Content.Contains("/bike"))
+                await _commands.Bike();
 
             foreach (string word in _commands.wordArrays.funnyWords) // giggity response triggers
             {
