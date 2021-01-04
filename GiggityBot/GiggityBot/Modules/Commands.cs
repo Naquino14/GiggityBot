@@ -26,7 +26,7 @@ namespace GiggityBot.Modules
 
         #region global variables
 
-
+        private int _char;
 
         #endregion
 
@@ -64,6 +64,16 @@ namespace GiggityBot.Modules
                 }
             }
 
+            foreach (string word in _commands.wordArrays.familyManCharacters)
+            {
+                if (message.Content.Contains(word))
+                {
+                    await _commands.CharacterResponse(_commands._char);
+                    break;
+                }
+                _commands._char++;
+            }
+
         }
 
         #region prefix commands
@@ -84,6 +94,19 @@ namespace GiggityBot.Modules
             embedBuilder.WithTitle("Commands");
             embedBuilder.WithImageUrl("https://media.discordapp.net/attachments/734949688754700482/794991036309045348/quag.gif");
             embedBuilder.AddField("q!ping", "returns the ping", true);
+            embedBuilder.AddField("q!info", "bot info", true);
+            embedBuilder.WithColor(Discord.Color.Red);
+            await Task.Delay(100);
+            await ReplyAsync("", false, embedBuilder.Build());
+        }
+
+        [Command("info")]
+        public async Task Info()
+        {
+            embedBuilder.WithTitle("Info");
+            embedBuilder.AddField("Author", "Vinetta#5601");
+            embedBuilder.AddField("", "I actually dont watch family guy.");
+            embedBuilder.AddField("Bot birthday", "1/2/2021");
             embedBuilder.WithColor(Discord.Color.Red);
             await Task.Delay(100);
             await ReplyAsync("", false, embedBuilder.Build());
@@ -121,10 +144,68 @@ namespace GiggityBot.Modules
 
             int arM = wordArrays.hotBoobResponse.Count;
             int rand = random.Next(0, arM);
-            string randS = (string) wordArrays.hotBoobResponse[rand];
+            string randS = (string)wordArrays.hotBoobResponse[rand];
             await _context.Channel.SendMessageAsync(randS);
         }
 
+        private async Task CharacterResponse(int _char)
+        {
+            random = new Random();
+            int randC = random.Next(0, 100);
+            if (randC > 50)
+                return;
+            int arM;
+            int rand;
+            string randS = null;
+
+            if (_char == 0) // peter's 3 responses
+            {
+                arM = 3;
+                rand = random.Next(0, arM);
+                randS = (string)wordArrays.familyManResponses[rand];
+            } else
+            if (_char > 0 && _char <= 2) // brian's 2 responses
+            {
+                arM = 2;
+                rand = random.Next(0, arM) + 3;
+                randS = (string)wordArrays.familyManResponses[rand];
+            } else
+            if (_char > 2 && _char <= 4) // lois's 2 responses
+            {
+                arM = 2;
+                rand = random.Next(0, arM) + 5;
+                randS = (string)wordArrays.familyManResponses[rand];
+            } else
+            if (_char > 4 && _char <= 5) // quagmire's 2 responses
+            {
+                arM = 4;
+                rand = random.Next(0, arM) + 7;
+                randS = (string)wordArrays.familyManResponses[rand];
+            } else
+            if (_char > 5 && _char <= 6) // stewie's 2 responses
+            {
+                arM = 2;
+                rand = random.Next(0, arM) + 11;
+                randS = (string)wordArrays.familyManResponses[rand];
+            } else
+            if (_char > 6 && _char <= 7) // chris's 3 responses
+            {
+                arM = 3;
+                rand = random.Next(0, arM) + 13;
+                randS = (string)wordArrays.familyManResponses[rand];
+            } else
+            if (_char > 7 && _char <= 9) // joe's 2 responses
+            {
+                arM = 2;
+                rand = random.Next(0, arM) + 17;
+                randS = (string)wordArrays.familyManResponses[rand];
+            } else
+            {
+                randS = "havent seen them in ages...";
+            }
+            await _context.Channel.SendMessageAsync(randS);
+
+        }
         #endregion
 
         #region other functions
