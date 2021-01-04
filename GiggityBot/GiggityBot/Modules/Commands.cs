@@ -16,7 +16,7 @@ namespace GiggityBot.Modules
     public class Commands : ModuleBase<SocketCommandContext>
     {
         #region required variables
-        private Discord.EmbedBuilder embedBuilder = new Discord.EmbedBuilder();
+        private EmbedBuilder embedBuilder = new EmbedBuilder();
         private SocketUserMessage _message;
         private SocketCommandContext _context;
         private WordArrays wordArrays;
@@ -27,6 +27,10 @@ namespace GiggityBot.Modules
         #region global variables
 
         private int _char;
+        private DateTime timeNow = new DateTime();
+        private DateTime lastTime = new DateTime();
+        private TimeSpan elapsedTime = new TimeSpan();
+        bool updateTimeFireOnce = true;
 
         #endregion
 
@@ -35,6 +39,11 @@ namespace GiggityBot.Modules
         {
             Commands _commands = new Commands();
             commands = _commands;
+            if (_commands.updateTimeFireOnce)
+            {
+                UpdateTime();
+                _commands.updateTimeFireOnce = false;
+            }
             _commands._context = context;
             _commands._message = message;
             _commands.wordArrays = Base._wordArrays;
@@ -105,8 +114,10 @@ namespace GiggityBot.Modules
         {
             embedBuilder.WithTitle("Info");
             embedBuilder.AddField("Author", "Vinetta#5601");
-            embedBuilder.AddField("", "I actually dont watch family guy.");
+            embedBuilder.AddField("Am I a family guy fan?", "I actually dont watch family guy.");
             embedBuilder.AddField("Bot birthday", "1/2/2021");
+            //UpTime();
+            //embedBuilder.AddField("Uptime", "Days: " + elapsedTime.Days + " Hours: " + elapsedTime.Hours + " Minutes: " + elapsedTime.Hours + " Seconds: " + elapsedTime.Seconds);
             embedBuilder.WithColor(Discord.Color.Red);
             await Task.Delay(100);
             await ReplyAsync("", false, embedBuilder.Build());
@@ -210,7 +221,16 @@ namespace GiggityBot.Modules
 
         #region other functions
 
-
+        public void UpTime()
+        {
+            timeNow = DateTime.Now;
+            elapsedTime = timeNow - lastTime;
+        }
+        public static void UpdateTime()
+        {
+            Commands __commands = commands;
+            __commands.lastTime = DateTime.Now;
+        }
 
         #endregion
        

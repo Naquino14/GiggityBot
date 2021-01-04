@@ -20,6 +20,8 @@ namespace GiggityBot
 
         public static WordArrays _wordArrays;
 
+        public static bool ErrorStatus = false;
+
         private async Task RunBotAsync()
         {
             _client = new DiscordSocketClient();
@@ -84,6 +86,8 @@ namespace GiggityBot
 
             _wordArrays = new WordArrays();
             _wordArrays.InitArrays();
+
+            //Commands.UpdateTime();
             
             Console.WriteLine("Finished starting up...");
         }
