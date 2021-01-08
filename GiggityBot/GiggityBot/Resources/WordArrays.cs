@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using GiggityBot.Modules;
 
 namespace GiggityBot.Resources
 {
@@ -18,7 +19,7 @@ namespace GiggityBot.Resources
         
         public void InitArrays()
         {
-
+            InitBlacklist();
 
             InitFunny();
             InitFunnyResponses();
@@ -26,6 +27,11 @@ namespace GiggityBot.Resources
             InitBoobaResponse();
             InitFamilyMan();
             InitFamilyManResponse();
+        }
+        private void InitBlacklist()
+        {
+            Commands commands = new Commands();
+            commands.InitBlacklist();
         }
 
         private void InitFunny() // scan words

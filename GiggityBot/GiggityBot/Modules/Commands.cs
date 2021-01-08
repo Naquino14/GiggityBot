@@ -23,7 +23,7 @@ namespace GiggityBot.Modules
         private WordArrays wordArrays;
         public static Commands commands; // ex use only
         private Random random;
-        public SaveData saveData = new SaveData(); 
+        public SaveData saveData = new SaveData();
         #endregion
 
         #region global variables
@@ -35,6 +35,8 @@ namespace GiggityBot.Modules
         bool updateTimeFireOnce = true;
         public ArrayList whitelistedChannels = new ArrayList();
 
+        private string serverWithBlacklist;
+        private uint channelBlacklist;
 
         #endregion
 
@@ -143,25 +145,33 @@ namespace GiggityBot.Modules
 
                 ArrayList channels = new ArrayList();
                 bool _continue = false;
+                ulong _id = 0;
+                channel = channel.Split('#')[1]; // what the fuck
+                channel = channel.Split('>')[0];
+                _id = Convert.ToUInt64(channel);
                 foreach (SocketGuildChannel channelName in Context.Guild.Channels) // for every channel name in the server's channels
                 {
-                    if (channelName.Name == channel) // if one is found, continue
+                    if (channelName.Id == _id) // if one is found, continue
                         _continue = true;
 
                 }
                 if (!_continue) // if not found, return
                 {
-                    await ReplyAsync("Channel " + channel +" not found.");
+                    await ReplyAsync("Channel " + channel + " not found.");
+                    return;
+                }
+                if (_id == 0)
+                {
+                    await ReplyAsync("Error getting channel id.");
                     return;
                 }
 
                 // add to json and whitelist array
-                whitelistedChannels.Add(channel);
+                whitelistedChannels.Add(_id);
                 string serverName = Context.Guild.Name;
-                string _channel = channel.Split('#')[1]; // get everything after the #
-                saveData.Save(serverName, _channel);
+                saveData.Save(serverName, _id);
 
-                await ReplyAsync("Successfully blacklisted " + _channel);
+                await ReplyAsync("Successfully blacklisted " + channel);
             } catch (Exception ex)
             {
                 Console.WriteLine(ex);
@@ -170,6 +180,46 @@ namespace GiggityBot.Modules
 
         }
 
+        [Command("trysplit")]
+        public async Task TrySplt(string channelName)
+        {
+            try
+            {
+                if (channelName == null) // check if parameter null
+                {
+                    await ReplyAsync("Channel name cannot be empty.");
+                    return;
+                }
+                channelName = channelName.Split('>')[0];
+                channelName = channelName.Split('#')[1];
+                ulong _id = Convert.ToUInt64(channelName);
+                await ReplyAsync("Channel as string: " + channelName);
+                await ReplyAsync("Channel as id: " + _id);
+            } catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+        }
+
+        [Command("tryshit")]
+        public async Task TryShit()
+        {
+            await ReplyAsync("Shut the fuck up " + Context.User + " you are literally not funny.");
+        }
+
+        [Command("tryreaddata")]
+        public async Task TryReadData()
+        {
+            string result = saveData.ReadBlacklistServerName();
+            await ReplyAsync(result);
+        }
+
+        [Command("penis")]
+        public async Task Penis()
+        {
+            await ReplyAsync("cokc and balls");
+        }
         #endregion
 
         #region scan commands
@@ -277,6 +327,12 @@ namespace GiggityBot.Modules
         {
             Commands __commands = commands;
             __commands.lastTime = DateTime.Now;
+        }
+
+        public void InitBlacklist()
+        {
+            // read json
+            
         }
 
         #endregion

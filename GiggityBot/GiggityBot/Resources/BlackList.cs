@@ -7,6 +7,6 @@ namespace GiggityBot.Resources
     public class BlackList
     {
         public string ServerName { get; set; }
-        public string ChannelName { get; set; }
+        public ulong ChannelID { get; set; }
     }
 }

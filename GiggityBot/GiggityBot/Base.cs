@@ -12,6 +12,7 @@ namespace GiggityBot
 {
     class Base
     {
+        private bool inDev = true;
         static void Main(string[] args) => new Base().RunBotAsync().GetAwaiter().GetResult();
 
         public static DiscordSocketClient _client;
@@ -83,8 +84,16 @@ namespace GiggityBot
         private async Task StartBot()
         {
             Console.WriteLine("Starting...");
-            await _client.SetStatusAsync(UserStatus.DoNotDisturb);
-            await _client.SetGameAsync("with your mom", null, ActivityType.Playing);
+            if (inDev)
+            {
+                await _client.SetGameAsync("in development", null, ActivityType.Playing);
+                await _client.SetStatusAsync(UserStatus.DoNotDisturb);
+            }
+            if (!inDev)
+            {
+                await _client.SetGameAsync("with your mom", null, ActivityType.Playing);
+                await _client.SetStatusAsync(UserStatus.Online);
+            }
 
             _wordArrays = new WordArrays();
             _wordArrays.InitArrays();
