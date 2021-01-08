@@ -4,14 +4,22 @@ namespace GiggityBot.Resources
 {
     class WordArrays
     {
+        #region important arrays
+
+
+
+        #endregion
         public ArrayList funnyWords = new ArrayList();
         public ArrayList funnyResponses = new ArrayList();
         public ArrayList hotBoob = new ArrayList();
         public ArrayList hotBoobResponse = new ArrayList();
         public ArrayList familyManCharacters = new ArrayList();
         public ArrayList familyManResponses = new ArrayList();
+        
         public void InitArrays()
         {
+
+
             InitFunny();
             InitFunnyResponses();
             InitBooba();

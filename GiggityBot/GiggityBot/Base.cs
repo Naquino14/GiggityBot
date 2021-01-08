@@ -22,6 +22,8 @@ namespace GiggityBot
 
         public static bool ErrorStatus = false;
 
+        
+
         private async Task RunBotAsync()
         {
             _client = new DiscordSocketClient();

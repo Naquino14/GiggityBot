@@ -10,6 +10,7 @@ using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
 using GiggityBot.Resources;
+using GiggityBot.Modules;
 
 namespace GiggityBot.Modules
 {
@@ -22,6 +23,7 @@ namespace GiggityBot.Modules
         private WordArrays wordArrays;
         public static Commands commands; // ex use only
         private Random random;
+        public SaveData saveData = new SaveData(); 
         #endregion
 
         #region global variables
@@ -31,6 +33,8 @@ namespace GiggityBot.Modules
         private DateTime lastTime = new DateTime();
         private TimeSpan elapsedTime = new TimeSpan();
         bool updateTimeFireOnce = true;
+        public ArrayList whitelistedChannels = new ArrayList();
+
 
         #endregion
 
@@ -104,6 +108,7 @@ namespace GiggityBot.Modules
             embedBuilder.WithImageUrl("https://media.discordapp.net/attachments/734949688754700482/794991036309045348/quag.gif");
             embedBuilder.AddField("q!ping", "returns the ping", true);
             embedBuilder.AddField("q!info", "bot info", true);
+            embedBuilder.AddField("q!whitelistchannel", "blacklist a channel from bot responses (not working atm)", false);
             embedBuilder.WithColor(Discord.Color.Red);
             await Task.Delay(100);
             await ReplyAsync("", false, embedBuilder.Build());
@@ -121,6 +126,48 @@ namespace GiggityBot.Modules
             embedBuilder.WithColor(Discord.Color.Red);
             await Task.Delay(100);
             await ReplyAsync("", false, embedBuilder.Build());
+        }
+
+        [Command("blacklistchannel")]
+        [RequireContext(ContextType.Guild)]
+        [RequireUserPermission(GuildPermission.KickMembers)] // mod check
+        public async Task BlacklistChannel(string channel)
+        {
+            try
+            {
+                if (channel == null) // check if parameter null
+                {
+                    await ReplyAsync("Channel name cannot be empty.");
+                    return;
+                }
+
+                ArrayList channels = new ArrayList();
+                bool _continue = false;
+                foreach (SocketGuildChannel channelName in Context.Guild.Channels) // for every channel name in the server's channels
+                {
+                    if (channelName.Name == channel) // if one is found, continue
+                        _continue = true;
+
+                }
+                if (!_continue) // if not found, return
+                {
+                    await ReplyAsync("Channel " + channel +" not found.");
+                    return;
+                }
+
+                // add to json and whitelist array
+                whitelistedChannels.Add(channel);
+                string serverName = Context.Guild.Name;
+                string _channel = channel.Split('#')[1]; // get everything after the #
+                saveData.Save(serverName, _channel);
+
+                await ReplyAsync("Successfully blacklisted " + _channel);
+            } catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+
         }
 
         #endregion
