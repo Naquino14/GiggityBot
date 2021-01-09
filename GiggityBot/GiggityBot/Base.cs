@@ -12,7 +12,7 @@ namespace GiggityBot
 {
     class Base
     {
-        private bool inDev = true;
+        private bool inDev = false;
         static void Main(string[] args) => new Base().RunBotAsync().GetAwaiter().GetResult();
 
         public static DiscordSocketClient _client;
@@ -91,7 +91,7 @@ namespace GiggityBot
             }
             if (!inDev)
             {
-                await _client.SetGameAsync("with your mom", null, ActivityType.Playing);
+                await _client.SetGameAsync("with your dad", null, ActivityType.Playing);
                 await _client.SetStatusAsync(UserStatus.Online);
             }
 
