@@ -320,7 +320,7 @@ namespace GiggityBot.Modules
 
         private async Task Troll()
         {
-           // _context.Channel.SendFileAsync();
+           await _context.Channel.SendFileAsync(@"video0.mp4");
         }
         #endregion
 

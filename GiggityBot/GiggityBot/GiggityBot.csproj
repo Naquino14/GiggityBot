@@ -6,10 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Modules\video0.mp4" />
     <None Remove="Resources\Images\quag.gif" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Modules\video0.mp4" />
     <EmbeddedResource Include="Resources\Images\quag.gif" />
   </ItemGroup>
 
