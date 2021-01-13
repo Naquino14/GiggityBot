@@ -40,6 +40,7 @@ namespace GiggityBot.Modules
 
         #endregion
 
+        private readonly string funny = "https://cdn.discordapp.com/attachments/566874876296691712/799042385485103124/video0.mp4";
 
         public static async Task Scan(SocketUserMessage message, SocketCommandContext context) // scans all messages
         {
@@ -60,6 +61,8 @@ namespace GiggityBot.Modules
                 await _commands.Fart();
             if (message.Content.Contains("/bike"))
                 await _commands.Bike();
+            if (message.Content.Contains("trollface "))
+                await _commands.Troll();
 
             foreach (string word in _commands.wordArrays.funnyWords) // giggity response triggers
             {
@@ -313,6 +316,11 @@ namespace GiggityBot.Modules
             }
             await _context.Channel.SendMessageAsync(randS);
 
+        }
+
+        private async Task Troll()
+        {
+           // _context.Channel.SendFileAsync();
         }
         #endregion
 
