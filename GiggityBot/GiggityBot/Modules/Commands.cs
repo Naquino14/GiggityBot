@@ -67,6 +67,12 @@ namespace GiggityBot.Modules
             if (message.Content.Contains("speak"))
                 await _commands.Speak();
 
+
+            if ((message.Content.Contains("quag") || message.Content.Contains("quagmire")) && (message.Content.Contains("real") || message.Content.Contains("true")))
+                await _commands.RealOrFake();
+
+
+
             foreach (string word in _commands.wordArrays.funnyWords) // giggity response triggers
             {
                 if (message.Content.Contains(word))
@@ -323,6 +329,15 @@ namespace GiggityBot.Modules
 
         private async Task Troll() { await _context.Channel.SendFileAsync(@"video0.mp4"); }
         private async Task Speak() { await _context.Channel.SendFileAsync(@"speak.mp4"); }
+
+        private async Task RealOrFake()
+        {
+            int randC = random.Next(0, 100);
+            if (randC > 50)
+                await _context.Channel.SendMessageAsync("(real)");
+            else if (randC <= 50)
+                await _context.Channel.SendMessageAsync("(not real)");
+        }
         #endregion
 
         #region other functions
