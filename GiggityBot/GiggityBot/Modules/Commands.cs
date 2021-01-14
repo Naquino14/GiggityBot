@@ -332,7 +332,8 @@ namespace GiggityBot.Modules
 
         private async Task RealOrFake()
         {
-            int randC = random.Next(0, 100);
+            Random _random = new Random();
+            int randC = _random.Next(0, 100);
             if (randC > 50)
                 await _context.Channel.SendMessageAsync("(real)");
             else if (randC <= 50)
