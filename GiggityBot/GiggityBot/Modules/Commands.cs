@@ -38,6 +38,7 @@ namespace GiggityBot.Modules
         private string serverWithBlacklist;
         private uint channelBlacklist;
 
+        private bool gromSpeakFO = true;
         #endregion
 
         private readonly string funny = "https://cdn.discordapp.com/attachments/566874876296691712/799042385485103124/video0.mp4";
@@ -62,10 +63,12 @@ namespace GiggityBot.Modules
                 await _commands.Fart();
             if (message.Content.Contains("/bike"))
                 await _commands.Bike();
-            if (message.Content.Contains("trollface"))
+            if (message.Content.Contains("trollface video"))
                 await _commands.Troll();
-            if (message.Content.Contains("speak"))
+            if (message.Content.Contains("remy speak"))
                 await _commands.Speak();
+            if (message.Content.Contains("speak") && message.Author.Id == 757473997326647386 && _commands.gromSpeakFO)
+                await _commands.GromSpeak();
 
 
             if ((message.Content.Contains("quag") || message.Content.Contains("quagmire")) && (message.Content.Contains("real") || message.Content.Contains("true")))
@@ -329,6 +332,12 @@ namespace GiggityBot.Modules
 
         private async Task Troll() { await _context.Channel.SendFileAsync(@"video0.mp4"); }
         private async Task Speak() { await _context.Channel.SendFileAsync(@"speak.mp4"); }
+
+        private async Task GromSpeak()
+        {
+            await _context.Channel.SendMessageAsync("There I finally stopped posting that video are you happy now grommet?");
+            gromSpeakFO = false;
+        }
 
         private async Task RealOrFake()
         {
