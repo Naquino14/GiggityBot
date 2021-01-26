@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Reflection;
 using System.Threading.Tasks;
 using Discord;
@@ -12,8 +13,26 @@ namespace GiggityBot
 {
     class Base
     {
-        private bool inDev = false;
-        static void Main(string[] args) => new Base().RunBotAsync().GetAwaiter().GetResult();
+        private static bool checkArgsFO = true;
+        static void Main(string[] args)
+        {
+            if (checkArgsFO)
+            {
+                if(args[0] == "")
+                {
+                    Console.WriteLine("Critical error! No launch parameters inputted. The two available are: [-dev] [-normal]");
+                    throw new InvalidOperationException();
+                } else
+                {
+                    StartupWithArgs(args[0]);
+                }
+                checkArgsFO = false;
+            }
+                
+                
+            new Base().RunBotAsync().GetAwaiter().GetResult();
+
+        }
 
         public static DiscordSocketClient _client;
         private CommandService _commands;
@@ -23,7 +42,13 @@ namespace GiggityBot
 
         public static bool ErrorStatus = false;
 
-        
+        private static RunMode currentMode;
+        private enum RunMode
+        {
+            dev,
+            normal,
+            anncmnt
+        }
 
         private async Task RunBotAsync()
         {
@@ -81,19 +106,38 @@ namespace GiggityBot
 
         }
 
+        private static void StartupWithArgs(string arg)
+        {
+            if (arg == "-dev")
+                currentMode = RunMode.dev;
+            else if (arg == "-normal")
+                currentMode = RunMode.normal;
+            else if (arg == "-anncmnt")
+                currentMode = RunMode.anncmnt;
+            else
+            {
+                Console.WriteLine("Error! Invalid launch parameter(s)");
+                throw new InvalidOperationException();
+            }
+
+
+        }
+
         private async Task StartBot()
         {
             Console.WriteLine("Starting...");
-            if (inDev)
+            if (currentMode == RunMode.dev)
             {
                 await _client.SetGameAsync("in development", null, ActivityType.Playing);
                 await _client.SetStatusAsync(UserStatus.DoNotDisturb);
             }
-            if (!inDev)
+            if (currentMode == RunMode.normal)
             {
                 await _client.SetGameAsync("with your dad", null, ActivityType.Playing);
                 await _client.SetStatusAsync(UserStatus.Online);
             }
+            if (currentMode == RunMode.anncmnt)
+                throw new NotImplementedException();
 
             _wordArrays = new WordArrays();
             _wordArrays.InitArrays();
