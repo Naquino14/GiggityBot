@@ -278,7 +278,7 @@ namespace GiggityBot.Modules
                     if (role.Id == mcServerGangRoleId)
                     {
                         await ReplyAsync("Starting Server...");
-                        Process.Start(serverExecPath);
+                        Process.Start(@"start /i" + serverExecPath);
                     } else
                     {
                         moveAlong = true;
@@ -308,7 +308,7 @@ namespace GiggityBot.Modules
                         Process serverProcess = Process.GetProcessesByName(mcServerExecutable)[0];
                         serverProcess.Kill();
                         await ReplyAsync("Killed server. Starting...");
-                        Process.Start(serverExecPath);
+                        Process.Start(@"start /i" + serverExecPath);
                     }
                     else
                     {
@@ -318,6 +318,13 @@ namespace GiggityBot.Modules
                 if (moveAlong)
                     await ReplyAsync("You do not meet the requirements to execute this command.");
             }
+        }
+
+        [Command("stopserver")]
+        public async Task StopServer()
+        {
+            await ReplyAsync("balls");
+            throw new NotImplementedException();
         }
 
         #endregion
