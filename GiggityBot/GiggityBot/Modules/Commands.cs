@@ -39,6 +39,11 @@ namespace GiggityBot.Modules
         private uint channelBlacklist;
 
         private bool gromSpeakFO = true;
+
+        const string mcServerExecutable = "nameofexehere";
+        const ulong gamingChannelId = 615369865305260047;
+        const ulong mcServerGangRoleId = 736043415875223574;
+        const string serverExecPath = @"C:\pathhere";
         #endregion
 
         private readonly string funny = "https://cdn.discordapp.com/attachments/566874876296691712/799042385485103124/video0.mp4";
@@ -235,6 +240,80 @@ namespace GiggityBot.Modules
         {
             await ReplyAsync("cokc and balls");
         }
+
+        [Command("mcstat")]
+        public async Task McStat()
+        {
+            if (Context.Channel.Id != gamingChannelId)
+            {
+                await ReplyAsync("This channel does not meet the requirements to execute this command.");
+                return;
+            }
+            if (Context.Channel.Id == gamingChannelId)
+            {
+                if (Process.GetProcessesByName(mcServerExecutable).Length == 0)
+                {
+                    await ReplyAsync("Server Executable for Thot Obliterators is offline.");
+            }
+                if (Process.GetProcessesByName(mcServerExecutable).Length > 0)
+                {
+                    await ReplyAsync("The Thot Obliterators MC Server is currently running!");
+                }
+            }
+        }
+
+        [Command("startserver")]
+        public async Task StartServer()
+        {
+            if (Context.Channel.Id != gamingChannelId)
+            {
+                await ReplyAsync("This channel does not meet the requirements to execute this command.");
+                return;
+            }
+            if (Context.Channel.Id == gamingChannelId)
+            {
+                foreach(SocketRole role in ((SocketGuildUser)Context.Message.Author).Roles)
+                {
+                    if (role.Id == mcServerGangRoleId)
+                    {
+                        await ReplyAsync("Starting Server...");
+                        Process.Start(serverExecPath);
+                    } else
+                    {
+                        await ReplyAsync("You do not meet the requirements to execute this command.");
+                    }
+                }
+            }
+        }
+
+        [Command("restartserver")]
+        public async Task RestartServer()
+        {
+            if (Context.Channel.Id != gamingChannelId)
+            {
+                await ReplyAsync("This channel does not meet the requirements to execute this command.");
+                return;
+            }
+            if (Context.Channel.Id == gamingChannelId)
+            {
+                foreach (SocketRole role in ((SocketGuildUser)Context.Message.Author).Roles)
+                {
+                    if (role.Id == mcServerGangRoleId)
+                    {
+                        await ReplyAsync("Restarting Server...");
+                        Process serverProcess = Process.GetProcessesByName(mcServerExecutable)[0];
+                        serverProcess.Kill();
+                        await ReplyAsync("Killed server. Starting...");
+                        Process.Start(serverExecPath);
+                    }
+                    else
+                    {
+                        await ReplyAsync("You do not meet the requirements to execute this command.");
+                    }
+                }
+            }
+        }
+
         #endregion
 
         #region scan commands
