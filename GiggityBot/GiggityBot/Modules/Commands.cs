@@ -43,7 +43,7 @@ namespace GiggityBot.Modules
         const string mcServerExecutable = "java.exe";
         const ulong gamingChannelId = 615369865305260047;
         const ulong mcServerGangRoleId = 736043415875223574;
-        const string serverExecPath = @"C:\Users\naqui\Desktop\mcserver\TOMCServer\Minecraft server survuival 1.12.2\start.bat";
+        const string serverExecPath = @"C:\Users\naqui\Desktop\mc server\TOMCServer\Minecraft server survuival 1.12.2\start.bat";
         #endregion
 
         private readonly string funny = "https://cdn.discordapp.com/attachments/566874876296691712/799042385485103124/video0.mp4";
@@ -266,6 +266,7 @@ namespace GiggityBot.Modules
         public async Task StartServer()
         {
             bool moveAlong = false;
+            bool _moveAlong = true;
             if (Context.Channel.Id != gamingChannelId)
             {
                 await ReplyAsync("This channel does not meet the requirements to execute this command.");
@@ -278,19 +279,14 @@ namespace GiggityBot.Modules
                     if (role.Id == mcServerGangRoleId)
                     {
                         await ReplyAsync("Starting Server...");
-                        try
-                        {
-                            Process.Start(serverExecPath);
-                        } catch (Exception ex)
-                        {
-                            await ReplyAsync(ex.ToString());
-                        }
+                        Process.Start(serverExecPath);
+                        _moveAlong = false;
                     } else if (role.Id != mcServerGangRoleId)
                     {
                         moveAlong = true;
                     }
                 }
-                if (moveAlong)
+                if (moveAlong && _moveAlong)
                     await ReplyAsync("You do not meet the requirements to execute this command.");
             }
         }
@@ -299,6 +295,7 @@ namespace GiggityBot.Modules
         public async Task RestartServer()
         {
             bool moveAlong = false;
+            bool _moveAlong = true;
             if (Context.Channel.Id != gamingChannelId)
             {
                 await ReplyAsync("This channel does not meet the requirements to execute this command.");
@@ -316,18 +313,19 @@ namespace GiggityBot.Modules
                             Process serverProcess = Process.GetProcessesByName(mcServerExecutable)[0];
                             serverProcess.Kill();
                             await ReplyAsync("Killed server. Starting...");
-                            Process.Start(@"start /i " + @serverExecPath);
+                            Process.Start(serverExecPath);
+                            _moveAlong = false;
                         } catch (Exception ex)
                         {
                             await ReplyAsync(ex.ToString());
                         }
                     }
-                    else
+                    else if (role.Id != mcServerGangRoleId)
                     {
                         moveAlong = true;
                     }
                 }
-                if (moveAlong)
+                if (moveAlong && _moveAlong)
                     await ReplyAsync("You do not meet the requirements to execute this command.");
             }
         }
@@ -336,6 +334,7 @@ namespace GiggityBot.Modules
         public async Task StopServer()
         {
             bool moveAlong = false;
+            bool _moveAlong = true;
             if (Context.Channel.Id != gamingChannelId)
             {
                 await ReplyAsync("This channel does not meet the requirements to execute this command.");
@@ -347,22 +346,24 @@ namespace GiggityBot.Modules
                 {
                     if (role.Id == mcServerGangRoleId)
                     {
-                        await ReplyAsync("Stopping Server...");
+                        await ReplyAsync("Restarting Server...");
                         try
                         {
                             Process serverProcess = Process.GetProcessesByName(mcServerExecutable)[0];
                             serverProcess.Kill();
-                        } catch (Exception ex)
+                            _moveAlong = false;
+                        }
+                        catch (Exception ex)
                         {
                             await ReplyAsync(ex.ToString());
                         }
                     }
-                    else
+                    else if (role.Id != mcServerGangRoleId)
                     {
                         moveAlong = true;
                     }
                 }
-                if (moveAlong)
+                if (moveAlong && _moveAlong)
                     await ReplyAsync("You do not meet the requirements to execute this command.");
             }
         }
