@@ -280,7 +280,7 @@ namespace GiggityBot.Modules
                         await ReplyAsync("Starting Server...");
                         try
                         {
-                            Process.Start("cmd.exe", @"start /i " + @serverExecPath);
+                            Process.Start(@"start /i " + @serverExecPath);
                         } catch (Exception ex)
                         {
                             await ReplyAsync(ex.ToString());
