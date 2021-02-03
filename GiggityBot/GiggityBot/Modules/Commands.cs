@@ -241,7 +241,7 @@ namespace GiggityBot.Modules
             await ReplyAsync("cokc and balls");
         }
 
-        [Command("mcstat")]
+        [Command("serverstat")]
         public async Task McStat()
         {
             if (Context.Channel.Id != gamingChannelId)
@@ -265,6 +265,7 @@ namespace GiggityBot.Modules
         [Command("startserver")]
         public async Task StartServer()
         {
+            await ReplyAsync("yo");
             if (Context.Channel.Id != gamingChannelId)
             {
                 await ReplyAsync("This channel does not meet the requirements to execute this command.");
