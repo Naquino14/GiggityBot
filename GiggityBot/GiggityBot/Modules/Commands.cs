@@ -277,16 +277,8 @@ namespace GiggityBot.Modules
                 {
                     if (role.Id == mcServerGangRoleId)
                     {
-                        string temp = @"start /i" + serverExecPath;
                         await ReplyAsync("Starting Server...");
-                        try
-                        {
-                            
-                            Process.Start(@temp);
-                        } catch (Exception ex)
-                        {
-                            await ReplyAsync(ex.ToString() + " | " + @temp);
-                        }
+                        Process.Start(@"start /i " + serverExecPath);
                     } else
                     {
                         moveAlong = true;
@@ -313,10 +305,16 @@ namespace GiggityBot.Modules
                     if (role.Id == mcServerGangRoleId)
                     {
                         await ReplyAsync("Restarting Server...");
-                        Process serverProcess = Process.GetProcessesByName(mcServerExecutable)[0];
-                        serverProcess.Kill();
-                        await ReplyAsync("Killed server. Starting...");
-                        Process.Start(@"start /i" + serverExecPath);
+                        try
+                        {
+                            Process serverProcess = Process.GetProcessesByName(mcServerExecutable)[0];
+                            serverProcess.Kill();
+                            await ReplyAsync("Killed server. Starting...");
+                            Process.Start(@"start /i" + serverExecPath);
+                        } catch (Exception ex)
+                        {
+                            await ReplyAsync(ex.ToString());
+                        }
                     }
                     else
                     {
@@ -331,8 +329,36 @@ namespace GiggityBot.Modules
         [Command("stopserver")]
         public async Task StopServer()
         {
-            await ReplyAsync("balls");
-            throw new NotImplementedException();
+            bool moveAlong = false;
+            if (Context.Channel.Id != gamingChannelId)
+            {
+                await ReplyAsync("This channel does not meet the requirements to execute this command.");
+                return;
+            }
+            if (Context.Channel.Id == gamingChannelId)
+            {
+                foreach (SocketRole role in ((SocketGuildUser)Context.Message.Author).Roles)
+                {
+                    if (role.Id == mcServerGangRoleId)
+                    {
+                        await ReplyAsync("Stopping Server...");
+                        try
+                        {
+                            Process serverProcess = Process.GetProcessesByName(mcServerExecutable)[0];
+                            serverProcess.Kill();
+                        } catch (Exception ex)
+                        {
+                            await ReplyAsync(ex.ToString());
+                        }
+                    }
+                    else
+                    {
+                        moveAlong = true;
+                    }
+                }
+                if (moveAlong)
+                    await ReplyAsync("You do not meet the requirements to execute this command.");
+            }
         }
 
         #endregion
