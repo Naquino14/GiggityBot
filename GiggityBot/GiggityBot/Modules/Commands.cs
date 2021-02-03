@@ -265,6 +265,7 @@ namespace GiggityBot.Modules
         [Command("startserver")]
         public async Task StartServer()
         {
+            bool moveAlong = false;
             if (Context.Channel.Id != gamingChannelId)
             {
                 await ReplyAsync("This channel does not meet the requirements to execute this command.");
@@ -280,15 +281,18 @@ namespace GiggityBot.Modules
                         Process.Start(serverExecPath);
                     } else
                     {
-                        await ReplyAsync("You do not meet the requirements to execute this command.");
+                        moveAlong = true;
                     }
                 }
+                if (moveAlong)
+                    await ReplyAsync("You do not meet the requirements to execute this command.");
             }
         }
 
         [Command("restartserver")]
         public async Task RestartServer()
         {
+            bool moveAlong = false;
             if (Context.Channel.Id != gamingChannelId)
             {
                 await ReplyAsync("This channel does not meet the requirements to execute this command.");
@@ -308,9 +312,11 @@ namespace GiggityBot.Modules
                     }
                     else
                     {
-                        await ReplyAsync("You do not meet the requirements to execute this command.");
+                        moveAlong = true;
                     }
                 }
+                if (moveAlong)
+                    await ReplyAsync("You do not meet the requirements to execute this command.");
             }
         }
 
