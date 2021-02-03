@@ -277,15 +277,13 @@ namespace GiggityBot.Modules
                 {
                     if (role.Id == mcServerGangRoleId)
                     {
-                        string temp = @"start /i " + @serverExecPath;
                         await ReplyAsync("Starting Server...");
                         try
                         {
-                            
-                            Process.Start(@temp);
+                            Process.Start("cmd.exe", @"start /i " + serverExecPath);
                         } catch (Exception ex)
                         {
-                            await ReplyAsync(ex.ToString() + " | " + @temp);
+                            await ReplyAsync(ex.ToString());
                         }
                     } else
                     {
