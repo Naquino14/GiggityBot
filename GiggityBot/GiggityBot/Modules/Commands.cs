@@ -43,7 +43,7 @@ namespace GiggityBot.Modules
         const string mcServerExecutable = "java.exe";
         const ulong gamingChannelId = 615369865305260047;
         const ulong mcServerGangRoleId = 736043415875223574;
-        const string serverExecPath = @"C:\Users\naqui\Desktop\mc server\TOMCServer\Minecraft server survuival 1.12.2\start.bat";
+        const string serverExecPath = @"C:\Users\naqui\Desktop\mcserver\TOMCServer\Minecraft server survuival 1.12.2\start.bat";
         #endregion
 
         private readonly string funny = "https://cdn.discordapp.com/attachments/566874876296691712/799042385485103124/video0.mp4";
@@ -280,7 +280,7 @@ namespace GiggityBot.Modules
                         await ReplyAsync("Starting Server...");
                         try
                         {
-                            Process.Start(@"start /i " + @serverExecPath);
+                            Process.Start(serverExecPath);
                         } catch (Exception ex)
                         {
                             await ReplyAsync(ex.ToString());
