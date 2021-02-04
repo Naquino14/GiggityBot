@@ -125,7 +125,7 @@ namespace GiggityBot.Modules
                 _commands._char++;
             }
 
-            if (message.Content.Contains("quag kill yourself") && context.Message.Author.Id == vinettaId)
+            if ((message.Content.Contains("quag kill yourself") || message.Content.Contains("quag kys")) && context.Message.Author.Id == vinettaId)
                 await _commands.Suicide();
 
         }
@@ -306,7 +306,7 @@ namespace GiggityBot.Modules
                 await ReplyAsync("Bro which one? type q!help server for a list.");
                 return;
             }
-            if (serverType != ServerType.mod16.ToString() || serverType != ServerType.mod12.ToString() || serverType != ServerType.van12.ToString())
+            if (serverType != ServerType.mod16.ToString() ^ serverType != ServerType.mod12.ToString() ^ serverType != ServerType.van12.ToString())
             {
                 await ReplyAsync("Dood thats not a valid server type, see q!help server for a list.");
                 return;
@@ -469,9 +469,10 @@ namespace GiggityBot.Modules
         }
 
         [Command("spitdebug")]
-        public async Task SpitDebug()
+        public async Task SpitDebug(string w)
         {
             // use this for debugging
+            await ReplyAsync(w);
             await ReplyAsync(ServerType.mod16.ToString());
             await ReplyAsync(ServerType.mod12.ToString());
             await ReplyAsync(ServerType.van12.ToString());
