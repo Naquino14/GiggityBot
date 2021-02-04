@@ -292,6 +292,12 @@ namespace GiggityBot.Modules
                 await ReplyAsync("This channel does not meet the requirements to execute this command.");
                 return;
             }
+            Process serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
+            if (serverProcess != null)
+            {
+                await ReplyAsync("Server is already running...");
+                return;
+            }
             if (Context.Channel.Id == gamingChannelId)
             {
                 foreach(SocketRole role in ((SocketGuildUser)Context.Message.Author).Roles)
@@ -366,10 +372,10 @@ namespace GiggityBot.Modules
                 {
                     if (role.Id == mcServerGangRoleId)
                     {
-                        await ReplyAsync("Restarting Server...");
+                        await ReplyAsync("Stopping Server...");
                         try
                         {
-                            Process serverProcess = Process.GetProcessesByName(mcServerExecutable)[0];
+                            Process serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
                             serverProcess.Kill();
                             _moveAlong = false;
                         }
