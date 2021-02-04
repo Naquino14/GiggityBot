@@ -145,7 +145,7 @@ namespace GiggityBot.Modules
             {
                 embedBuilder.WithTitle("MC Server Commands");
                 embedBuilder.WithImageUrl("https://cdn.iconscout.com/icon/free/png-512/minecraft-15-282774.png");
-                embedBuilder.AddField("q!serverstat", "Returns wether or not the server executable is running on the host.", true);
+                embedBuilder.AddField("q!serverstatus", "Returns wether or not the server executable is running on the host.", true);
                 embedBuilder.AddField("q!startserver", "Tells me to run the minecraft server.", true);
                 embedBuilder.AddField("q!stopserver", "Tells me to stop the minecraft server. (DOES NOT SAVE!!!)", true);
                 embedBuilder.AddField("q!restartserver", "Tells me to restart the minecraft server. (DOES NOT SAVE!!!)", true);
@@ -277,7 +277,7 @@ namespace GiggityBot.Modules
             await ReplyAsync("cokc and balls");
         }
 
-        [Command("serverstat")]
+        [Command("serverstatus")]
         public async Task McStat()
         {
             if (Context.Channel.Id != gamingChannelId)
