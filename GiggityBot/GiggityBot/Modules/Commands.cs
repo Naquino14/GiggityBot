@@ -516,6 +516,7 @@ namespace GiggityBot.Modules
         private async Task Suicide()
         {
             await _context.Channel.SendMessageAsync("ight, imma head out");
+            await _context.Channel.SendMessageAsync("https://cdn.discordapp.com/emojis/741089413626331176.gif?v=1");
             Environment.Exit(0); // successfully die lol
         }
         #endregion
