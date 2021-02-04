@@ -306,6 +306,11 @@ namespace GiggityBot.Modules
                 await ReplyAsync("Bro which one? type q!help server for a list.");
                 return;
             }
+            if (serverType != ServerType.mod16.ToString() || serverType != ServerType.mod12.ToString() || serverType != ServerType.van12.ToString())
+            {
+                await ReplyAsync("Dood thats not a valid server type, see q!help server for a list.");
+                return;
+            }
 
             bool moveAlong = false;
             bool _moveAlong = true;
@@ -393,7 +398,12 @@ namespace GiggityBot.Modules
                             {
                                 serverProcess.Kill();
                                 await ReplyAsync("Killed server. Starting...");
-                                Process.Start(van12serverPath);
+                                if (currentServerType == ServerType.mod16)
+                                    Process.Start(mod16serverPath);
+                                if(currentServerType == ServerType.mod12)
+                                    Process.Start(mod12serverPath);
+                                if(currentServerType == ServerType.van12)
+                                    Process.Start(van12serverPath);
                                 _moveAlong = false;
                             }
                             catch (Exception ex)
