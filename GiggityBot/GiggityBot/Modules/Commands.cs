@@ -468,6 +468,15 @@ namespace GiggityBot.Modules
             }
         }
 
+        [Command("spitdebug")]
+        public async Task SpitDebug()
+        {
+            // use this for debugging
+            await ReplyAsync(ServerType.mod16.ToString());
+            await ReplyAsync(ServerType.mod12.ToString());
+            await ReplyAsync(ServerType.van12.ToString());
+        }
+
         #endregion
 
         #region scan commands
