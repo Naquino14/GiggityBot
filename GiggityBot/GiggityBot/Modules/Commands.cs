@@ -43,8 +43,17 @@ namespace GiggityBot.Modules
         private const string mcServerExecutable = "java.exe";
         private const ulong gamingChannelId = 615369865305260047;
         private const ulong mcServerGangRoleId = 736043415875223574;
-        private const string serverExecPath = @"C:\Users\naqui\Desktop\mc server\TOMCServer\Minecraft server survuival 1.12.2\start.bat";
+        private const string van12serverPath = @"C:\Users\naqui\Desktop\mc server\TOMCServer\Minecraft server survuival 1.12.2\start.bat";
+        private const string mod12serverPath = @"C:\Users\naqui\Desktop\mc server\TOMCServer\Minecraft 1.12.2 Modded\start.bat";
+        private const string mod16serverPath = @"C:\Users\naqui\Desktop\mc server\TOMCServer\Minecraft 1.16.5 Modded\start.bat";
         private Process _serverProcess;
+        enum ServerType
+        {
+            mod16,
+            mod12,
+            van12
+        }
+        private ServerType currentServerType;
 
         const ulong vinettaId = 388440073219211265;
         #endregion
@@ -140,6 +149,7 @@ namespace GiggityBot.Modules
                 embedBuilder.AddField("q!startserver", "Tells me to run the minecraft server.", true);
                 embedBuilder.AddField("q!stopserver", "Tells me to stop the minecraft server. (DOES NOT SAVE!!!)", true);
                 embedBuilder.AddField("q!restartserver", "Tells me to restart the minecraft server. (DOES NOT SAVE!!!)", true);
+                embedBuilder.AddField("Server Start parameters:", "`mod16` - modded 1.16.5 | `mod12` - modded 1.12.2 | `van12` - vanilla 1.12.2");
                 embedBuilder.WithColor(Discord.Color.Green);
                 await ReplyAsync("", false, embedBuilder.Build());
                 return;
@@ -283,14 +293,20 @@ namespace GiggityBot.Modules
             }
                 if (Process.GetProcessesByName(mcServerExecutable.Split('.')[0]).Length > 0)
                 {
-                    await ReplyAsync("The Thot Obliterators MC Server is currently running!");
+                    await ReplyAsync("The Thot Obliterators MC Server is currently running `" + currentServerType.ToString() + "`");
                 }
             }
         }
 
         [Command("startserver")]
-        public async Task StartServer()
+        public async Task StartServer(string serverType = null)
         {
+            if (serverType == null)
+            {
+                await ReplyAsync("Bro which one? type q!help server for a list.");
+                return;
+            }
+
             bool moveAlong = false;
             bool _moveAlong = true;
             if (Context.Channel.Id != gamingChannelId)
@@ -316,8 +332,24 @@ namespace GiggityBot.Modules
                 {
                     if (role.Id == mcServerGangRoleId)
                     {
-                        await ReplyAsync("Starting Server...");
-                        Process.Start(serverExecPath);
+                        if (serverType == ServerType.mod16.ToString())
+                        {
+                            currentServerType = ServerType.mod16;
+                            await ReplyAsync("Starting Server " + currentServerType.ToString() + " ...");
+                            Process.Start(mod16serverPath);
+                        }
+                        if (serverType == ServerType.mod12.ToString())
+                        {
+                            currentServerType = ServerType.mod12;
+                            await ReplyAsync("Starting Server " + currentServerType.ToString() + " ...");
+                            Process.Start(mod12serverPath);
+                        }
+                        if (serverType == ServerType.van12.ToString())
+                        {
+                            currentServerType = ServerType.van12;
+                            await ReplyAsync("Starting Server " + currentServerType.ToString() + " ...");
+                            Process.Start(van12serverPath);
+                        }
                         _moveAlong = false;
                     } else if (role.Id != mcServerGangRoleId)
                     {
@@ -361,7 +393,7 @@ namespace GiggityBot.Modules
                             {
                                 serverProcess.Kill();
                                 await ReplyAsync("Killed server. Starting...");
-                                Process.Start(serverExecPath);
+                                Process.Start(van12serverPath);
                                 _moveAlong = false;
                             }
                             catch (Exception ex)
