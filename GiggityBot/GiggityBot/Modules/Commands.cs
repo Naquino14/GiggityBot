@@ -345,17 +345,29 @@ namespace GiggityBot.Modules
                 {
                     if (role.Id == mcServerGangRoleId)
                     {
-                        await ReplyAsync("Restarting Server...");
+                        Process serverProcess;
                         try
                         {
-                            Process serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
-                            serverProcess.Kill();
-                            await ReplyAsync("Killed server. Starting...");
-                            Process.Start(serverExecPath);
-                            _moveAlong = false;
-                        } catch (Exception ex)
+                            serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
+                        } catch (Exception unused)
                         {
-                            await ReplyAsync(ex.ToString());
+                            await ReplyAsync("Server is not running, start it with q!startserver");
+                            return;
+                        }
+                        if (serverProcess != null)
+                        {
+                            await ReplyAsync("Restarting Server...");
+                            try
+                            {
+                                serverProcess.Kill();
+                                await ReplyAsync("Killed server. Starting...");
+                                Process.Start(serverExecPath);
+                                _moveAlong = false;
+                            }
+                            catch (Exception ex)
+                            {
+                                await ReplyAsync(ex.ToString());
+                            }
                         }
                     }
                     else if (role.Id != mcServerGangRoleId)
@@ -382,12 +394,20 @@ namespace GiggityBot.Modules
             {
                 foreach (SocketRole role in ((SocketGuildUser)Context.Message.Author).Roles)
                 {
-                    if (role.Id == mcServerGangRoleId)
+                    Process serverProcess;
+                    try
+                    {
+                        serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
+                    } catch (Exception unused)
+                    {
+                        await ReplyAsync("Server cannot be stopped because it is not running.");
+                        return;
+                    }
+                    if (serverProcess != null && role.Id == mcServerGangRoleId)
                     {
                         await ReplyAsync("Stopping Server...");
                         try
                         {
-                            Process serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
                             serverProcess.Kill();
                             _moveAlong = false;
                         }
