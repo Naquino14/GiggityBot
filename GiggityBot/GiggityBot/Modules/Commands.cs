@@ -116,7 +116,7 @@ namespace GiggityBot.Modules
             }
 
             if (message.Content.Contains("quag kill yourself") && context.Message.Author.Id == vinettaId)
-                Suicide();
+                await _commands.Suicide();
 
         }
 
