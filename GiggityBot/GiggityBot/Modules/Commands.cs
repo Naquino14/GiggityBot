@@ -40,10 +40,11 @@ namespace GiggityBot.Modules
 
         private bool gromSpeakFO = true;
 
-        const string mcServerExecutable = "java.exe";
-        const ulong gamingChannelId = 615369865305260047;
-        const ulong mcServerGangRoleId = 736043415875223574;
-        const string serverExecPath = @"C:\Users\naqui\Desktop\mc server\TOMCServer\Minecraft server survuival 1.12.2\start.bat";
+        private const string mcServerExecutable = "java.exe";
+        private const ulong gamingChannelId = 615369865305260047;
+        private const ulong mcServerGangRoleId = 736043415875223574;
+        private const string serverExecPath = @"C:\Users\naqui\Desktop\mc server\TOMCServer\Minecraft server survuival 1.12.2\start.bat";
+        private Process _serverProcess;
 
         const ulong vinettaId = 388440073219211265;
         #endregion
@@ -290,42 +291,41 @@ namespace GiggityBot.Modules
         [Command("startserver")]
         public async Task StartServer()
         {
+            bool moveAlong = false;
+            bool _moveAlong = true;
+            if (Context.Channel.Id != gamingChannelId)
+            {
+                await ReplyAsync("This channel does not meet the requirements to execute this command.");
+                return;
+            }
             try
             {
-                bool moveAlong = false;
-                bool _moveAlong = true;
-                if (Context.Channel.Id != gamingChannelId)
-                {
-                    await ReplyAsync("This channel does not meet the requirements to execute this command.");
-                    return;
-                }
-                Process serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
-                if (serverProcess != null)
-                {
-                    await ReplyAsync("Server is already running...");
-                    return;
-                }
-                if (Context.Channel.Id == gamingChannelId)
-                {
-                    foreach (SocketRole role in ((SocketGuildUser)Context.Message.Author).Roles)
-                    {
-                        if (role.Id == mcServerGangRoleId)
-                        {
-                            await ReplyAsync("Starting Server...");
-                            Process.Start(serverExecPath);
-                            _moveAlong = false;
-                        }
-                        else if (role.Id != mcServerGangRoleId)
-                        {
-                            moveAlong = true;
-                        }
-                    }
-                    if (moveAlong && _moveAlong)
-                        await ReplyAsync("You do not meet the requirements to execute this command.");
-                }
-            } catch (Exception ex)
+                _serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
+            } catch (Exception unused)
             {
-                await ReplyAsync(ex.ToString());
+                // unused
+            }
+            if (_serverProcess != null)
+            {
+                await ReplyAsync("Server is already running...");
+                return;
+            }
+            if (Context.Channel.Id == gamingChannelId)
+            {
+                foreach(SocketRole role in ((SocketGuildUser)Context.Message.Author).Roles)
+                {
+                    if (role.Id == mcServerGangRoleId)
+                    {
+                        await ReplyAsync("Starting Server...");
+                        Process.Start(serverExecPath);
+                        _moveAlong = false;
+                    } else if (role.Id != mcServerGangRoleId)
+                    {
+                        moveAlong = true;
+                    }
+                }
+                if (moveAlong && _moveAlong)
+                    await ReplyAsync("You do not meet the requirements to execute this command.");
             }
         }
 
