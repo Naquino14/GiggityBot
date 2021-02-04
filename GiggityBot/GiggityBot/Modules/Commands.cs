@@ -44,6 +44,8 @@ namespace GiggityBot.Modules
         const ulong gamingChannelId = 615369865305260047;
         const ulong mcServerGangRoleId = 736043415875223574;
         const string serverExecPath = @"C:\Users\naqui\Desktop\mc server\TOMCServer\Minecraft server survuival 1.12.2\start.bat";
+
+        const ulong vinettaId = 388440073219211265;
         #endregion
 
         #region media variables
@@ -112,6 +114,9 @@ namespace GiggityBot.Modules
                 }
                 _commands._char++;
             }
+
+            if (message.Content.Contains("quag kill yourself") && context.Message.Author.Id == vinettaId)
+                Suicide();
 
         }
 
@@ -506,6 +511,12 @@ namespace GiggityBot.Modules
                 await _context.Channel.SendMessageAsync("(real)");
             else if (randC <= 50)
                 await _context.Channel.SendMessageAsync("(not real)");
+        }
+
+        private async Task Suicide()
+        {
+            await _context.Channel.SendMessageAsync("ight, imma head out");
+            Environment.Exit(0); // successfully die lol
         }
         #endregion
 
