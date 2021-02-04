@@ -351,7 +351,7 @@ namespace GiggityBot.Modules
                             serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
                         } catch (Exception unused)
                         {
-                            await ReplyAsync("Server is not running, start it with q!startserver");
+                            await ReplyAsync("Server is not running, start it with q!startserver.");
                             return;
                         }
                         if (serverProcess != null)
