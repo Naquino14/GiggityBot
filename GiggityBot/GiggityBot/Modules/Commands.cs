@@ -340,19 +340,19 @@ namespace GiggityBot.Modules
                         if (serverType == ServerType.mod16.ToString())
                         {
                             currentServerType = ServerType.mod16;
-                            await ReplyAsync("Starting Server " + currentServerType.ToString() + " ...");
+                            await ReplyAsync("Starting Server `" + currentServerType.ToString() + "`...");
                             Process.Start(mod16serverPath);
                         }
                         if (serverType == ServerType.mod12.ToString())
                         {
                             currentServerType = ServerType.mod12;
-                            await ReplyAsync("Starting Server " + currentServerType.ToString() + " ...");
+                            await ReplyAsync("Starting Server `" + currentServerType.ToString() + "`...");
                             Process.Start(mod12serverPath);
                         }
                         if (serverType == ServerType.van12.ToString())
                         {
                             currentServerType = ServerType.van12;
-                            await ReplyAsync("Starting Server " + currentServerType.ToString() + " ...");
+                            await ReplyAsync("Starting Server `" + currentServerType.ToString() + "`...");
                             Process.Start(van12serverPath);
                         }
                         _moveAlong = false;
