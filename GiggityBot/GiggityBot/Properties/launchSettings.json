@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "GiggityBot": {
+      "commandName": "Project",
+      "commandLineArgs": "-dev"
+    }
+  }
+}

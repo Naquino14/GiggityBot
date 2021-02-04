@@ -46,8 +46,12 @@ namespace GiggityBot.Modules
         const string serverExecPath = @"C:\Users\naqui\Desktop\mc server\TOMCServer\Minecraft server survuival 1.12.2\start.bat";
         #endregion
 
+        #region media variables
+
         private readonly string funny = "https://cdn.discordapp.com/attachments/566874876296691712/799042385485103124/video0.mp4";
         private readonly string funny2 = "https://cdn.discordapp.com/attachments/388795923360120834/798924241256972318/speak.mp4";
+
+        #endregion
 
         public static async Task Scan(SocketUserMessage message, SocketCommandContext context) // scans all messages
         {
@@ -120,8 +124,24 @@ namespace GiggityBot.Modules
         }
 
         [Command("help")]
-        public async Task Help()
+        public async Task Help(string parameter = null)
         {
+            if (parameter == "server" && Context.Channel.Id == gamingChannelId)
+            {
+                embedBuilder.WithTitle("MC Server Commands");
+                embedBuilder.WithImageUrl("https://cdn.iconscout.com/icon/free/png-512/minecraft-15-282774.png");
+                embedBuilder.AddField("q!serverstat", "Returns wether or not the server executable is running on the host.", true);
+                embedBuilder.AddField("q!startserver", "Tells me to run the minecraft server.", true);
+                embedBuilder.AddField("q!stopserver", "Tells me to stop the minecraft server. (DOES NOT SAVE!!!)", true);
+                embedBuilder.AddField("q!restartserver", "Tells me to restart the minecraft server. (DOES NOT SAVE!!!)", true);
+                embedBuilder.WithColor(Discord.Color.Green);
+                await ReplyAsync("", false, embedBuilder.Build());
+                return;
+            } else if (parameter == "server" && Context.Channel.Id != gamingChannelId)
+            {
+                await ReplyAsync("This channel does not meet the requirements to execute this command.");
+                return;
+            }
             await ReplyAsync("fuck off loser");
             await Task.Delay(4000);
             await ReplyAsync("lol jkjk");
@@ -130,7 +150,7 @@ namespace GiggityBot.Modules
             embedBuilder.WithImageUrl("https://media.discordapp.net/attachments/734949688754700482/794991036309045348/quag.gif");
             embedBuilder.AddField("q!ping", "returns the ping", true);
             embedBuilder.AddField("q!info", "bot info", true);
-            embedBuilder.AddField("q!whitelistchannel", "blacklist a channel from bot responses (not working atm)", false);
+            embedBuilder.AddField("q!blacklistchannel [channel]", "blacklist a channel from bot responses (not working atm)", false);
             embedBuilder.WithColor(Discord.Color.Red);
             await Task.Delay(100);
             await ReplyAsync("", false, embedBuilder.Build());
@@ -251,11 +271,11 @@ namespace GiggityBot.Modules
             }
             if (Context.Channel.Id == gamingChannelId)
             {
-                if (Process.GetProcessesByName(mcServerExecutable).Length == 0)
+                if (Process.GetProcessesByName(mcServerExecutable.Split('.')[0]).Length == 0)
                 {
                     await ReplyAsync("Server Executable for Thot Obliterators is offline.");
             }
-                if (Process.GetProcessesByName(mcServerExecutable).Length > 0)
+                if (Process.GetProcessesByName(mcServerExecutable.Split('.')[0]).Length > 0)
                 {
                     await ReplyAsync("The Thot Obliterators MC Server is currently running!");
                 }
@@ -310,7 +330,7 @@ namespace GiggityBot.Modules
                         await ReplyAsync("Restarting Server...");
                         try
                         {
-                            Process serverProcess = Process.GetProcessesByName(mcServerExecutable)[0];
+                            Process serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
                             serverProcess.Kill();
                             await ReplyAsync("Killed server. Starting...");
                             Process.Start(serverExecPath);
