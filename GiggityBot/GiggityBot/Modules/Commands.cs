@@ -290,35 +290,42 @@ namespace GiggityBot.Modules
         [Command("startserver")]
         public async Task StartServer()
         {
-            bool moveAlong = false;
-            bool _moveAlong = true;
-            if (Context.Channel.Id != gamingChannelId)
+            try
             {
-                await ReplyAsync("This channel does not meet the requirements to execute this command.");
-                return;
-            }
-            Process serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
-            if (serverProcess != null)
-            {
-                await ReplyAsync("Server is already running...");
-                return;
-            }
-            if (Context.Channel.Id == gamingChannelId)
-            {
-                foreach(SocketRole role in ((SocketGuildUser)Context.Message.Author).Roles)
+                bool moveAlong = false;
+                bool _moveAlong = true;
+                if (Context.Channel.Id != gamingChannelId)
                 {
-                    if (role.Id == mcServerGangRoleId)
-                    {
-                        await ReplyAsync("Starting Server...");
-                        Process.Start(serverExecPath);
-                        _moveAlong = false;
-                    } else if (role.Id != mcServerGangRoleId)
-                    {
-                        moveAlong = true;
-                    }
+                    await ReplyAsync("This channel does not meet the requirements to execute this command.");
+                    return;
                 }
-                if (moveAlong && _moveAlong)
-                    await ReplyAsync("You do not meet the requirements to execute this command.");
+                Process serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
+                if (serverProcess != null)
+                {
+                    await ReplyAsync("Server is already running...");
+                    return;
+                }
+                if (Context.Channel.Id == gamingChannelId)
+                {
+                    foreach (SocketRole role in ((SocketGuildUser)Context.Message.Author).Roles)
+                    {
+                        if (role.Id == mcServerGangRoleId)
+                        {
+                            await ReplyAsync("Starting Server...");
+                            Process.Start(serverExecPath);
+                            _moveAlong = false;
+                        }
+                        else if (role.Id != mcServerGangRoleId)
+                        {
+                            moveAlong = true;
+                        }
+                    }
+                    if (moveAlong && _moveAlong)
+                        await ReplyAsync("You do not meet the requirements to execute this command.");
+                }
+            } catch (Exception ex)
+            {
+                await ReplyAsync(ex.ToString());
             }
         }
 
