@@ -301,6 +301,11 @@ namespace GiggityBot.Modules
         [Command("startserver")]
         public async Task StartServer(string serverType = null)
         {
+            if (Context.Channel.Id =! gamingChannelId)
+            {
+                await ReplyAsync("You do not meet the requirements to execute this command.");
+                return;
+            }
             if (serverType == null)
             {
                 await ReplyAsync("Bro which one? type q!help server for a list.");
