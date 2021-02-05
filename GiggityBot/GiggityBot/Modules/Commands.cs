@@ -283,14 +283,14 @@ namespace GiggityBot.Modules
         [Command("serverstatus")]
         public async Task McStat()
         {
-            if (isDev)
-            {
-                await ReplyAsync("Unable to comply. I am currently in Dev mode so I may or may not be running on the host.");
-                return;
-            }
             if (Context.Channel.Id != gamingChannelId)
             {
                 await ReplyAsync("This channel does not meet the requirements to execute this command.");
+                return;
+            }
+            if (isDev)
+            {
+                await ReplyAsync("Unable to comply. I am currently in Dev mode so I may or may not be running on the host.");
                 return;
             }
             if (Context.Channel.Id == gamingChannelId)
@@ -309,14 +309,14 @@ namespace GiggityBot.Modules
         [Command("startserver")]
         public async Task StartServer(string serverType = null)
         {
-            if (isDev)
-            {
-                await ReplyAsync("Unable to comply. I am currently in Dev mode so I may or may not be running on the host.");
-                return;
-            }
             if (Context.Channel.Id != gamingChannelId)
             {
                 await ReplyAsync("You do not meet the requirements to execute this command.");
+                return;
+            }
+            if (isDev)
+            {
+                await ReplyAsync("Unable to comply. I am currently in Dev mode so I may or may not be running on the host.");
                 return;
             }
             if (serverType == null)
@@ -387,16 +387,16 @@ namespace GiggityBot.Modules
         [Command("restartserver")]
         public async Task RestartServer()
         {
-            if (isDev)
-            {
-                await ReplyAsync("Unable to comply. I am currently in Dev mode so I may or may not be running on the host.");
-                return;
-            }
             bool moveAlong = false;
             bool _moveAlong = true;
             if (Context.Channel.Id != gamingChannelId)
             {
                 await ReplyAsync("This channel does not meet the requirements to execute this command.");
+                return;
+            }
+            if (isDev)
+            {
+                await ReplyAsync("Unable to comply. I am currently in Dev mode so I may or may not be running on the host.");
                 return;
             }
             if (Context.Channel.Id == gamingChannelId)
@@ -448,16 +448,16 @@ namespace GiggityBot.Modules
         [Command("stopserver")]
         public async Task StopServer()
         {
-            if (isDev)
-            {
-                await ReplyAsync("Unable to comply. I am currently in Dev mode so I may or may not be running on the host.");
-                return;
-            }
             bool moveAlong = false;
             bool _moveAlong = true;
             if (Context.Channel.Id != gamingChannelId)
             {
                 await ReplyAsync("This channel does not meet the requirements to execute this command.");
+                return;
+            }
+            if (isDev)
+            {
+                await ReplyAsync("Unable to comply. I am currently in Dev mode so I may or may not be running on the host.");
                 return;
             }
             if (Context.Channel.Id == gamingChannelId)
