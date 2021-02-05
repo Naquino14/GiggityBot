@@ -128,6 +128,7 @@ namespace GiggityBot
             Console.WriteLine("Starting...");
             if (currentMode == RunMode.dev)
             {
+                Commands.isDev = true;
                 await _client.SetGameAsync("in development", null, ActivityType.Playing);
                 await _client.SetStatusAsync(UserStatus.DoNotDisturb);
             }

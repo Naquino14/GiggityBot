@@ -35,6 +35,8 @@ namespace GiggityBot.Modules
         bool updateTimeFireOnce = true;
         public ArrayList whitelistedChannels = new ArrayList();
 
+        public static bool isDev;
+
         private string serverWithBlacklist;
         private uint channelBlacklist;
 
@@ -95,7 +97,8 @@ namespace GiggityBot.Modules
             if ((message.Content.Contains("quag") || message.Content.Contains("quagmire")) && (message.Content.Contains("real") || message.Content.Contains("true")))
                 await _commands.RealOrFake();
 
-
+            if (context.IsPrivate)
+                await _commands.AnswerDm();
 
             foreach (string word in _commands.wordArrays.funnyWords) // giggity response triggers
             {
@@ -280,6 +283,11 @@ namespace GiggityBot.Modules
         [Command("serverstatus")]
         public async Task McStat()
         {
+            if (isDev)
+            {
+                await ReplyAsync("Unable to comply. I am currently in Dev mode so I may or may not be running on the host.");
+                return;
+            }
             if (Context.Channel.Id != gamingChannelId)
             {
                 await ReplyAsync("This channel does not meet the requirements to execute this command.");
@@ -301,6 +309,11 @@ namespace GiggityBot.Modules
         [Command("startserver")]
         public async Task StartServer(string serverType = null)
         {
+            if (isDev)
+            {
+                await ReplyAsync("Unable to comply. I am currently in Dev mode so I may or may not be running on the host.");
+                return;
+            }
             if (Context.Channel.Id != gamingChannelId)
             {
                 await ReplyAsync("You do not meet the requirements to execute this command.");
@@ -374,6 +387,11 @@ namespace GiggityBot.Modules
         [Command("restartserver")]
         public async Task RestartServer()
         {
+            if (isDev)
+            {
+                await ReplyAsync("Unable to comply. I am currently in Dev mode so I may or may not be running on the host.");
+                return;
+            }
             bool moveAlong = false;
             bool _moveAlong = true;
             if (Context.Channel.Id != gamingChannelId)
@@ -430,6 +448,11 @@ namespace GiggityBot.Modules
         [Command("stopserver")]
         public async Task StopServer()
         {
+            if (isDev)
+            {
+                await ReplyAsync("Unable to comply. I am currently in Dev mode so I may or may not be running on the host.");
+                return;
+            }
             bool moveAlong = false;
             bool _moveAlong = true;
             if (Context.Channel.Id != gamingChannelId)
@@ -478,9 +501,6 @@ namespace GiggityBot.Modules
         {
             // use this for debugging
             await ReplyAsync(w);
-            await ReplyAsync(ServerType.mod16.ToString());
-            await ReplyAsync(ServerType.mod12.ToString());
-            await ReplyAsync(ServerType.van12.ToString());
         }
 
         #endregion
@@ -602,6 +622,12 @@ namespace GiggityBot.Modules
             await _context.Channel.SendMessageAsync("ight, imma head out");
             await _context.Channel.SendMessageAsync("https://cdn.discordapp.com/emojis/741089413626331176.gif?v=1");
             Environment.Exit(0); // successfully die lol
+        }
+
+        private async Task AnswerDm()
+        {
+            await _context.Channel.SendMessageAsync("Dude, Nate literally explained that the bot doesnt asnwer dms, or if you did this accidentally or out of curiosity, what makes you think");
+            await _context.Channel.SendMessageAsync("that a discord bot will be useful answering dms like, you are just wasting my server's resources bro. Kinda cringe...");
         }
         #endregion
 

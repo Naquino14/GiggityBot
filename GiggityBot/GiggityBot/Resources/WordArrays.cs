@@ -7,7 +7,7 @@ namespace GiggityBot.Resources
     {
         #region important arrays
 
-
+        public ArrayList DMIds = new ArrayList();
 
         #endregion
         public ArrayList funnyWords = new ArrayList();
