@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
@@ -54,8 +54,6 @@ namespace GiggityBot.Modules
 
         private string serverWithBlacklist;
         private uint channelBlacklist;
-
-        private bool gromSpeakFO = true;
 
         private const string mcServerExecutable = "java.exe";
         private const string mcServerExecutableWindowName = "t";
@@ -721,11 +719,6 @@ namespace GiggityBot.Modules
         private async Task Troll() { await _context.Channel.SendFileAsync(@"video0.mp4"); }
         private async Task Speak() { await _context.Channel.SendFileAsync(@"speak.mp4"); }
 
-        private async Task GromSpeak()
-        {
-            await _context.Channel.SendMessageAsync("There I finally stopped posting that video are you happy now grommet?");
-            gromSpeakFO = false;
-        }
 
         private async Task RealOrFake()
         {
