@@ -595,7 +595,20 @@ namespace GiggityBot.Modules
         {
             try
             {
-                throw new NotImplementedException();
+                IntPtr _zero = IntPtr.Zero;
+                for (int i = 0; (i < 60) && (_zero == IntPtr.Zero); i++ /* 60 window max scan */)
+                {
+                    await Task.Delay(20); // delay to not murder the laptop
+                    _zero = FindWindow(null, mcServerExecutableWindowName);
+                }
+                if (_zero != null) // keypress issued here
+                {
+                    await ReplyAsync("Issuing command `" + args + "`.");
+                    SetForegroundWindow(_zero);
+                    SendKeys.SendWait(args);
+                    SendKeys.SendWait("{ENTER}");
+                    SendKeys.Flush();
+                }
             }
             catch (Exception ex)
             {
