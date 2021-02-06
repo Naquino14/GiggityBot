@@ -437,8 +437,22 @@ namespace GiggityBot.Modules
                             await ReplyAsync("Restarting Server...");
                             try
                             {
+                                IntPtr _zero = IntPtr.Zero;
+                                for (int i = 0; (i < 60) && (_zero == IntPtr.Zero); i++ /* 60 window max scan */)
+                                {
+                                    await Task.Delay(20); // delay to not murder the laptop
+                                    _zero = FindWindow(null, mcServerExecutableWindowName);
+                                }
+                                if (_zero != null) // keypress issued here
+                                {
+                                    SetForegroundWindow(_zero);
+                                    SendKeys.SendWait("save-all");
+                                    SendKeys.SendWait("{ENTER}");
+                                    SendKeys.Flush();
+                                    await Task.Delay(3000);
+                                }
                                 serverProcess.Kill();
-                                await ReplyAsync("Killed server. Starting...");
+                                await ReplyAsync("Saved and killed server. Starting...");
                                 if (currentServerType == ServerType.mod16)
                                     Process.Start(mod16serverPath);
                                 if(currentServerType == ServerType.mod12)
@@ -496,6 +510,20 @@ namespace GiggityBot.Modules
                         await ReplyAsync("Stopping Server...");
                         try
                         {
+                            IntPtr _zero = IntPtr.Zero;
+                            for (int i = 0; (i < 60) && (_zero == IntPtr.Zero); i++ /* 60 window max scan */)
+                            {
+                                await Task.Delay(20); // delay to not murder the laptop
+                                _zero = FindWindow(null, mcServerExecutableWindowName);
+                            }
+                            if (_zero != null) // keypress issued here
+                            {
+                                SetForegroundWindow(_zero);
+                                SendKeys.SendWait("save-all");
+                                SendKeys.SendWait("{ENTER}");
+                                SendKeys.Flush();
+                                await Task.Delay(3000);
+                            }
                             serverProcess.Kill();
                             _moveAlong = false;
                         }
@@ -503,6 +531,7 @@ namespace GiggityBot.Modules
                         {
                             await ReplyAsync(ex.ToString());
                         }
+                        await ReplyAsync("Successfully saved and stopped the server");
                     }
                     else if (role.Id != mcServerGangRoleId)
                     {
