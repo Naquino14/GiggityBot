@@ -11,6 +11,10 @@ using Discord.Commands;
 using Discord.WebSocket;
 using GiggityBot.Resources;
 using GiggityBot.Modules;
+using System.Runtime.InteropServices;
+using System.Linq;
+using System.IO;
+using System.Windows.Forms;
 
 namespace GiggityBot.Modules
 {
@@ -24,6 +28,17 @@ namespace GiggityBot.Modules
         public static Commands commands; // ex use only
         private Random random;
         public SaveData saveData = new SaveData();
+        #endregion
+
+
+        #region dll import
+
+        [DllImport("user32.dll")]
+        private static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
+
+        [DllImport("user32.dll")]
+        private static extern bool SetForegroundWindow(IntPtr hWnd);
+
         #endregion
 
         #region global variables
@@ -43,6 +58,7 @@ namespace GiggityBot.Modules
         private bool gromSpeakFO = true;
 
         private const string mcServerExecutable = "java.exe";
+        private const string mcServerExecutableWindowName = "t";
         private const ulong gamingChannelId = 615369865305260047;
         private const ulong mcServerGangRoleId = 736043415875223574;
         private const string van12serverPath = @"C:\Users\naqui\Desktop\mc server\TOMCServer\Minecraft server survuival 1.12.2\start.bat";
@@ -149,10 +165,12 @@ namespace GiggityBot.Modules
                 embedBuilder.WithTitle("MC Server Commands");
                 embedBuilder.WithImageUrl("https://cdn.iconscout.com/icon/free/png-512/minecraft-15-282774.png");
                 embedBuilder.AddField("q!serverstatus", "Returns wether or not the server executable is running on the host.", true);
-                embedBuilder.AddField("q!startserver", "Tells me to run the minecraft server.", true);
-                embedBuilder.AddField("q!stopserver", "Tells me to stop the minecraft server. (DOES NOT SAVE!!!)", true);
-                embedBuilder.AddField("q!restartserver", "Tells me to restart the minecraft server. (DOES NOT SAVE!!!)", true);
-                embedBuilder.AddField("Server Start parameters:", "`mod16` - modded 1.16.5 | `mod12` - modded 1.12.2 | `van12` - vanilla 1.12.2");
+                embedBuilder.AddField("q!startserver [server type]", "Tells me to run the minecraft server.", true);
+                embedBuilder.AddField("q!stopserver", "Tells me to stop the minecraft server.", true);
+                embedBuilder.AddField("q!restartserver", "Tells me to restart the minecraft server.", true);
+                embedBuilder.AddField("q!saveserver", "Issues a command to the server to save it.", true);
+                embedBuilder.AddField("q!servercommand [command]", "Issues [command] to the server.", true);
+                embedBuilder.AddField("Server Start parameter types:", "`mod16` - modded 1.16.5 | `mod12` - modded 1.12.2 | `van12` - vanilla 1.12.2");
                 embedBuilder.WithColor(Discord.Color.Green);
                 await ReplyAsync("", false, embedBuilder.Build());
                 return;
@@ -493,6 +511,66 @@ namespace GiggityBot.Modules
                 }
                 if (moveAlong && _moveAlong)
                     await ReplyAsync("You do not meet the requirements to execute this command.");
+            }
+        }
+
+        [Command("saveserver")]
+        public async Task SaveServer()
+        {
+            if (Context.Channel.Id != gamingChannelId)
+            {
+                await ReplyAsync("This channel does not meet the requirements to execute this command.");
+                return;
+            }
+            if (isDev)
+            {
+                await ReplyAsync("Unable to comply. I am currently in Dev mode so I may or may not be running on the host.");
+                return;
+            }
+            if (Context.Channel.Id == gamingChannelId)
+            {
+                foreach (SocketRole role in ((SocketGuildUser)Context.Message.Author).Roles)
+                {
+                    if (role.Id == mcServerGangRoleId)
+                    {
+                        await ReplyAsync("Attempting to save server...");
+                        try
+                        {
+                            IntPtr _zero = IntPtr.Zero;
+                            for (int i = 0; (i < 60) && (_zero == IntPtr.Zero); i++ /* 60 window max scan */)
+                            {
+                                await Task.Delay(20); // delay to not murder the laptop
+                                _zero = FindWindow(null, mcServerExecutableWindowName);
+                            }
+                            if (_zero != null) // keypress issued here
+                            {
+                                SetForegroundWindow(_zero);
+                                SendKeys.SendWait("save-all");
+                                SendKeys.SendWait("{ENTER}");
+                                SendKeys.Flush();
+                                await Task.Delay(3000);
+                            }
+                            await ReplyAsync("Successfully sent save command.");
+                        }
+                        catch (Exception ex)
+                        {
+                            await ReplyAsync("Unable to save server.");
+                            await ReplyAsync(ex.ToString());
+                        }
+                    }
+                }
+            }
+        }
+        [Command("servercommand")]
+        public async Task ServerCommand(string args)
+        {
+            try
+            {
+                throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+                await ReplyAsync(ex.ToString());
             }
         }
 

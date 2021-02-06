@@ -46,6 +46,7 @@ namespace GiggityBot
         private enum RunMode
         {
             dev,
+            debug,
             normal,
             anncmnt
         }
@@ -110,6 +111,8 @@ namespace GiggityBot
         {
             if (arg == "-dev")
                 currentMode = RunMode.dev;
+            else if (arg == "-debug")
+                currentMode = RunMode.debug;
             else if (arg == "-normal")
                 currentMode = RunMode.normal;
             else if (arg == "-anncmnt")
@@ -130,6 +133,11 @@ namespace GiggityBot
             {
                 Commands.isDev = true;
                 await _client.SetGameAsync("in development", null, ActivityType.Playing);
+                await _client.SetStatusAsync(UserStatus.DoNotDisturb);
+            }
+            if (currentMode == RunMode.debug)
+            {
+                await _client.SetGameAsync("in debug mode", null, ActivityType.Playing);
                 await _client.SetStatusAsync(UserStatus.DoNotDisturb);
             }
             if (currentMode == RunMode.normal)
