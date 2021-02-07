@@ -104,8 +104,6 @@ namespace GiggityBot.Modules
                 await _commands.Troll();
             if (message.Content.Contains("remy speak"))
                 await _commands.Speak();
-            if (message.Content.Contains("speak") && message.Author.Id == 757473997326647386 && _commands.gromSpeakFO)
-                await _commands.GromSpeak();
 
 
             if ((message.Content.Contains("quag") || message.Content.Contains("quagmire")) && (message.Content.Contains("real") || message.Content.Contains("true")))
@@ -142,8 +140,12 @@ namespace GiggityBot.Modules
                 _commands._char++;
             }
 
-            if ((message.Content.Contains("quag kill yourself") || message.Content.Contains("quag kys")) && context.Message.Author.Id == vinettaId)
+            if ((message.Content.Contains("quag kill yourself") || message.Content.Contains("quag kys")))
                 await _commands.Suicide();
+            if (message.Content.Contains("quag restart") || message.Content.Contains("quag restart host"))
+                await _commands.RestartHost();
+            if (message.Content.Contains("quag cancel") || message.Content.Contains("actually cancel"))
+                await _commands.CancelHostRestart();
 
         }
 
@@ -327,7 +329,7 @@ namespace GiggityBot.Modules
         {
             if (Context.Channel.Id != gamingChannelId)
             {
-                await ReplyAsync("You do not meet the requirements to execute this command.");
+                await ReplyAsync("This channel does not meet the requirements to execute this command.");
                 return;
             }
             if (isDev)
@@ -348,17 +350,12 @@ namespace GiggityBot.Modules
 
             bool moveAlong = false;
             bool _moveAlong = true;
-            if (Context.Channel.Id != gamingChannelId)
-            {
-                await ReplyAsync("This channel does not meet the requirements to execute this command.");
-                return;
-            }
             try
             {
                 _serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
             } catch (Exception unused)
             {
-                // unused
+                // unused, but important, dont delete
             }
             if (_serverProcess != null)
             {
@@ -554,6 +551,16 @@ namespace GiggityBot.Modules
                 await ReplyAsync("Unable to comply. I am currently in Dev mode so I may or may not be running on the host.");
                 return;
             }
+            Process serverProcess;
+            try
+            {
+                serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
+            }
+            catch (Exception unused)
+            {
+                await ReplyAsync("Could not issue command because server is not running.");
+                return;
+            }
             if (Context.Channel.Id == gamingChannelId)
             {
                 foreach (SocketRole role in ((SocketGuildUser)Context.Message.Author).Roles)
@@ -591,6 +598,26 @@ namespace GiggityBot.Modules
         [Command("servercommand")]
         public async Task ServerCommand(string args)
         {
+            if (Context.Channel.Id != gamingChannelId)
+            {
+                await ReplyAsync("This channel does not meet the requirements to execute this command.");
+                return;
+            }
+            if (isDev)
+            {
+                await ReplyAsync("Unable to comply. I am currently in Dev mode so I may or may not be running on the host.");
+                return;
+            }
+            Process serverProcess;
+            try
+            {
+                serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
+            }
+            catch (Exception unused)
+            {
+                await ReplyAsync("Could not issue command because server is not running.");
+                return;
+            }
             try
             {
                 IntPtr _zero = IntPtr.Zero;
@@ -732,9 +759,60 @@ namespace GiggityBot.Modules
 
         private async Task Suicide()
         {
-            await _context.Channel.SendMessageAsync("ight, imma head out");
-            await _context.Channel.SendMessageAsync("https://cdn.discordapp.com/emojis/741089413626331176.gif?v=1");
-            Environment.Exit(0); // successfully die lol
+            if (_context.Message.Author.Id == vinettaId)
+            {
+                await _context.Channel.SendMessageAsync("ight, imma head out");
+                await _context.Channel.SendMessageAsync("https://cdn.discordapp.com/emojis/741089413626331176.gif?v=1");
+                Environment.Exit(0); // successfully die lol
+            } else
+            {
+                await _context.Channel.SendMessageAsync("Why dont you kill yourself?");
+                await _context.Channel.SendMessageAsync("Loser");
+                await _context.Channel.SendMessageAsync("Get rekt lolollolololol");
+            }
+        }
+
+        private async Task RestartHost()
+        {
+            if (_context.Message.Author.Id == vinettaId)
+            {
+                if (isDev)
+                {
+                    await _context.Channel.SendMessageAsync("Unable to restart, I am in Dev mode so I may or may not be on the host.");
+                    return;
+                } else
+                {
+                    await _context.Channel.SendMessageAsync("Aight, restarting host... (this may take awhile)");
+                    Process.Start("cmd.exe", "/c shutdown /r");
+                }
+            } else
+            {
+                await _context.Channel.SendMessageAsync("YOU NOT MY DAD!");
+                await _context.Channel.SendMessageAsync("YOU ALWAYS WANA HEAR SOEMTHING!");
+                await _context.Channel.SendMessageAsync("ugly ass fuckin' noodlehead.");
+            }
+        }
+
+        private async Task CancelHostRestart()
+        {
+            if (_context.Message.Author.Id == vinettaId)
+            {
+                if (isDev)
+                {
+                    await _context.Channel.SendMessageAsync("Unable to cancel restart, I am in Dev mode so I may or may not be on the host.");
+                    return;
+                } else
+                {
+                    await _context.Channel.SendMessageAsync("Cancelling host restart.");
+                    Process.Start("cmd.exe", "/c shutdown /a");
+                }
+            } else
+            {
+                await _context.Channel.SendMessageAsync("Have you not learned,");
+                await Task.Delay(500);
+                await _context.Channel.SendMessageAsync("that only vin can run these commands...");
+                await _context.Channel.SendMessageAsync("smh, idiots nowadays.");
+            }
         }
 
         private async Task AnswerDm()
