@@ -69,7 +69,7 @@ namespace GiggityBot.Modules
             mod12,
             van12
         }
-        private ServerType currentServerType;
+        private static ServerType currentServerType;
 
         const ulong vinettaId = 388440073219211265;
         #endregion
@@ -644,8 +644,7 @@ namespace GiggityBot.Modules
         [Command("spitdebug")]
         public async Task SpitDebug(string w)
         {
-            // use this for debugging
-            await ReplyAsync(w);
+            
         }
 
         #endregion
