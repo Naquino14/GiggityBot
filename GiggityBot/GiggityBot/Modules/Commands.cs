@@ -56,7 +56,9 @@ namespace GiggityBot.Modules
         private uint channelBlacklist;
 
         private const string mcServerExecutable = "java.exe";
-        private const string mcServerExecutableWindowName = "t";
+        private const string mcServerExecutableWindowName = @"t - """ + mod16serverPath + @""" ";
+        // @"t - """ + mod16serverPath + @""" "
+        // "Minecraft server"
         private const ulong gamingChannelId = 615369865305260047;
         private const ulong mcServerGangRoleId = 736043415875223574;
         private const string van12serverPath = @"C:\Users\naqui\Desktop\mc server\TOMCServer\Minecraft server survuival 1.12.2\start.bat";
