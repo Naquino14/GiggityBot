@@ -30,7 +30,6 @@ namespace GiggityBot.Modules
         public SaveData saveData = new SaveData();
         #endregion
 
-
         #region dll import
 
         [DllImport("user32.dll")]
@@ -644,9 +643,36 @@ namespace GiggityBot.Modules
         }
 
         [Command("spitdebug")]
-        public async Task SpitDebug(string w)
+        public async Task SpitDebug(string w, string w2)
         {
-            
+            await ReplyAsync(w);
+            await ReplyAsync(w2);
+            //await ReplyAsync(mcServerExecutableWindowName);
+        }
+
+        [Command("debug")]
+        public async Task Debug(string args, string parameter1)
+        {
+            if (args == "curl") {
+                try
+                {
+                    throw new NotImplementedException();
+                } catch (Exception ex)
+                {
+                    await ReplyAsync(ex.ToString());
+                }
+            }
+            if (args == "trycompare")
+            {
+                try
+                {
+                    HandleAI.Start(parameter1, _context);
+                    throw new NotImplementedException();
+                } catch (Exception ex)
+                {
+                    await ReplyAsync(ex.ToString());
+                }
+            }
         }
 
         #endregion

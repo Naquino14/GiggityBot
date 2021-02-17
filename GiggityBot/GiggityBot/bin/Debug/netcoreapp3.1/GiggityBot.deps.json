@@ -11,7 +11,23 @@
           "Discord.Net": "2.2.0",
           "Microsoft.Bcl.AsyncInterfaces": "5.0.0",
           "Microsoft.Extensions.DependencyInjection": "5.0.1",
-          "System.Collections.NonGeneric": "4.3.0"
+          "System.Collections.NonGeneric": "4.3.0",
+          "GianDetectorML.ConsoleApp": "1.0.0.0",
+          "GianDetectorML.Model": "1.0.0.0",
+          "Microsoft.ML.Core": "1.0.0.0",
+          "Microsoft.ML.CpuMath": "1.0.0.0",
+          "Microsoft.ML.Data": "1.0.0.0",
+          "Microsoft.ML.DataView": "1.0.0.0",
+          "Microsoft.ML.ImageAnalytics": "1.0.0.0",
+          "Microsoft.ML.KMeansClustering": "1.0.0.0",
+          "Microsoft.ML.PCA": "1.0.0.0",
+          "Microsoft.ML.StandardTrainers": "1.0.0.0",
+          "Microsoft.ML.TensorFlow": "1.0.0.0",
+          "Microsoft.ML.Transforms": "1.0.0.0",
+          "Microsoft.ML.Vision": "1.0.0.0",
+          "NumSharp.Core": "0.20.4.0",
+          "System.Threading.Channels": "4.0.2.0",
+          "TensorFlow.NET": "0.11.8.1"
         },
         "runtime": {
           "GiggityBot.dll": {}
@@ -259,6 +275,142 @@
           "Microsoft.NETCore.Targets": "1.1.0",
           "System.Runtime": "4.3.0"
         }
+      },
+      "GianDetectorML.ConsoleApp/1.0.0.0": {
+        "runtime": {
+          "GianDetectorML.ConsoleApp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "GianDetectorML.Model/1.0.0.0": {
+        "runtime": {
+          "GianDetectorML.Model.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Microsoft.ML.Core/1.0.0.0": {
+        "runtime": {
+          "Microsoft.ML.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.5.29311.2"
+          }
+        }
+      },
+      "Microsoft.ML.CpuMath/1.0.0.0": {
+        "runtime": {
+          "Microsoft.ML.CpuMath.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.5.29311.2"
+          }
+        }
+      },
+      "Microsoft.ML.Data/1.0.0.0": {
+        "runtime": {
+          "Microsoft.ML.Data.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.5.29311.2"
+          }
+        }
+      },
+      "Microsoft.ML.DataView/1.0.0.0": {
+        "runtime": {
+          "Microsoft.ML.DataView.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.5.29311.2"
+          }
+        }
+      },
+      "Microsoft.ML.ImageAnalytics/1.0.0.0": {
+        "runtime": {
+          "Microsoft.ML.ImageAnalytics.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.5.29311.2"
+          }
+        }
+      },
+      "Microsoft.ML.KMeansClustering/1.0.0.0": {
+        "runtime": {
+          "Microsoft.ML.KMeansClustering.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.5.29311.2"
+          }
+        }
+      },
+      "Microsoft.ML.PCA/1.0.0.0": {
+        "runtime": {
+          "Microsoft.ML.PCA.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.5.29311.2"
+          }
+        }
+      },
+      "Microsoft.ML.StandardTrainers/1.0.0.0": {
+        "runtime": {
+          "Microsoft.ML.StandardTrainers.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.5.29311.2"
+          }
+        }
+      },
+      "Microsoft.ML.TensorFlow/1.0.0.0": {
+        "runtime": {
+          "Microsoft.ML.TensorFlow.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.5.29311.2"
+          }
+        }
+      },
+      "Microsoft.ML.Transforms/1.0.0.0": {
+        "runtime": {
+          "Microsoft.ML.Transforms.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.5.29311.2"
+          }
+        }
+      },
+      "Microsoft.ML.Vision/1.0.0.0": {
+        "runtime": {
+          "Microsoft.ML.Vision.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.5.29311.2"
+          }
+        }
+      },
+      "NumSharp.Core/0.20.4.0": {
+        "runtime": {
+          "NumSharp.Core.dll": {
+            "assemblyVersion": "0.20.4.0",
+            "fileVersion": "0.20.4.0"
+          }
+        }
+      },
+      "System.Threading.Channels/4.0.2.0": {
+        "runtime": {
+          "System.Threading.Channels.dll": {
+            "assemblyVersion": "4.0.2.0",
+            "fileVersion": "4.700.20.21406"
+          }
+        }
+      },
+      "TensorFlow.NET/0.11.8.1": {
+        "runtime": {
+          "TensorFlow.NET.dll": {
+            "assemblyVersion": "0.11.8.1",
+            "fileVersion": "0.11.8.1"
+          }
+        }
+      },
+      "Google.Protobuf/3.10.0.0": {
+        "runtime": {
+          "Google.Protobuf.dll": {
+            "assemblyVersion": "3.10.0.0",
+            "fileVersion": "3.10.0.0"
+          }
+        }
       }
     }
   },
@@ -470,6 +622,91 @@
       "sha512": "sha512-LbSxKEdOUhVe8BezB/9uOGGppt+nZf6e1VFyw6v3DN6lqitm0OSn2uXMOdtP0M3W4iMcqcivm2J6UgqiwwnXiA==",
       "path": "system.threading.tasks/4.3.0",
       "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
+    },
+    "GianDetectorML.ConsoleApp/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GianDetectorML.Model/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.ML.Core/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.ML.CpuMath/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.ML.Data/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.ML.DataView/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.ML.ImageAnalytics/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.ML.KMeansClustering/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.ML.PCA/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.ML.StandardTrainers/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.ML.TensorFlow/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.ML.Transforms/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.ML.Vision/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NumSharp.Core/0.20.4.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Threading.Channels/4.0.2.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TensorFlow.NET/0.11.8.1": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Google.Protobuf/3.10.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

@@ -21,4 +21,55 @@
     <PackageReference Include="System.Collections.NonGeneric" Version="4.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="GianDetectorML.ConsoleApp">
+      <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\GianDetectorML.ConsoleApp.dll</HintPath>
+    </Reference>
+    <Reference Include="GianDetectorML.Model">
+      <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\GianDetectorML.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.Core">
+      <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\Microsoft.ML.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.CpuMath">
+      <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\Microsoft.ML.CpuMath.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.Data">
+      <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\Microsoft.ML.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.DataView">
+      <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\Microsoft.ML.DataView.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.ImageAnalytics">
+      <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\Microsoft.ML.ImageAnalytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.KMeansClustering">
+      <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\Microsoft.ML.KMeansClustering.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.PCA">
+      <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\Microsoft.ML.PCA.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.StandardTrainers">
+      <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\Microsoft.ML.StandardTrainers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.TensorFlow">
+      <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\Microsoft.ML.TensorFlow.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.Transforms">
+      <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\Microsoft.ML.Transforms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ML.Vision">
+      <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\Microsoft.ML.Vision.dll</HintPath>
+    </Reference>
+    <Reference Include="NumSharp.Core">
+      <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\NumSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Channels">
+      <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="TensorFlow.NET">
+      <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\TensorFlow.NET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
