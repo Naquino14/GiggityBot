@@ -16,6 +16,7 @@ namespace GiggityBot.Resources
         public ArrayList hotBoobResponse = new ArrayList();
         public ArrayList familyManCharacters = new ArrayList();
         public ArrayList familyManResponses = new ArrayList();
+        public ArrayList funnyFamilyGuyClips = new ArrayList();
         
         public void InitArrays()
         {
@@ -27,6 +28,7 @@ namespace GiggityBot.Resources
             InitBoobaResponse();
             InitFamilyMan();
             InitFamilyManResponse();
+            InitFamilyGuyClips();
         }
         private void InitBlacklist()
         {
@@ -100,6 +102,13 @@ namespace GiggityBot.Resources
             familyManResponses.Add("Poor loser got robbed by his goldfish once."); // 16 chris
             familyManResponses.Add("I dont think Joe is actually crippled."); // 17 joe
             familyManResponses.Add("He once said sex was overrated. He doesnt get enough of that giggity to understand."); // 18 joe
+        }
+        private void InitFamilyGuyClips()
+        {
+            funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/811773568005439508/811776546184101918/Death_2.mp4");
+            funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/811773568005439508/811777820791537704/Quag_Died.mp4");
+            funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/811773568005439508/811775379622199326/Death.mp4");
+            funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/769802428966240256/811692956523167744/Peter.mp4");
         }
 
     }

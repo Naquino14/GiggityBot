@@ -12,11 +12,12 @@ namespace GiggityBot.Modules
 {
     public class HandleAI
     {
-        public const string pathToComparison = @"nate pls add path here k thx";
+        public const string pathToComparison = @"D:\Users\naqui\Desktop\curll\lol.png"; // temp path
 
-        private const int predictedDownloadTime = 10; // just as a starter
+        private const int predictedDownloadTime = 3000; // just as a starter
+        private const int predictedComparisonTime = 10000; // just as a starter
 
-        public static async void Start(string url, SocketCommandContext _context)
+        public static async Task Start(string url, SocketCommandContext _context)
         {
             bool curlSuccess = (Curler.Curl(url, _context) == Curler.status.success);
             if (!curlSuccess)
@@ -27,13 +28,15 @@ namespace GiggityBot.Modules
             if (curlSuccess)
             {
                 await _context.Channel.SendMessageAsync("Successfully found image. Downloading...");
-                await Task.Delay(predictedDownloadTime);
             }
-
+            await Task.Delay(predictedDownloadTime);
             await _context.Channel.SendMessageAsync("Successfully downloaded. Comparing...");
 
             // AI stuff here...
             string result = WhoIsThis.CompareImage(pathToComparison);
+            await Task.Delay(predictedComparisonTime);
+            if (result == null)
+                result = "failed to compare image.";
             await _context.Channel.SendMessageAsync(result);
             // then eventually...
 

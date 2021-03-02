@@ -189,6 +189,8 @@ namespace GiggityBot.Modules
             embedBuilder.AddField("q!ping", "returns the ping", true);
             embedBuilder.AddField("q!info", "bot info", true);
             embedBuilder.AddField("q!blacklistchannel [channel]", "blacklist a channel from bot responses (not working atm)", false);
+            embedBuilder.AddField("q!familyguy", "sends a random family guy clip. More will be added as time goes by.", false);
+            embedBuilder.AddField("q!compare", "expirimental ai shit, dont use if you dont know what its for", false);
             embedBuilder.WithColor(Discord.Color.Red);
             await Task.Delay(100);
             await ReplyAsync("", false, embedBuilder.Build());
@@ -642,6 +644,17 @@ namespace GiggityBot.Modules
             }
         }
 
+        [Command("familyguy")]
+        public async Task FamilyGuy()
+        {
+            Random random = new Random();
+            wordArrays = new WordArrays();
+            wordArrays.InitArrays();
+            int randC = random.Next(0, wordArrays.funnyFamilyGuyClips.Count);
+            string randS = (string)wordArrays.funnyFamilyGuyClips[randC];
+            await ReplyAsync(randS);
+        }
+
         [Command("spitdebug")]
         public async Task SpitDebug(string w, string w2)
         {
@@ -656,7 +669,9 @@ namespace GiggityBot.Modules
             if (args == "curl") {
                 try
                 {
-                    throw new NotImplementedException();
+                    await ReplyAsync(Curler.Curl(parameter1, Context).ToString());
+                    await Task.Delay(2000);
+                    await Context.Channel.SendFileAsync(HandleAI.pathToComparison);
                 } catch (Exception ex)
                 {
                     await ReplyAsync(ex.ToString());
@@ -666,14 +681,26 @@ namespace GiggityBot.Modules
             {
                 try
                 {
-                    HandleAI.Start(parameter1, _context);
-                    throw new NotImplementedException();
+                    HandleAI.Start(parameter1, Context);
                 } catch (Exception ex)
                 {
                     await ReplyAsync(ex.ToString());
                 }
             }
         }
+
+        [Command("compare")]
+        public async Task Compare(string url)
+        {
+            try
+            {
+                throw new NotImplementedException();
+            } catch (Exception ex)
+            {
+                await ReplyAsync(ex.ToString());
+            }
+        }
+
 
         #endregion
 
@@ -847,6 +874,7 @@ namespace GiggityBot.Modules
             await _context.Channel.SendMessageAsync("Dude, Nate literally explained that the bot doesnt asnwer dms, or if you did this accidentally or out of curiosity, what makes you think");
             await _context.Channel.SendMessageAsync("that a discord bot will be useful answering dms like, you are just wasting my server's resources bro. Kinda cringe...");
         }
+
         #endregion
 
         #region other functions

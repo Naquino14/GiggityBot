@@ -28,6 +28,9 @@
     <Reference Include="GianDetectorML.Model">
       <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\GianDetectorML.Model.dll</HintPath>
     </Reference>
+    <Reference Include="Google.Protobuf">
+      <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\Google.Protobuf.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ML.Core">
       <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\Microsoft.ML.Core.dll</HintPath>
     </Reference>
@@ -60,6 +63,9 @@
     </Reference>
     <Reference Include="Microsoft.ML.Vision">
       <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\Microsoft.ML.Vision.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NumSharp.Core">
       <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\NumSharp.Core.dll</HintPath>

@@ -24,7 +24,7 @@ namespace GiggityBot.Modules
         {
             try
             {
-                Process.Start("cmd.exe", "/c curl -o " + HandleAI.pathToComparison);
+                Process.Start("cmd.exe", "/c curl -o \"" + HandleAI.pathToComparison + "\" \"" + url + "\"");
                 return status.success;
             } catch (Exception ex)
             {
