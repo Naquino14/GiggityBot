@@ -51,6 +51,18 @@
               "target": "Package",
               "version": "[5.0.1, )"
             },
+            "Microsoft.ML": {
+              "target": "Package",
+              "version": "[1.5.4, )"
+            },
+            "Microsoft.ML.ImageAnalytics": {
+              "target": "Package",
+              "version": "[1.5.4, )"
+            },
+            "SciSharp.TensorFlow.Redist": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
             "System.Collections.NonGeneric": {
               "target": "Package",
               "version": "[4.3.0, )"
