@@ -681,7 +681,7 @@ namespace GiggityBot.Modules
             {
                 try
                 {
-                    HandleAI.Start(parameter1, Context);
+                    await HandleAI.Start(parameter1, Context);
                 } catch (Exception ex)
                 {
                     await ReplyAsync(ex.ToString());
@@ -701,6 +701,17 @@ namespace GiggityBot.Modules
             }
         }
 
+        [Command("hostcommand")]
+        public async Task HostCommand(string args)
+        {
+            try
+            {
+                Process.Start("cmd.exe", args);
+            } catch (Exception ex)
+            {
+                await ReplyAsync(ex.ToString());
+            }
+        }
 
         #endregion
 
