@@ -702,11 +702,28 @@ namespace GiggityBot.Modules
         }
 
         [Command("hostcommand")]
-        public async Task HostCommand(string args)
+        public async Task HostCommand(string args, string _override = "nul")
         {
             try
             {
-                Process.Start("cmd.exe", args);
+                bool __override = false;
+                if (_override == "override" || _override == "o")
+                    __override = true;
+                if (Context.Message.Author.Id != vinettaId)
+                {
+                    await ReplyAsync("Bro, only Vinetta can run that command...");
+                    return;
+                }
+                if (Context.Message.Author.Id == vinettaId)
+                {
+                    if (isDev && !__override)
+                    {
+                        await ReplyAsync("Cannot run command, I am not on the host.");
+                        return;
+                    }
+                    await ReplyAsync("Running " + args);
+                    Process.Start("cmd.exe", args);
+                }
             } catch (Exception ex)
             {
                 await ReplyAsync(ex.ToString());
