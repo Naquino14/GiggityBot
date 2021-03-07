@@ -9,6 +9,7 @@
       "GiggityBot/1.0.0": {
         "dependencies": {
           "Discord.Net": "2.2.0",
+          "GiggityBotML.Model": "1.0.0",
           "Microsoft.Bcl.AsyncInterfaces": "5.0.0",
           "Microsoft.Extensions.DependencyInjection": "5.0.1",
           "Microsoft.ML": "1.5.4",
@@ -16,12 +17,7 @@
           "SciSharp.TensorFlow.Redist": "2.4.1",
           "System.Collections.NonGeneric": "4.3.0",
           "GianDetectorML.ConsoleApp": "1.0.0.0",
-          "GianDetectorML.Model": "1.0.0.0",
-          "Google.Protobuf": "3.10.0.0",
-          "Microsoft.ML.TensorFlow": "1.0.0.0",
-          "Microsoft.ML.Vision": "1.0.0.0",
-          "NumSharp.Core": "0.20.4.0",
-          "TensorFlow.NET": "0.11.8.1"
+          "GianDetectorML.Model": "1.0.0.0"
         },
         "runtime": {
           "GiggityBot.dll": {}
@@ -92,6 +88,17 @@
           "lib/netstandard2.1/Discord.Net.WebSocket.dll": {
             "assemblyVersion": "2.2.0.0",
             "fileVersion": "2.2.0.0"
+          }
+        }
+      },
+      "Google.Protobuf/3.10.0": {
+        "dependencies": {
+          "System.Memory": "4.5.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Protobuf.dll": {
+            "assemblyVersion": "3.10.0.0",
+            "fileVersion": "3.10.0.0"
           }
         }
       },
@@ -219,6 +226,31 @@
           }
         }
       },
+      "Microsoft.ML.TensorFlow/1.5.2": {
+        "dependencies": {
+          "Microsoft.ML": "1.5.4",
+          "System.IO.FileSystem.AccessControl": "4.5.0",
+          "System.Security.Principal.Windows": "4.5.0",
+          "TensorFlow.NET": "0.11.8.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.ML.TensorFlow.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.5.29311.2"
+          }
+        }
+      },
+      "Microsoft.ML.Vision/1.5.2": {
+        "dependencies": {
+          "Microsoft.ML.TensorFlow": "1.5.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.ML.Vision.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.5.29311.2"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/2.0.0": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
       "Microsoft.Win32.SystemEvents/4.5.0": {
@@ -231,6 +263,18 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "12.0.0.0",
             "fileVersion": "12.0.2.23222"
+          }
+        }
+      },
+      "NumSharp/0.20.4": {
+        "dependencies": {
+          "System.Memory": "4.5.3",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NumSharp.Core.dll": {
+            "assemblyVersion": "0.20.4.0",
+            "fileVersion": "0.20.4.0"
           }
         }
       },
@@ -316,6 +360,12 @@
           "System.Threading.Tasks": "4.3.0"
         }
       },
+      "System.IO.FileSystem.AccessControl/4.5.0": {
+        "dependencies": {
+          "System.Security.AccessControl": "4.5.0",
+          "System.Security.Principal.Windows": "4.5.0"
+        }
+      },
       "System.Linq.Async/4.0.0": {
         "runtime": {
           "lib/netcoreapp3.0/System.Linq.Async.dll": {
@@ -371,11 +421,23 @@
           "Microsoft.NETCore.Targets": "1.1.0"
         }
       },
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {},
       "System.Runtime.Extensions/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0",
           "Microsoft.NETCore.Targets": "1.1.0",
           "System.Runtime": "4.3.0"
+        }
+      },
+      "System.Security.AccessControl/4.5.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.0",
+          "System.Security.Principal.Windows": "4.5.0"
+        }
+      },
+      "System.Security.Principal.Windows/4.5.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.0"
         }
       },
       "System.Text.Encoding/4.3.0": {
@@ -406,6 +468,29 @@
           "System.Runtime": "4.3.0"
         }
       },
+      "TensorFlow.NET/0.11.8.1": {
+        "dependencies": {
+          "Google.Protobuf": "3.10.0",
+          "NumSharp": "0.20.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/TensorFlow.NET.dll": {
+            "assemblyVersion": "0.11.8.1",
+            "fileVersion": "0.11.8.1"
+          }
+        }
+      },
+      "GiggityBotML.Model/1.0.0": {
+        "dependencies": {
+          "Microsoft.ML": "1.5.4",
+          "Microsoft.ML.ImageAnalytics": "1.5.4",
+          "Microsoft.ML.Vision": "1.5.2",
+          "SciSharp.TensorFlow.Redist": "2.4.1"
+        },
+        "runtime": {
+          "GiggityBotML.Model.dll": {}
+        }
+      },
       "GianDetectorML.ConsoleApp/1.0.0.0": {
         "runtime": {
           "GianDetectorML.ConsoleApp.dll": {
@@ -419,46 +504,6 @@
           "GianDetectorML.Model.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "Google.Protobuf/3.10.0.0": {
-        "runtime": {
-          "Google.Protobuf.dll": {
-            "assemblyVersion": "3.10.0.0",
-            "fileVersion": "3.10.0.0"
-          }
-        }
-      },
-      "Microsoft.ML.TensorFlow/1.0.0.0": {
-        "runtime": {
-          "Microsoft.ML.TensorFlow.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.5.29311.2"
-          }
-        }
-      },
-      "Microsoft.ML.Vision/1.0.0.0": {
-        "runtime": {
-          "Microsoft.ML.Vision.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.5.29311.2"
-          }
-        }
-      },
-      "NumSharp.Core/0.20.4.0": {
-        "runtime": {
-          "NumSharp.Core.dll": {
-            "assemblyVersion": "0.20.4.0",
-            "fileVersion": "0.20.4.0"
-          }
-        }
-      },
-      "TensorFlow.NET/0.11.8.1": {
-        "runtime": {
-          "TensorFlow.NET.dll": {
-            "assemblyVersion": "0.11.8.1",
-            "fileVersion": "0.11.8.1"
           }
         }
       }
@@ -512,6 +557,13 @@
       "path": "discord.net.websocket/2.2.0",
       "hashPath": "discord.net.websocket.2.2.0.nupkg.sha512"
     },
+    "Google.Protobuf/3.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Vg7uAamIF6bECZ2F3tMv2N8IvCbO750q/M+Yz16wu3W2F+grIV3eFcb/qLWzNBc/HJTTbHk2sLqDL8tMF1Xd5Q==",
+      "path": "google.protobuf/3.10.0",
+      "hashPath": "google.protobuf.3.10.0.nupkg.sha512"
+    },
     "Microsoft.Bcl.AsyncInterfaces/5.0.0": {
       "type": "package",
       "serviceable": true,
@@ -561,6 +613,20 @@
       "path": "microsoft.ml.imageanalytics/1.5.4",
       "hashPath": "microsoft.ml.imageanalytics.1.5.4.nupkg.sha512"
     },
+    "Microsoft.ML.TensorFlow/1.5.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Mqw/gRgglSOo0wcri1jPhjZeTGGMy6tZ0r9jTLI/olI3jMAkSh19LqGmvYDk426LwQ14GBahtGEaP+3UtshGiQ==",
+      "path": "microsoft.ml.tensorflow/1.5.2",
+      "hashPath": "microsoft.ml.tensorflow.1.5.2.nupkg.sha512"
+    },
+    "Microsoft.ML.Vision/1.5.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ULcr1jLCPlpkgg341uZNtpOSxrol37XGZWREf6iQcL6njqmih70hkOm7XEwuyQ/Rkn+rhvNG1mH3SeJs1CuPYA==",
+      "path": "microsoft.ml.vision/1.5.2",
+      "hashPath": "microsoft.ml.vision.1.5.2.nupkg.sha512"
+    },
     "Microsoft.NETCore.Platforms/2.0.0": {
       "type": "package",
       "serviceable": true,
@@ -588,6 +654,13 @@
       "sha512": "sha512-rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
       "path": "newtonsoft.json/12.0.2",
       "hashPath": "newtonsoft.json.12.0.2.nupkg.sha512"
+    },
+    "NumSharp/0.20.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EdgdzmfzRu6qEUxQXZnJFk2CinLwZPhF8bGNJlyFcWIrobkj2dWWtkvehRl2uWOxXiY4rN5xAHyjO5tGnmLzUw==",
+      "path": "numsharp/0.20.4",
+      "hashPath": "numsharp.0.20.4.nupkg.sha512"
     },
     "SciSharp.TensorFlow.Redist/2.4.1": {
       "type": "package",
@@ -659,6 +732,13 @@
       "path": "system.io/4.3.0",
       "hashPath": "system.io.4.3.0.nupkg.sha512"
     },
+    "System.IO.FileSystem.AccessControl/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TYe6xstoqT5MlTly0OtPU6u9zWuNScLVMEx6sTCjjx+Hqdp0wCXoG6fnzMpTPMQACXQzi9pd2N5Tloow+5jQdQ==",
+      "path": "system.io.filesystem.accesscontrol/4.5.0",
+      "hashPath": "system.io.filesystem.accesscontrol.4.5.0.nupkg.sha512"
+    },
     "System.Linq.Async/4.0.0": {
       "type": "package",
       "serviceable": true,
@@ -715,12 +795,33 @@
       "path": "system.runtime/4.3.0",
       "hashPath": "system.runtime.4.3.0.nupkg.sha512"
     },
+    "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wprSFgext8cwqymChhrBLu62LMg/1u92bU+VOwyfBimSPVFXtsNqEWC92Pf9ofzJFlk4IHmJA75EDJn1b2goAQ==",
+      "path": "system.runtime.compilerservices.unsafe/4.5.2",
+      "hashPath": "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
+    },
     "System.Runtime.Extensions/4.3.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-guW0uK0fn5fcJJ1tJVXYd7/1h5F+pea1r7FLSOz/f8vPEqbR2ZAknuRDvTQ8PzAilDveOxNjSfr0CHfIQfFk8g==",
       "path": "system.runtime.extensions/4.3.0",
       "hashPath": "system.runtime.extensions.4.3.0.nupkg.sha512"
+    },
+    "System.Security.AccessControl/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vW8Eoq0TMyz5vAG/6ce483x/CP83fgm4SJe5P8Tb1tZaobcvPrbMEL7rhH1DRdrYbbb6F0vq3OlzmK0Pkwks5A==",
+      "path": "system.security.accesscontrol/4.5.0",
+      "hashPath": "system.security.accesscontrol.4.5.0.nupkg.sha512"
+    },
+    "System.Security.Principal.Windows/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-U77HfRXlZlOeIXd//Yoj6Jnk8AXlbeisf1oq1os+hxOGVnuG+lGSfGqTwTZBoORFF6j/0q7HXIl8cqwQ9aUGqQ==",
+      "path": "system.security.principal.windows/4.5.0",
+      "hashPath": "system.security.principal.windows.4.5.0.nupkg.sha512"
     },
     "System.Text.Encoding/4.3.0": {
       "type": "package",
@@ -750,37 +851,24 @@
       "path": "system.threading.tasks/4.3.0",
       "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
     },
+    "TensorFlow.NET/0.11.8.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CgmjrRenAMRyH5cTuKbISxvfdqU+3Rla3eEunS0wLFC9WqfN8GF5NEv67Hs60g9RYYLQS5LI3GQy8+fJBlGPfA==",
+      "path": "tensorflow.net/0.11.8.1",
+      "hashPath": "tensorflow.net.0.11.8.1.nupkg.sha512"
+    },
+    "GiggityBotML.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "GianDetectorML.ConsoleApp/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
     "GianDetectorML.Model/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Google.Protobuf/3.10.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.ML.TensorFlow/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.ML.Vision/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "NumSharp.Core/0.20.4.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "TensorFlow.NET/0.11.8.1": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

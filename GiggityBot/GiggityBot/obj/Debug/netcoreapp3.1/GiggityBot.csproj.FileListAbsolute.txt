@@ -52,3 +52,6 @@ D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\bin\Debug\netcore
 D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libtensorflow_framework.2.dylib
 D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\tensorflow.dll
 D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\obj\Debug\netcoreapp3.1\GiggityBot.csproj.CoreCompileInputs.cache
+D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\bin\Debug\netcoreapp3.1\MLModel.zip
+D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\bin\Debug\netcoreapp3.1\GiggityBotML.Model.dll
+D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\bin\Debug\netcoreapp3.1\GiggityBotML.Model.pdb
