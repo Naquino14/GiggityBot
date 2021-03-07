@@ -4,3 +4,5 @@ GiggityBot/GiggityBot/bin/Debug/netcoreapp3.1/runtimes/osx-x64/native/libtensorf
 GiggityBot/GiggityBot/bin/Debug/netcoreapp3.1/runtimes/win-x64/native/tensorflow.dll
 GiggityBot/GiggityBot/bin/Debug/netcoreapp3.1/runtimes/win-x64/native/tensorflow.dll
 GiggityBot/GiggityBot/bin/Debug/netcoreapp3.1/runtimes/win-x64/native/tensorflow.dll
+GiggityBot/GiggityBotML.ConsoleApp/bin/Debug/netcoreapp3.1/runtimes/osx-x64/native/libtensorflow.dylib
+GiggityBot/GiggityBotML.ConsoleApp/bin/Debug/netcoreapp3.1/runtimes/linux-x64/native/libtensorflow.so

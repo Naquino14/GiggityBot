@@ -686,6 +686,23 @@
           "lib/netstandard2.0/TensorFlow.NET.dll": {}
         }
       },
+      "GiggityBotML.ConsoleApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "GiggityBotML.Model": "1.0.0",
+          "Microsoft.ML": "1.5.2",
+          "Microsoft.ML.ImageAnalytics": "1.5.2",
+          "Microsoft.ML.Vision": "1.5.2",
+          "SciSharp.TensorFlow.Redist": "1.14.0"
+        },
+        "compile": {
+          "bin/placeholder/GiggityBotML.ConsoleApp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GiggityBotML.ConsoleApp.dll": {}
+        }
+      },
       "GiggityBotML.Model/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -2403,6 +2420,11 @@
         "tensorflow.net.nuspec"
       ]
     },
+    "GiggityBotML.ConsoleApp/1.0.0": {
+      "type": "project",
+      "path": "../GiggityBotML.ConsoleApp/GiggityBotML.ConsoleApp.csproj",
+      "msbuildProject": "../GiggityBotML.ConsoleApp/GiggityBotML.ConsoleApp.csproj"
+    },
     "GiggityBotML.Model/1.0.0": {
       "type": "project",
       "path": "../GiggityBotML.Model/GiggityBotML.Model.csproj",
@@ -2412,6 +2434,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Discord.Net >= 2.2.0",
+      "GiggityBotML.ConsoleApp >= 1.0.0",
       "GiggityBotML.Model >= 1.0.0",
       "Microsoft.Bcl.AsyncInterfaces >= 5.0.0",
       "Microsoft.Extensions.DependencyInjection >= 5.0.1",
@@ -2448,6 +2471,9 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
+            "D:\\CSharp Projects\\GiggityBot\\GiggityBot\\GiggityBot\\GiggityBotML.ConsoleApp\\GiggityBotML.ConsoleApp.csproj": {
+              "projectPath": "D:\\CSharp Projects\\GiggityBot\\GiggityBot\\GiggityBot\\GiggityBotML.ConsoleApp\\GiggityBotML.ConsoleApp.csproj"
+            },
             "D:\\CSharp Projects\\GiggityBot\\GiggityBot\\GiggityBot\\GiggityBotML.Model\\GiggityBotML.Model.csproj": {
               "projectPath": "D:\\CSharp Projects\\GiggityBot\\GiggityBot\\GiggityBot\\GiggityBotML.Model\\GiggityBotML.Model.csproj"
             }

@@ -9,15 +9,14 @@
       "GiggityBot/1.0.0": {
         "dependencies": {
           "Discord.Net": "2.2.0",
+          "GiggityBotML.ConsoleApp": "1.0.0",
           "GiggityBotML.Model": "1.0.0",
           "Microsoft.Bcl.AsyncInterfaces": "5.0.0",
           "Microsoft.Extensions.DependencyInjection": "5.0.1",
           "Microsoft.ML": "1.5.4",
           "Microsoft.ML.ImageAnalytics": "1.5.4",
           "SciSharp.TensorFlow.Redist": "2.4.1",
-          "System.Collections.NonGeneric": "4.3.0",
-          "GianDetectorML.ConsoleApp": "1.0.0.0",
-          "GianDetectorML.Model": "1.0.0.0"
+          "System.Collections.NonGeneric": "4.3.0"
         },
         "runtime": {
           "GiggityBot.dll": {}
@@ -480,6 +479,18 @@
           }
         }
       },
+      "GiggityBotML.ConsoleApp/1.0.0": {
+        "dependencies": {
+          "GiggityBotML.Model": "1.0.0",
+          "Microsoft.ML": "1.5.4",
+          "Microsoft.ML.ImageAnalytics": "1.5.4",
+          "Microsoft.ML.Vision": "1.5.2",
+          "SciSharp.TensorFlow.Redist": "2.4.1"
+        },
+        "runtime": {
+          "GiggityBotML.ConsoleApp.dll": {}
+        }
+      },
       "GiggityBotML.Model/1.0.0": {
         "dependencies": {
           "Microsoft.ML": "1.5.4",
@@ -489,22 +500,6 @@
         },
         "runtime": {
           "GiggityBotML.Model.dll": {}
-        }
-      },
-      "GianDetectorML.ConsoleApp/1.0.0.0": {
-        "runtime": {
-          "GianDetectorML.ConsoleApp.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "GianDetectorML.Model/1.0.0.0": {
-        "runtime": {
-          "GianDetectorML.Model.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
         }
       }
     }
@@ -858,18 +853,13 @@
       "path": "tensorflow.net/0.11.8.1",
       "hashPath": "tensorflow.net.0.11.8.1.nupkg.sha512"
     },
-    "GiggityBotML.Model/1.0.0": {
+    "GiggityBotML.ConsoleApp/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "GianDetectorML.ConsoleApp/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "GianDetectorML.Model/1.0.0.0": {
-      "type": "reference",
+    "GiggityBotML.Model/1.0.0": {
+      "type": "project",
       "serviceable": false,
       "sha512": ""
     }

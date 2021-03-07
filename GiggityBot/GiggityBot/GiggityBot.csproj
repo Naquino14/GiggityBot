@@ -25,16 +25,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GiggityBotML.ConsoleApp\GiggityBotML.ConsoleApp.csproj" />
     <ProjectReference Include="..\GiggityBotML.Model\GiggityBotML.Model.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="GianDetectorML.ConsoleApp">
-      <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\GianDetectorML.ConsoleApp.dll</HintPath>
-    </Reference>
-    <Reference Include="GianDetectorML.Model">
-      <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\GianDetectorML.Model.dll</HintPath>
-    </Reference>
     <Reference Include="Google.Protobuf">
       <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\Google.Protobuf.dll</HintPath>
     </Reference>
