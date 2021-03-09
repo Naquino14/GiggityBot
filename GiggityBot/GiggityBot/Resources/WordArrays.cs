@@ -109,6 +109,7 @@ namespace GiggityBot.Resources
             funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/811773568005439508/811777820791537704/Quag_Died.mp4");
             funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/811773568005439508/811775379622199326/Death.mp4");
             funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/769802428966240256/811692956523167744/Peter.mp4");
+            funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/801462827017437224/813443484933423164/b09f198122f5a3c23ddf41a2773d1fa6ed36aea4cac93ccbe69f03024eaf60b2_1.mp4");
         }
 
     }
