@@ -142,7 +142,7 @@ namespace GiggityBot
             }
             if (currentMode == RunMode.normal)
             {
-                await _client.SetGameAsync("with your dad", null, ActivityType.Playing);
+                await _client.SetGameAsync("with explosive ordinance", null, ActivityType.Playing);
                 await _client.SetStatusAsync(UserStatus.Online);
             }
             if (currentMode == RunMode.anncmnt)

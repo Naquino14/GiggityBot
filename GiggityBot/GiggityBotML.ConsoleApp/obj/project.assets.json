@@ -6067,11 +6067,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CSharp Projects\\GiggityBot\\GiggityBot\\GiggityBot\\GiggityBotML.ConsoleApp\\GiggityBotML.ConsoleApp.csproj",
+      "projectUniqueName": "D:\\CSharp Projects\\GiggityBot\\GiggityBot\\GiggityBotML.ConsoleApp\\GiggityBotML.ConsoleApp.csproj",
       "projectName": "GiggityBotML.ConsoleApp",
-      "projectPath": "D:\\CSharp Projects\\GiggityBot\\GiggityBot\\GiggityBot\\GiggityBotML.ConsoleApp\\GiggityBotML.ConsoleApp.csproj",
+      "projectPath": "D:\\CSharp Projects\\GiggityBot\\GiggityBot\\GiggityBotML.ConsoleApp\\GiggityBotML.ConsoleApp.csproj",
       "packagesPath": "C:\\Users\\naqui\\.nuget\\packages\\",
-      "outputPath": "D:\\CSharp Projects\\GiggityBot\\GiggityBot\\GiggityBot\\GiggityBotML.ConsoleApp\\obj\\",
+      "outputPath": "D:\\CSharp Projects\\GiggityBot\\GiggityBot\\GiggityBotML.ConsoleApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\naqui\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6088,8 +6088,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\CSharp Projects\\GiggityBot\\GiggityBot\\GiggityBot\\GiggityBotML.Model\\GiggityBotML.Model.csproj": {
-              "projectPath": "D:\\CSharp Projects\\GiggityBot\\GiggityBot\\GiggityBot\\GiggityBotML.Model\\GiggityBotML.Model.csproj"
+            "D:\\CSharp Projects\\GiggityBot\\GiggityBot\\GiggityBotML.Model\\GiggityBotML.Model.csproj": {
+              "projectPath": "D:\\CSharp Projects\\GiggityBot\\GiggityBot\\GiggityBotML.Model\\GiggityBotML.Model.csproj"
             }
           }
         }

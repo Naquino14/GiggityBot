@@ -4063,11 +4063,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CSharp Projects\\GiggityBot\\GiggityBot\\GiggityBot\\GiggityBotML.Model\\GiggityBotML.Model.csproj",
+      "projectUniqueName": "D:\\CSharp Projects\\GiggityBot\\GiggityBot\\GiggityBotML.Model\\GiggityBotML.Model.csproj",
       "projectName": "GiggityBotML.Model",
-      "projectPath": "D:\\CSharp Projects\\GiggityBot\\GiggityBot\\GiggityBot\\GiggityBotML.Model\\GiggityBotML.Model.csproj",
+      "projectPath": "D:\\CSharp Projects\\GiggityBot\\GiggityBot\\GiggityBotML.Model\\GiggityBotML.Model.csproj",
       "packagesPath": "C:\\Users\\naqui\\.nuget\\packages\\",
-      "outputPath": "D:\\CSharp Projects\\GiggityBot\\GiggityBot\\GiggityBot\\GiggityBotML.Model\\obj\\",
+      "outputPath": "D:\\CSharp Projects\\GiggityBot\\GiggityBot\\GiggityBotML.Model\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\naqui\\AppData\\Roaming\\NuGet\\NuGet.Config",

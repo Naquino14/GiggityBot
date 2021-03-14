@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
-using GiggityBotML;
-using GiggityBotML.ConsoleApp;
 
 namespace GiggityBot.Modules
 {
@@ -33,8 +31,9 @@ namespace GiggityBot.Modules
             await Task.Delay(predictedDownloadTime);
             await _context.Channel.SendMessageAsync("Successfully downloaded. Comparing...");
 
-            // AI stuff here...
-            string result = WhoIsThis.CompareImage(pathToComparison);
+            //AI stuff here...
+            //string result = WhoIsThis.CompareImage(pathToComparison);
+            string result = "This Function is broken, please do not use it. Failed to compare image. This operation is not implemented @HandleAI.cs L35";
             await Task.Delay(predictedComparisonTime);
             if (result == null)
                 result = "failed to compare image.";
