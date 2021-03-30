@@ -116,6 +116,7 @@ namespace GiggityBot.Resources
             funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/811773568005439508/819437950268997642/get_down_here.MP4");
             funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/759825412343201792/789505356325716008/y2mate.com_-_Shitpost_status_480p_2.mp4");
             funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/811773568005439508/820793733456330802/056f596b611b8dce7ae93ec1dd132ae049fee66e70cc13c65d8cb9adb1ee4314_1.MP4");
+            funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/472407264700006420/826221277835427890/really.mp4");
         }
 
     }
