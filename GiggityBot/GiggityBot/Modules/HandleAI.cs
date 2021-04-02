@@ -18,15 +18,12 @@ namespace GiggityBot.Modules
 
         public static async Task Start(string url, SocketCommandContext _context)
         {
-            bool curlSuccess = (Curler.Curl(url, _context) == Curler.status.success);
-            if (!curlSuccess)
+            if (Curler.Curl(url, _context) == Curler.status.success)
+                await _context.Channel.SendMessageAsync("Successfully found image. Downloading...");
+            else
             {
                 await _context.Channel.SendMessageAsync("Failed to get image.");
                 return;
-            }
-            if (curlSuccess)
-            {
-                await _context.Channel.SendMessageAsync("Successfully found image. Downloading...");
             }
             await Task.Delay(predictedDownloadTime);
             await _context.Channel.SendMessageAsync("Successfully downloaded. Comparing...");
@@ -39,7 +36,6 @@ namespace GiggityBot.Modules
                 result = "failed to compare image.";
             await _context.Channel.SendMessageAsync(result);
             // then eventually...
-
 
             Process.Start("cmd.exe", "/c del /f " + pathToComparison); // delete reference image to make space for a new one
         }

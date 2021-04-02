@@ -18,20 +18,16 @@ namespace GiggityBot
         {
             if (checkArgsFO)
             {
-                if(args[0] == "")
+                if (args[0] == "")
                 {
                     Console.WriteLine("Critical error! No launch parameters inputted. The two available are: [-dev] [-normal]");
                     throw new InvalidOperationException();
-                } else
-                {
-                    StartupWithArgs(args[0]);
                 }
+                else
+                    StartupWithArgs(args[0]);
                 checkArgsFO = false;
             }
-                
-                
             new Base().RunBotAsync().GetAwaiter().GetResult();
-
         }
 
         public static DiscordSocketClient _client;
@@ -99,7 +95,7 @@ namespace GiggityBot
             if (message.HasStringPrefix("q!", ref argPos)) // bot prefix
             {
                 var result = await _commands.ExecuteAsync(context, argPos, _services);
-                if (!result.IsSuccess) // error debugging
+                if (!result.IsSuccess)
                     Console.WriteLine(result.Error);
             }
 

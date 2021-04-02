@@ -20,6 +20,8 @@ namespace GiggityBot.Modules
 {
     public class Commands : ModuleBase<SocketCommandContext>
     {
+        #pragma warning disable CS0168
+
         #region required variables
         private EmbedBuilder embedBuilder = new EmbedBuilder();
         private SocketUserMessage _message;
@@ -114,22 +116,18 @@ namespace GiggityBot.Modules
                 await _commands.AnswerDm();
 
             foreach (string word in _commands.wordArrays.funnyWords) // giggity response triggers
-            {
                 if (message.Content.Contains(word))
                 {
                     await _commands.Giggity();
                     break;
                 }
-            }
-            
+
             foreach (string word in _commands.wordArrays.hotBoob)
-            {
                 if (message.Content.Contains(word))
                 {
                     await _commands.Booba();
                     break;
                 }
-            }
 
             foreach (string word in _commands.wordArrays.familyManCharacters)
             {
@@ -153,10 +151,7 @@ namespace GiggityBot.Modules
         #region prefix commands
 
         [Command("ping")]
-        public async Task Ping()
-        {
-            await ReplyAsync("pong, Latency: **" + Base._client.Latency + "ms**");
-        }
+        public async Task Ping() => await ReplyAsync("pong, Latency: **" + Base._client.Latency + "ms**");
 
         [Command("help")]
         public async Task Help(string parameter = null)
@@ -230,11 +225,8 @@ namespace GiggityBot.Modules
                 channel = channel.Split('>')[0];
                 _id = Convert.ToUInt64(channel);
                 foreach (SocketGuildChannel channelName in Context.Guild.Channels) // for every channel name in the server's channels
-                {
                     if (channelName.Id == _id) // if one is found, continue
                         _continue = true;
-
-                }
                 if (!_continue) // if not found, return
                 {
                     await ReplyAsync("Channel " + channel + " not found.");
@@ -256,8 +248,6 @@ namespace GiggityBot.Modules
             {
                 Console.WriteLine(ex);
             }
-
-
         }
 
         [Command("trysplit")]
@@ -283,10 +273,7 @@ namespace GiggityBot.Modules
         }
 
         [Command("tryshit")]
-        public async Task TryShit()
-        {
-            await ReplyAsync("Shut the fuck up " + Context.User + " you are literally not funny.");
-        }
+        public async Task TryShit() => await ReplyAsync("Shut the fuck up " + Context.User + " you are literally not funny.");
 
         [Command("tryreaddata")]
         public async Task TryReadData()
@@ -296,10 +283,7 @@ namespace GiggityBot.Modules
         }
 
         [Command("penis")]
-        public async Task Penis()
-        {
-            await ReplyAsync("cokc and balls");
-        }
+        public async Task Penis() => await ReplyAsync("cokc and balls");
 
         [Command("serverstatus")]
         public async Task McStat()
@@ -317,13 +301,9 @@ namespace GiggityBot.Modules
             if (Context.Channel.Id == gamingChannelId)
             {
                 if (Process.GetProcessesByName(mcServerExecutable.Split('.')[0]).Length == 0)
-                {
                     await ReplyAsync("Server Executable for Thot Obliterators is offline.");
-            }
                 if (Process.GetProcessesByName(mcServerExecutable.Split('.')[0]).Length > 0)
-                {
                     await ReplyAsync("The Thot Obliterators MC Server is currently running `" + currentServerType.ToString() + "`");
-                }
             }
         }
 
@@ -391,9 +371,7 @@ namespace GiggityBot.Modules
                         }
                         _moveAlong = false;
                     } else if (role.Id != mcServerGangRoleId)
-                    {
                         moveAlong = true;
-                    }
                 }
                 if (moveAlong && _moveAlong)
                     await ReplyAsync("You do not meet the requirements to execute this command.");
@@ -466,9 +444,7 @@ namespace GiggityBot.Modules
                         }
                     }
                     else if (role.Id != mcServerGangRoleId)
-                    {
                         moveAlong = true;
-                    }
                 }
                 if (moveAlong && _moveAlong)
                     await ReplyAsync("You do not meet the requirements to execute this command.");
@@ -531,15 +507,14 @@ namespace GiggityBot.Modules
                         }
                         await ReplyAsync("Successfully saved and stopped the server");
                     }
-                    else if (role.Id != mcServerGangRoleId)
-                    {
+                    else if (role.Id != mcServerGangRoleId) 
                         moveAlong = true;
-                    }
                 }
                 if (moveAlong && _moveAlong)
                     await ReplyAsync("You do not meet the requirements to execute this command.");
             }
-        }
+        } 
+        
 
         [Command("saveserver")]
         public async Task SaveServer()
@@ -611,6 +586,12 @@ namespace GiggityBot.Modules
                 await ReplyAsync("Unable to comply. I am currently in Dev mode so I may or may not be running on the host.");
                 return;
             }
+            if (args == null)
+            {
+                await ReplyAsync("Arguments are null. Please enter a command.");
+                return;
+            }
+
             Process serverProcess;
             try
             {
@@ -660,7 +641,6 @@ namespace GiggityBot.Modules
         {
             await ReplyAsync(w);
             await ReplyAsync(w2);
-            //await ReplyAsync(mcServerExecutableWindowName);
         }
 
         [Command("debug")]
@@ -766,7 +746,7 @@ namespace GiggityBot.Modules
             await _context.Channel.SendMessageAsync(randS);
         }
 
-        private async Task CharacterResponse(int _char)
+        private async Task CharacterResponse(int _char) // simplify somehow later
         {
             random = new Random();
             int randC = random.Next(0, 100);
@@ -818,9 +798,7 @@ namespace GiggityBot.Modules
                 rand = random.Next(0, arM) + 17;
                 randS = (string)wordArrays.familyManResponses[rand];
             } else
-            {
                 randS = "havent seen them in ages...";
-            }
             await _context.Channel.SendMessageAsync(randS);
 
         }
@@ -907,6 +885,7 @@ namespace GiggityBot.Modules
 
         #region other functions
 
+        // just a heads up, all of these dont work
         public void UpTime()
         {
             timeNow = DateTime.Now;

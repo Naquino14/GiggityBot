@@ -13,7 +13,6 @@ namespace GiggityBot.Modules
     {
         public enum status
         {
-            nul,
             success,
             fail
         }
@@ -31,8 +30,6 @@ namespace GiggityBot.Modules
                 CurlerException = ex.ToString();
                 return status.fail;
             }
-
-            //return status.nul;
         }
     }
 }

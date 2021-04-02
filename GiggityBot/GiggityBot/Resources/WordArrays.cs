@@ -21,7 +21,6 @@ namespace GiggityBot.Resources
         public void InitArrays()
         {
             InitBlacklist();
-
             InitFunny();
             InitFunnyResponses();
             InitBooba();
