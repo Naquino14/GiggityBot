@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<DedicatedServerSettingsDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--Use rainbow effect for the server in the server browser-->
+  <UseRainbowEffect>true</UseRainbowEffect>
+  <!--If UseRainbowEffect is false use RedGreenBlue fields to specify server color (Valid values are from 0 to 255)-->
+  <Red>255</Red>
+  <!--If UseRainbowEffect is false use RedGreenBlue fields to specify server color (Valid values are from 0 to 255)-->
+  <Green>0</Green>
+  <!--If UseRainbowEffect is false use RedGreenBlue fields to specify server color (Valid values are from 0 to 255)-->
+  <Blue>0</Blue>
+</DedicatedServerSettingsDefinition>

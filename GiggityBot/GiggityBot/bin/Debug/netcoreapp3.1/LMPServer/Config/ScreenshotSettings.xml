@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ScreenshotSettingsDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--Minimum interval between screenshots in milliseconds-->
+  <MinScreenshotIntervalMs>30000</MinScreenshotIntervalMs>
+  <!--Max screenshot width in pixels-->
+  <MaxScreenshotWidth>1920</MaxScreenshotWidth>
+  <!--Max screenshot height in pixels-->
+  <MaxScreenshotHeight>1080</MaxScreenshotHeight>
+  <!--Maximum screenshots kept per user-->
+  <MaxScreenshotsPerUser>30</MaxScreenshotsPerUser>
+  <!--Maximum screenshots folders kept-->
+  <MaxScreenshotsFolders>50</MaxScreenshotsFolders>
+</ScreenshotSettingsDefinition>

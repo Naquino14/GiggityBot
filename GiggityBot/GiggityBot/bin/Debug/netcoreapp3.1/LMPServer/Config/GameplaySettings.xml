@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-16"?>
+<GameplaySettingsDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--Allow Reverting-->
+  <CanRevert>true</CanRevert>
+  <!--Missing Crews Respawn-->
+  <MissingCrewsRespawn>true</MissingCrewsRespawn>
+  <!--Crew Respawn Time-->
+  <RespawnTime>2</RespawnTime>
+  <!--Auto-Hire Crewmembers before Flight-->
+  <AutoHireCrews>false</AutoHireCrews>
+  <!--No Entry Purchase Required on Research-->
+  <BypassEntryPurchaseAfterResearch>true</BypassEntryPurchaseAfterResearch>
+  <!--Indestructible Facilities-->
+  <IndestructibleFacilities>false</IndestructibleFacilities>
+  <!--Allow Stock Vessels-->
+  <AllowStockVessels>false</AllowStockVessels>
+  <!--Allow Other launch sites (for users that have the Making History DLC)-->
+  <AllowOtherLaunchSites>true</AllowOtherLaunchSites>
+  <!--Re-Entry Heating-->
+  <ReentryHeatScale>1</ReentryHeatScale>
+  <!--Resource Abundance-->
+  <ResourceAbundance>1</ResourceAbundance>
+  <!--Enable Comm Network-->
+  <CommNetwork>true</CommNetwork>
+  <!--Starting Funds-->
+  <StartingFunds>25000</StartingFunds>
+  <!--Starting Science-->
+  <StartingScience>0</StartingScience>
+  <!--Starting Reputation-->
+  <StartingReputation>0</StartingReputation>
+  <!--Science Rewards-->
+  <ScienceGainMultiplier>1</ScienceGainMultiplier>
+  <!--Funds Rewards-->
+  <FundsGainMultiplier>1</FundsGainMultiplier>
+  <!--Reputation Rewards-->
+  <RepGainMultiplier>1</RepGainMultiplier>
+  <!--Funds Penalties-->
+  <FundsLossMultiplier>1</FundsLossMultiplier>
+  <!--Reputation Penalties-->
+  <RepLossMultiplier>1</RepLossMultiplier>
+  <!--Decline Penalty-->
+  <RepLossDeclined>1</RepLossDeclined>
+  <!--Enable Kerbal Experience-->
+  <KerbalExp>true</KerbalExp>
+  <!--Kerbals Level Up Immediately-->
+  <ImmediateLevelUp>false</ImmediateLevelUp>
+  <!--Allow Negative Funds/Science-->
+  <AllowNegativeCurrency>false</AllowNegativeCurrency>
+  <!--Enable parts pressure limits-->
+  <PressurePartLimits>false</PressurePartLimits>
+  <!--Enable parts G limits-->
+  <GPartLimits>false</GPartLimits>
+  <!--Enable Kerbal G limits-->
+  <GKerbalLimits>false</GKerbalLimits>
+  <!--Kerbal G tolerance multiplier-->
+  <KerbalGToleranceMult>1</KerbalGToleranceMult>
+  <!--Resource Transfer Obeys Crossfeed Rules-->
+  <ObeyCrossfeedRules>false</ObeyCrossfeedRules>
+  <!--Always allow action groups-->
+  <ActionGroupsAlways>false</ActionGroupsAlways>
+  <!--Building Impact Damage Multiplier-->
+  <BuildingDamageMultiplier>0.05</BuildingDamageMultiplier>
+  <!--Part Upgrades-->
+  <PartUpgrades>true</PartUpgrades>
+  <!--Require Signal for Control-->
+  <RequireSignalForControl>false</RequireSignalForControl>
+  <!--Plasma blackout-->
+  <ReentryBlackout>false</ReentryBlackout>
+  <!--Range Modifier-->
+  <RangeModifier>1</RangeModifier>
+  <!--DSN Modifier-->
+  <DsnModifier>1</DsnModifier>
+  <!--Occlusion Modifier, Vac-->
+  <OcclusionModifierVac>0.9</OcclusionModifierVac>
+  <!--Occlusion Modifier, Atm-->
+  <OcclusionModifierAtm>0.75</OcclusionModifierAtm>
+  <!--Enable Extra Groundstations-->
+  <ExtraGroundstations>true</ExtraGroundstations>
+  <!--Enable full SAS in Sandbox-->
+  <EnableFullSASInSandbox>false</EnableFullSASInSandbox>
+</GameplaySettingsDefinition>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<LogSettingsDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--Minimum log level. Values: Normal, Debug, NetworkDebug, VerboseNetworkDebug-->
+  <LogLevel>Debug</LogLevel>
+  <!--Specify the amount of days a log file should be considered as expired and deleted. 0 = Disabled-->
+  <ExpireLogs>14</ExpireLogs>
+  <!--Use UTC instead of system time in the log.-->
+  <UseUtcTimeInLog>false</UseUtcTimeInLog>
+</LogSettingsDefinition>

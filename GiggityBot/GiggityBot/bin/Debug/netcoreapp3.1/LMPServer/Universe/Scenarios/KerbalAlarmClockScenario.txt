@@ -1,0 +1,5 @@
+name = KerbalAlarmClockScenario
+scene = 5, 6, 7, 8
+KACAlarmListStorage
+{
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<WebsiteSettingsDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--Enable the website system that allows to retrieve server information in JSON format. You can get the data at http://YourIP:Port-->
+  <EnableWebsite>true</EnableWebsite>
+  <!--TCP port. You will need to open this port on your router if you want to display the data from outside your local network-->
+  <Port>8900</Port>
+  <!--Interval for refreshing the information of players and vessels-->
+  <RefreshIntervalMs>5000</RefreshIntervalMs>
+</WebsiteSettingsDefinition>

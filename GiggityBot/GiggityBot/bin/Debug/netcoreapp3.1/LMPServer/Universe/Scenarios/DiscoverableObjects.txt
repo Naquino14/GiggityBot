@@ -1,0 +1,2 @@
+name = DiscoverableObjects
+scene = 7, 8, 5

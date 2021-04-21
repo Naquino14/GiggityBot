@@ -1,0 +1,121 @@
+pid = 720c308c67af4b32b18c28e08d7d76c4
+persistentId = 1382676592
+name = Ast. LHH-985
+type = SpaceObject
+sit = ORBITING
+landed = False
+skipGroundPositioning = False
+skipGroundPositioningForDroppedPart = False
+vesselSpawning = True
+launchedFrom = 
+landedAt = 
+displaylandedAt = 
+splashed = False
+met = 59035.411960199468
+lct = 59035.411960199468
+lastUT = -1
+distanceTraveled = 0
+root = 0
+lat = 0.01985576683113241
+lon = 136.83320893243169
+alt = 15776547987.059938
+hgt = -1
+nrm = 0,1,0
+rot = 0.664698124,-0.538211346,-0.505770564,0.112698898
+CoM = 0,0,0
+stg = 0
+prst = False
+ref = 0
+ctrl = False
+PQSMin = 0
+PQSMax = 0
+GroupOverride = 0
+OverrideDefault = False,False,False,False
+OverrideActionControl = 0,0,0,0
+OverrideAxisControl = 0,0,0,0
+OverrideGroupNames = ,,,
+altDispState = DEFAULT
+ORBIT
+{
+	SMA = 15955995570.298727
+	ECC = 0.15100442389524099
+	INC = 0.18450218990603401
+	LPE = 106.7897633642915
+	LAN = 179.85138175112354
+	MNA = 0.27314579689846302
+	EPH = 3274065.3558078557
+	REF = 0
+	IDENT = Squad/Sun
+}
+PART
+{
+	name = PotatoRoid
+	cid = 0
+	uid = 434669090
+	mid = 434669090
+	persistentId = 429773651
+	launchID = 0
+	parent = 0
+	position = 0,0,0
+	rotation = 0,0,0,1
+	mirror = 1,1,1
+	symMethod = Radial
+	istg = 0
+	resPri = 0
+	dstg = 0
+	sqor = 0
+	sepI = 0
+	sidx = 0
+	attm = 0
+	sameVesselCollision = False
+	srfN = None, -1
+	mass = 150
+	shielded = False
+	temp = -1
+	tempExt = 0
+	tempExtUnexp = 0
+	staticPressureAtm = 0
+	expt = 1
+	state = 0
+	attached = True
+	autostrutMode = Off
+	rigidAttachment = False
+	flag = 
+	rTrf = 
+	modCost = 0
+	modMass = 0
+	moduleVariantName = 
+	moduleCargoStackableQuantity = 1
+}
+ACTIONGROUPS
+{
+}
+DISCOVERY
+{
+	state = 1
+	lastObservedTime = 59035.411960199468
+	lifetime = 485683.79974365234
+	refTime = 1728000
+	size = 6
+}
+FLIGHTPLAN
+{
+}
+CTRLSTATE
+{
+}
+VESSELMODULES
+{
+	ModularFlightIntegrator
+	{
+	}
+	AxisGroupsModule
+	{
+	}
+	ParallaxPhysicsManager
+	{
+	}
+	PartEventsManager
+	{
+	}
+}

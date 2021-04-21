@@ -65,12 +65,14 @@ namespace GiggityBot.Modules
         private const string van12serverPath = @"C:\Users\naqui\Desktop\mc server\TOMCServer\Minecraft server survuival 1.12.2\start.bat";
         private const string mod12serverPath = @"C:\Users\naqui\Desktop\mc server\TOMCServer\Minecraft 1.12.2 Modded\start.bat";
         private const string mod16serverPath = @"C:\Users\naqui\Desktop\mc server\TOMCServer\Minecraft 1.16.5 Modded\start.bat";
+        private const string ksp11serverPath = "LMPServer\\Server.exe";
         private Process _serverProcess;
         enum ServerType
         {
             mod16,
             mod12,
-            van12
+            van12,
+            ksp11
         }
         private static ServerType currentServerType;
 
@@ -170,6 +172,9 @@ namespace GiggityBot.Modules
                 embedBuilder.WithColor(Discord.Color.Green);
                 await ReplyAsync("", false, embedBuilder.Build());
                 return;
+            } else if (parameter == "ksp" && Context.Channel.Id == gamingChannelId)
+            {
+
             } else if (parameter == "server" && Context.Channel.Id != gamingChannelId)
             {
                 await ReplyAsync("This channel does not meet the requirements to execute this command.");

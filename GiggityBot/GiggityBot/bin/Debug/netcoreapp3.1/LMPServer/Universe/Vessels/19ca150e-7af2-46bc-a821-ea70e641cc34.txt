@@ -1,0 +1,121 @@
+pid = 19ca150e7af246bca821ea70e641cc34
+persistentId = 1809567830
+name = Ast. XEI-230
+type = SpaceObject
+sit = ORBITING
+landed = False
+skipGroundPositioning = False
+skipGroundPositioningForDroppedPart = False
+vesselSpawning = True
+launchedFrom = 
+landedAt = 
+displaylandedAt = 
+splashed = False
+met = 59109.886849492796
+lct = 59109.886849492796
+lastUT = -1
+distanceTraveled = 0
+root = 0
+lat = 0.5986517382413703
+lon = 141.20412405515015
+alt = 14671342877.188377
+hgt = -1
+nrm = 0,1,0
+rot = 0.191015676,0.559350252,-0.774068892,0.226842731
+CoM = 0,0,0
+stg = 0
+prst = False
+ref = 0
+ctrl = False
+PQSMin = 0
+PQSMax = 0
+GroupOverride = 0
+OverrideDefault = False,False,False,False
+OverrideActionControl = 0,0,0,0
+OverrideAxisControl = 0,0,0,0
+OverrideGroupNames = ,,,
+altDispState = DEFAULT
+ORBIT
+{
+	SMA = 14313573437.211193
+	ECC = 0.051914076711927631
+	INC = 1.4017163659022005
+	LPE = 173.35655969293367
+	LAN = 165.18408239555265
+	MNA = -0.056410808254023552
+	EPH = 3967487.1085291803
+	REF = 0
+	IDENT = Squad/Sun
+}
+PART
+{
+	name = PotatoRoid
+	cid = 0
+	uid = 935200775
+	mid = 935200775
+	persistentId = 1371918792
+	launchID = 0
+	parent = 0
+	position = 0,0,0
+	rotation = 0,0,0,1
+	mirror = 1,1,1
+	symMethod = Radial
+	istg = 0
+	resPri = 0
+	dstg = 0
+	sqor = 0
+	sepI = 0
+	sidx = 0
+	attm = 0
+	sameVesselCollision = False
+	srfN = None, -1
+	mass = 150
+	shielded = False
+	temp = -1
+	tempExt = 0
+	tempExtUnexp = 0
+	staticPressureAtm = 0
+	expt = 1
+	state = 0
+	attached = True
+	autostrutMode = Off
+	rigidAttachment = False
+	flag = 
+	rTrf = 
+	modCost = 0
+	modMass = 0
+	moduleVariantName = 
+	moduleCargoStackableQuantity = 1
+}
+ACTIONGROUPS
+{
+}
+DISCOVERY
+{
+	state = 1
+	lastObservedTime = 59109.886849492796
+	lifetime = 421442.37213134766
+	refTime = 1728000
+	size = 6
+}
+FLIGHTPLAN
+{
+}
+CTRLSTATE
+{
+}
+VESSELMODULES
+{
+	ModularFlightIntegrator
+	{
+	}
+	AxisGroupsModule
+	{
+	}
+	ParallaxPhysicsManager
+	{
+	}
+	PartEventsManager
+	{
+	}
+}
