@@ -169,6 +169,11 @@
       <Sha></Sha>
     </MandatoryDllFile>
     <MandatoryDllFile>
+      <Text>PhysicsRangeExtender. Version: 1.20.0.0</Text>
+      <FilePath>physicsrangeextender/plugins/physicsrangeextender.dll</FilePath>
+      <Sha></Sha>
+    </MandatoryDllFile>
+    <MandatoryDllFile>
       <Text>PlanetShine. Version: 0.2.6.1</Text>
       <FilePath>planetshine/plugins/planetshine.dll</FilePath>
       <Sha></Sha>

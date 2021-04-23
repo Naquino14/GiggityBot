@@ -174,7 +174,14 @@ namespace GiggityBot.Modules
                 return;
             } else if (parameter == "ksp" && Context.Channel.Id == gamingChannelId)
             {
-
+                embedBuilder.WithTitle("Ksp Server Commands");
+                embedBuilder.WithImageUrl("https://external-preview.redd.it/CJvMs4PptcN1uypfZslT1wT5HA46a8xX5THWZr9AIoQ.jpg?auto=webp&s=abf2bb515a55a5be6c1a609f38d0ed1c36a72d95");
+                embedBuilder.AddField("q!kspstart", "Start the ksp server. (moded 1.11.1)", true);
+                embedBuilder.AddField("q!kspstop", "Stop the ksp server.", true);
+                embedBuilder.AddField("q!kspstat", "Returns wether or not the server executable is running on the host.", true);
+                embedBuilder.WithColor(Discord.Color.Green);
+                await ReplyAsync("", false, embedBuilder.Build());
+                return;
             } else if (parameter == "server" && Context.Channel.Id != gamingChannelId)
             {
                 await ReplyAsync("This channel does not meet the requirements to execute this command.");
@@ -713,6 +720,26 @@ namespace GiggityBot.Modules
             {
                 await ReplyAsync(ex.ToString());
             }
+        }
+
+        [Command("kspstart")]
+        public async Task StartKsp()
+        {
+            await ReplyAsync("not implimented");
+        }
+
+        [Command("stopksp")]
+        public async Task StopKsp()
+        {
+            await ReplyAsync("not implimented");
+
+        }
+
+        [Command("kspstat")]
+        public async Task KspStat()
+        {
+            await ReplyAsync("not implimented");
+
         }
 
         #endregion

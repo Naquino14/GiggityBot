@@ -12,20 +12,69 @@ inactive = False
 inactiveTimeEnd = 0
 gExperienced = 0
 outDueToG = False
-ToD = 0
-idx = -1
+ToD = 2000.02
+idx = 0
 extraXP = 0
-hasHelmetOn = False
-hasNeckRingOn = False
+hasHelmetOn = True
+hasNeckRingOn = True
 hasVisorDown = False
 lightR = 1
 lightG = 0.5176
 lightB = 0
-completedFirstEVA = False
+completedFirstEVA = True
 hero = False
+EVACHUTE
+{
+	name = ModuleEvaChute
+	isEnabled = True
+	chuteYawRateAtMaxSpeed = 1
+	chuteMaxSpeedForYawRate = 50
+	chuteYawRateAtMinSpeed = 1
+	chuteMinSpeedForYawRate = 1
+	chuteRollRate = 1
+	chutePitchRate = 1
+	chuteDefaultForwardPitch = 9
+	semiDeployedChuteForwardPitch = 25
+	chutePitchRateDivisorWhenTurning = 1
+	chuteRollRateDivisorWhenPitching = 1
+	chuteYawRateDivisorWhenPitching = 1
+	persistentState = STOWED
+	animTime = 0
+	minAirPressureToOpen = 0.0399999991
+	deployAltitude = 30
+	spreadAngle = 7
+	automateSafeDeploy = 0
+	stagingEnabled = False
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+		DeployAction
+		{
+			actionGroup = None
+		}
+		CutAction
+		{
+			actionGroup = None
+		}
+	}
+	UPGRADESAPPLIED
+	{
+	}
+}
 INVENTORY
 {
+	name = ModuleInventoryPart
+	isEnabled = True
+	stagingEnabled = True
 	inventory = evaChute,evaJetpack
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
 	STOREDPARTS
 	{
 		STOREDPART
@@ -38,10 +87,10 @@ INVENTORY
 			PART
 			{
 				name = evaChute
-				cid = 4294775710
+				cid = 4294775626
 				uid = 0
 				mid = 0
-				persistentId = 0
+				persistentId = 951942441
 				launchID = 0
 				parent = 0
 				position = 0,0,0
@@ -164,10 +213,10 @@ INVENTORY
 			PART
 			{
 				name = evaJetpack
-				cid = 4294775816
+				cid = 4294775732
 				uid = 0
 				mid = 0
-				persistentId = 0
+				persistentId = 2204586565
 				launchID = 0
 				parent = 0
 				position = 0,0,0
@@ -292,12 +341,52 @@ INVENTORY
 			}
 		}
 	}
+	UPGRADESAPPLIED
+	{
+	}
 }
 CAREER_LOG
 {
-	flight = 0
+	flight = 4
+	0 = ExitVessel,Kerbin
+	0 = Land,Kerbin
+	0 = Recover
+	0 = Land,Kerbin
+	0 = Flight,Kerbin
+	0 = ExitVessel,Kerbin
+	0 = Recover
+	1 = Recover
+	2 = Land,Kerbin
+	2 = Flight,Kerbin
+	2 = Recover
+	2 = Flight,Kerbin
+	2 = ExitVessel,Kerbin
+	2 = Land,Kerbin
+	2 = Recover
+	3 = Flight,Kerbin
+	3 = Suborbit,Kerbin
+	3 = Orbit,Kerbin
+	3 = ExitVessel,Kerbin
+	3 = BoardVessel,Kerbin
+	3 = Flyby,Mun
+	3 = Escape,Mun
+	3 = Orbit,Mun
+	3 = Suborbit,Mun
+	3 = Flyby,Kerbin
+	3 = Land,Kerbin
+	3 = Recover
+	3 = Land,Kerbin
+	3 = Flight,Kerbin
+	3 = Die
+	4 = Land,Kerbin
+	4 = Flight,Kerbin
+	4 = ExitVessel,Kerbin
+	4 = Recover
+	5 = Land,Kerbin
+	5 = Flight,Kerbin
+	5 = Die
 }
 FLIGHT_LOG
 {
-	flight = 0
+	flight = 4
 }

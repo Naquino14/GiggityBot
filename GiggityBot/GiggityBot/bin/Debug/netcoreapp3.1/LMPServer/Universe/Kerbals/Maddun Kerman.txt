@@ -1,19 +1,19 @@
-name = Jebediah Kerman
-gender = Male
+name = Maddun Kerman
+gender = Female
 type = Crew
 trait = Pilot
-brave = 0.5
-dumb = 0.5
-badS = True
-veteran = True
+brave = 0.459644645
+dumb = 0.683710039
+badS = False
+veteran = False
 tour = False
 state = Available
 inactive = False
 inactiveTimeEnd = 0
 gExperienced = 0
 outDueToG = False
-ToD = 2000.02
-idx = -1
+ToD = 479052.59384960326
+idx = 1
 extraXP = 0
 hasHelmetOn = False
 hasNeckRingOn = False
@@ -21,48 +21,8 @@ hasVisorDown = False
 lightR = 1
 lightG = 0.5176
 lightB = 0
-completedFirstEVA = True
+completedFirstEVA = False
 hero = False
-EVACHUTE
-{
-	name = ModuleEvaChute
-	isEnabled = True
-	chuteYawRateAtMaxSpeed = 1
-	chuteMaxSpeedForYawRate = 50
-	chuteYawRateAtMinSpeed = 1
-	chuteMinSpeedForYawRate = 1
-	chuteRollRate = 1
-	chutePitchRate = 1
-	chuteDefaultForwardPitch = 9
-	semiDeployedChuteForwardPitch = 25
-	chutePitchRateDivisorWhenTurning = 1
-	chuteRollRateDivisorWhenPitching = 1
-	chuteYawRateDivisorWhenPitching = 1
-	persistentState = STOWED
-	animTime = 1
-	minAirPressureToOpen = 0.0399999991
-	deployAltitude = 30
-	spreadAngle = 7
-	automateSafeDeploy = 0
-	stagingEnabled = False
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-		DeployAction
-		{
-			actionGroup = None
-		}
-		CutAction
-		{
-			actionGroup = None
-		}
-	}
-	UPGRADESAPPLIED
-	{
-	}
-}
 INVENTORY
 {
 	name = ModuleInventoryPart
@@ -87,10 +47,10 @@ INVENTORY
 			PART
 			{
 				name = evaChute
-				cid = 4294809688
+				cid = 4294775626
 				uid = 0
 				mid = 0
-				persistentId = 485435827
+				persistentId = 2374145085
 				launchID = 0
 				parent = 0
 				position = 0,0,0
@@ -210,88 +170,22 @@ INVENTORY
 }
 CAREER_LOG
 {
-	flight = 17
+	flight = 2
 	0 = Land,Kerbin
 	0 = Flight,Kerbin
 	0 = ExitVessel,Kerbin
+	0 = Die
+	0 = Spawn
 	0 = Recover
+	0 = Land,Kerbin
+	0 = Flight,Kerbin
+	0 = Recover
+	1 = Land,Kerbin
+	1 = Flight,Kerbin
 	1 = Recover
-	2 = Recover
-	3 = Recover
-	4 = Flight,Kerbin
-	4 = Suborbit,Kerbin
-	4 = Orbit,Kerbin
-	4 = ExitVessel,Kerbin
-	4 = BoardVessel,Kerbin
-	4 = Land,Kerbin
-	4 = PlantFlag,Kerbin
-	4 = Recover
-	5 = ExitVessel,Kerbin
-	5 = Land,Kerbin
-	5 = Recover
-	5 = Land,Kerbin
-	5 = Flight,Kerbin
-	5 = ExitVessel,Kerbin
-	5 = Recover
-	6 = Recover
-	7 = Land,Kerbin
-	7 = Recover
-	6 = Die
-	7 = Flight,Kerbin
-	7 = Land,Kerbin
-	7 = ExitVessel,Kerbin
-	7 = Recover
-	8 = Recover
-	7 = Land,Kerbin
-	7 = Recover
-	8 = Flight,Kerbin
-	8 = Land,Kerbin
-	8 = Die
-	9 = Recover
-	10 = Flight,Kerbin
-	10 = Land,Kerbin
-	10 = ExitVessel,Kerbin
-	10 = PlantFlag,Kerbin
-	10 = Recover
-	11 = Flight,Kerbin
-	11 = Land,Kerbin
-	11 = Recover
-	12 = Land,Kerbin
-	12 = Flight,Kerbin
-	12 = Recover
-	13 = Land,Kerbin
-	13 = Flight,Kerbin
-	13 = Recover
-	14 = Land,Kerbin
-	14 = Flight,Kerbin
-	14 = ExitVessel,Kerbin
-	14 = Recover
-	15 = Flight,Kerbin
-	15 = Land,Kerbin
-	15 = Die
-	16 = Spawn
-	16 = Land,Kerbin
-	16 = Flight,Kerbin
-	16 = ExitVessel,Kerbin
-	16 = Recover
-	17 = Land,Kerbin
-	17 = Flight,Kerbin
-	17 = Die
-	18 = Land,Kerbin
-	18 = Flight,Kerbin
-	18 = Recover
-	19 = Land,Kerbin
-	19 = Flight,Kerbin
-	19 = ExitVessel,Kerbin
-	19 = Recover
-	20 = Land,Kerbin
-	20 = Flight,Kerbin
-	20 = Recover
+	1 = Recover
 }
 FLIGHT_LOG
 {
-	flight = 17
-	21 = Land,Kerbin
-	21 = Flight,Kerbin
-	21 = ExitVessel,Kerbin
+	flight = 2
 }

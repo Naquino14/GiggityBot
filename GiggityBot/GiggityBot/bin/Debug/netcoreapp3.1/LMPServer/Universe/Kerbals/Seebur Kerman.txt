@@ -1,18 +1,18 @@
-name = Bob Kerman
+name = Seebur Kerman
 gender = Male
 type = Crew
-trait = Scientist
-brave = 0.300000012
-dumb = 0.100000001
+trait = Pilot
+brave = 0.0981326997
+dumb = 0.285125226
 badS = False
-veteran = True
+veteran = False
 tour = False
-state = Assigned
+state = Available
 inactive = False
 inactiveTimeEnd = 0
 gExperienced = 0
 outDueToG = False
-ToD = 2000.02
+ToD = 479052.59384960326
 idx = 1
 extraXP = 0
 hasHelmetOn = True
@@ -39,7 +39,7 @@ EVACHUTE
 	chuteRollRateDivisorWhenPitching = 1
 	chuteYawRateDivisorWhenPitching = 1
 	persistentState = STOWED
-	animTime = 0
+	animTime = 1
 	minAirPressureToOpen = 0.0399999991
 	deployAltitude = 30
 	spreadAngle = 7
@@ -68,7 +68,7 @@ INVENTORY
 	name = ModuleInventoryPart
 	isEnabled = True
 	stagingEnabled = True
-	inventory = evaChute,evaJetpack
+	inventory = evaChute
 	EVENTS
 	{
 	}
@@ -90,7 +90,7 @@ INVENTORY
 				cid = 4294775626
 				uid = 0
 				mid = 0
-				persistentId = 140195474
+				persistentId = 3881741187
 				launchID = 0
 				parent = 0
 				position = 0,0,0
@@ -203,143 +203,6 @@ INVENTORY
 				}
 			}
 		}
-		STOREDPART
-		{
-			slotIndex = 1
-			partName = evaJetpack
-			quantity = 1
-			stackCapacity = 1
-			variantName = 
-			PART
-			{
-				name = evaJetpack
-				cid = 4294775732
-				uid = 0
-				mid = 0
-				persistentId = 769385388
-				launchID = 0
-				parent = 0
-				position = 0,0,0
-				rotation = 0,0,0,0
-				mirror = 1,1,1
-				symMethod = Radial
-				istg = 0
-				resPri = 2
-				dstg = 0
-				sqor = -1
-				sepI = 0
-				sidx = -1
-				attm = 0
-				sameVesselCollision = False
-				srfN = None, -1
-				mass = 0.0199999996
-				shielded = False
-				temp = -1
-				tempExt = 0
-				tempExtUnexp = 0
-				staticPressureAtm = 0
-				expt = 0.5
-				state = 0
-				attached = True
-				autostrutMode = Off
-				rigidAttachment = False
-				flag = 
-				rTrf = evaJetpack
-				modCost = 0
-				modMass = 0
-				moduleVariantName = 
-				moduleCargoStackableQuantity = 1
-				EVENTS
-				{
-				}
-				ACTIONS
-				{
-					ToggleSameVesselInteraction
-					{
-						actionGroup = None
-					}
-					SetSameVesselInteraction
-					{
-						actionGroup = None
-					}
-					RemoveSameVesselInteraction
-					{
-						actionGroup = None
-					}
-				}
-				PARTDATA
-				{
-				}
-				MODULE
-				{
-					name = ModuleCargoPart
-					isEnabled = True
-					beingAttached = False
-					beingSettled = False
-					reinitResourcesOnStoreInVessel = True
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = Refunding
-					isEnabled = True
-					active = True
-					OriginalCost = 0
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				MODULE
-				{
-					name = HitpointTracker
-					isEnabled = True
-					Armor = 10
-					maxHitPoints = 0
-					ArmorThickness = 0
-					ArmorSet = False
-					ExplodeMode = Never
-					FireFX = True
-					FireFXLifeTimeInSeconds = 5
-					stagingEnabled = True
-					EVENTS
-					{
-					}
-					ACTIONS
-					{
-					}
-					UPGRADESAPPLIED
-					{
-					}
-				}
-				RESOURCE
-				{
-					name = EVA Propellant
-					amount = 5
-					maxAmount = 5
-					flowState = True
-					isTweakable = False
-					hideFlow = False
-					isVisible = True
-					flowMode = Both
-				}
-			}
-		}
 	}
 	UPGRADESAPPLIED
 	{
@@ -347,36 +210,15 @@ INVENTORY
 }
 CAREER_LOG
 {
-	flight = 7
-	0 = Recover
+	flight = 3
+	0 = Flight,Kerbin
+	0 = Land,Kerbin
+	0 = Flyby,Sun
+	1 = ExitVessel,Kerbin
 	1 = Recover
 	2 = Recover
-	3 = Flight,Kerbin
-	3 = Suborbit,Kerbin
-	3 = Orbit,Kerbin
-	3 = Land,Kerbin
-	3 = ExitVessel,Kerbin
-	3 = Recover
-	4 = Land,Kerbin
-	4 = Flight,Kerbin
-	4 = ExitVessel,Kerbin
-	4 = Recover
-	5 = Recover
-	6 = Land,Kerbin
-	6 = Recover
-	6 = Recover
-	7 = Land,Kerbin
-	7 = Flight,Kerbin
-	7 = Recover
-	8 = Land,Kerbin
-	8 = Flight,Kerbin
-	8 = Die
-	9 = Flight,Kerbin
-	9 = Land,Kerbin
-	9 = Die
 }
 FLIGHT_LOG
 {
-	flight = 7
-	7 = Spawn
+	flight = 3
 }

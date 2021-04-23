@@ -7,13 +7,13 @@ dumb = 0.800000012
 badS = False
 veteran = True
 tour = False
-state = Available
+state = Assigned
 inactive = False
 inactiveTimeEnd = 0
 gExperienced = 0
 outDueToG = False
 ToD = 2000.02
-idx = 1
+idx = -1
 extraXP = 0
 hasHelmetOn = False
 hasNeckRingOn = False
@@ -21,14 +21,54 @@ hasVisorDown = False
 lightR = 1
 lightG = 0.5176
 lightB = 0
-completedFirstEVA = False
+completedFirstEVA = True
 hero = False
+EVACHUTE
+{
+	name = ModuleEvaChute
+	isEnabled = True
+	chuteYawRateAtMaxSpeed = 1
+	chuteMaxSpeedForYawRate = 50
+	chuteYawRateAtMinSpeed = 1
+	chuteMinSpeedForYawRate = 1
+	chuteRollRate = 1
+	chutePitchRate = 1
+	chuteDefaultForwardPitch = 9
+	semiDeployedChuteForwardPitch = 25
+	chutePitchRateDivisorWhenTurning = 1
+	chuteRollRateDivisorWhenPitching = 1
+	chuteYawRateDivisorWhenPitching = 1
+	persistentState = CUT
+	animTime = 1
+	minAirPressureToOpen = 0.0399999991
+	deployAltitude = 30
+	spreadAngle = 7
+	automateSafeDeploy = 0
+	stagingEnabled = False
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+		DeployAction
+		{
+			actionGroup = None
+		}
+		CutAction
+		{
+			actionGroup = None
+		}
+	}
+	UPGRADESAPPLIED
+	{
+	}
+}
 INVENTORY
 {
 	name = ModuleInventoryPart
 	isEnabled = True
 	stagingEnabled = True
-	inventory = evaChute
+	inventory = evaChute,evaJetpack
 	EVENTS
 	{
 	}
@@ -47,10 +87,10 @@ INVENTORY
 			PART
 			{
 				name = evaChute
-				cid = 4294775710
+				cid = 4294775626
 				uid = 0
 				mid = 0
-				persistentId = 4121848708
+				persistentId = 1679284214
 				launchID = 0
 				parent = 0
 				position = 0,0,0
@@ -163,6 +203,143 @@ INVENTORY
 				}
 			}
 		}
+		STOREDPART
+		{
+			slotIndex = 1
+			partName = evaJetpack
+			quantity = 1
+			stackCapacity = 1
+			variantName = 
+			PART
+			{
+				name = evaJetpack
+				cid = 4294775732
+				uid = 0
+				mid = 0
+				persistentId = 1318286012
+				launchID = 0
+				parent = 0
+				position = 0,0,0
+				rotation = 0,0,0,0
+				mirror = 1,1,1
+				symMethod = Radial
+				istg = 0
+				resPri = 2
+				dstg = 0
+				sqor = -1
+				sepI = 0
+				sidx = -1
+				attm = 0
+				sameVesselCollision = False
+				srfN = None, -1
+				mass = 0.0199999996
+				shielded = False
+				temp = -1
+				tempExt = 0
+				tempExtUnexp = 0
+				staticPressureAtm = 0
+				expt = 0.5
+				state = 0
+				attached = True
+				autostrutMode = Off
+				rigidAttachment = False
+				flag = 
+				rTrf = evaJetpack
+				modCost = 0
+				modMass = 0
+				moduleVariantName = 
+				moduleCargoStackableQuantity = 1
+				EVENTS
+				{
+				}
+				ACTIONS
+				{
+					ToggleSameVesselInteraction
+					{
+						actionGroup = None
+					}
+					SetSameVesselInteraction
+					{
+						actionGroup = None
+					}
+					RemoveSameVesselInteraction
+					{
+						actionGroup = None
+					}
+				}
+				PARTDATA
+				{
+				}
+				MODULE
+				{
+					name = ModuleCargoPart
+					isEnabled = True
+					beingAttached = False
+					beingSettled = False
+					reinitResourcesOnStoreInVessel = True
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = Refunding
+					isEnabled = True
+					active = True
+					OriginalCost = 0
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				MODULE
+				{
+					name = HitpointTracker
+					isEnabled = True
+					Armor = 10
+					maxHitPoints = 0
+					ArmorThickness = 0
+					ArmorSet = False
+					ExplodeMode = Never
+					FireFX = True
+					FireFXLifeTimeInSeconds = 5
+					stagingEnabled = True
+					EVENTS
+					{
+					}
+					ACTIONS
+					{
+					}
+					UPGRADESAPPLIED
+					{
+					}
+				}
+				RESOURCE
+				{
+					name = EVA Propellant
+					amount = 5
+					maxAmount = 5
+					flowState = True
+					isTweakable = False
+					hideFlow = False
+					isVisible = True
+					flowMode = Both
+				}
+			}
+		}
 	}
 	UPGRADESAPPLIED
 	{
@@ -170,13 +347,61 @@ INVENTORY
 }
 CAREER_LOG
 {
-	flight = 1
+	flight = 9
 	0 = Recover
-}
-FLIGHT_LOG
-{
-	flight = 1
 	1 = Flight,Kerbin
 	1 = Suborbit,Kerbin
 	1 = Orbit,Kerbin
+	1 = Recover
+	2 = Land,Kerbin
+	2 = Flight,Kerbin
+	2 = ExitVessel,Kerbin
+	2 = Recover
+	3 = Land,Kerbin
+	3 = Flight,Kerbin
+	3 = ExitVessel,Kerbin
+	3 = Recover
+	3 = Land,Kerbin
+	3 = Flight,Kerbin
+	3 = ExitVessel,Kerbin
+	3 = Recover
+	4 = Recover
+	5 = ExitVessel,Kerbin
+	5 = Flight,Kerbin
+	5 = Land,Kerbin
+	5 = BoardVessel,Kerbin
+	1 = Die
+	5 = Recover
+	6 = Recover
+	2 = Land,Kerbin
+	2 = Recover
+	3 = Flight,Kerbin
+	3 = Land,Kerbin
+	3 = Die
+	7 = Recover
+	8 = Flight,Kerbin
+	8 = Land,Kerbin
+	8 = ExitVessel,Kerbin
+	8 = Recover
+	9 = Flight,Kerbin
+	9 = Land,Kerbin
+	9 = Recover
+	10 = Land,Kerbin
+	10 = Flight,Kerbin
+	10 = Recover
+	11 = Land,Kerbin
+	11 = Flight,Kerbin
+	11 = Recover
+	12 = Land,Kerbin
+	12 = Flight,Kerbin
+	12 = ExitVessel,Kerbin
+	12 = Recover
+}
+FLIGHT_LOG
+{
+	flight = 9
+	13 = Spawn
+	13 = Land,Kerbin
+	13 = Flight,Kerbin
+	13 = ExitVessel,Kerbin
 }

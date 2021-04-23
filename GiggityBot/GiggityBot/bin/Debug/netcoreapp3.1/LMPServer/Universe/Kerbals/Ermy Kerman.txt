@@ -1,11 +1,11 @@
-name = Bob Kerman
+name = Ermy Kerman
 gender = Male
 type = Crew
-trait = Scientist
-brave = 0.300000012
-dumb = 0.100000001
+trait = Pilot
+brave = 0.62996304
+dumb = 0.197114006
 badS = False
-veteran = True
+veteran = False
 tour = False
 state = Assigned
 inactive = False
@@ -13,7 +13,7 @@ inactiveTimeEnd = 0
 gExperienced = 0
 outDueToG = False
 ToD = 2000.02
-idx = 1
+idx = 0
 extraXP = 0
 hasHelmetOn = True
 hasNeckRingOn = True
@@ -23,46 +23,7 @@ lightG = 0.5176
 lightB = 0
 completedFirstEVA = True
 hero = False
-EVACHUTE
-{
-	name = ModuleEvaChute
-	isEnabled = True
-	chuteYawRateAtMaxSpeed = 1
-	chuteMaxSpeedForYawRate = 50
-	chuteYawRateAtMinSpeed = 1
-	chuteMinSpeedForYawRate = 1
-	chuteRollRate = 1
-	chutePitchRate = 1
-	chuteDefaultForwardPitch = 9
-	semiDeployedChuteForwardPitch = 25
-	chutePitchRateDivisorWhenTurning = 1
-	chuteRollRateDivisorWhenPitching = 1
-	chuteYawRateDivisorWhenPitching = 1
-	persistentState = STOWED
-	animTime = 0
-	minAirPressureToOpen = 0.0399999991
-	deployAltitude = 30
-	spreadAngle = 7
-	automateSafeDeploy = 0
-	stagingEnabled = False
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-		DeployAction
-		{
-			actionGroup = None
-		}
-		CutAction
-		{
-			actionGroup = None
-		}
-	}
-	UPGRADESAPPLIED
-	{
-	}
-}
+comboId = default_male_3
 INVENTORY
 {
 	name = ModuleInventoryPart
@@ -90,7 +51,7 @@ INVENTORY
 				cid = 4294775626
 				uid = 0
 				mid = 0
-				persistentId = 140195474
+				persistentId = 3995195440
 				launchID = 0
 				parent = 0
 				position = 0,0,0
@@ -216,7 +177,7 @@ INVENTORY
 				cid = 4294775732
 				uid = 0
 				mid = 0
-				persistentId = 769385388
+				persistentId = 617658615
 				launchID = 0
 				parent = 0
 				position = 0,0,0
@@ -347,36 +308,15 @@ INVENTORY
 }
 CAREER_LOG
 {
-	flight = 7
+	flight = 2
+	0 = Land,Kerbin
+	0 = Flight,Kerbin
 	0 = Recover
+	1 = Land,Kerbin
+	1 = Flight,Kerbin
 	1 = Recover
-	2 = Recover
-	3 = Flight,Kerbin
-	3 = Suborbit,Kerbin
-	3 = Orbit,Kerbin
-	3 = Land,Kerbin
-	3 = ExitVessel,Kerbin
-	3 = Recover
-	4 = Land,Kerbin
-	4 = Flight,Kerbin
-	4 = ExitVessel,Kerbin
-	4 = Recover
-	5 = Recover
-	6 = Land,Kerbin
-	6 = Recover
-	6 = Recover
-	7 = Land,Kerbin
-	7 = Flight,Kerbin
-	7 = Recover
-	8 = Land,Kerbin
-	8 = Flight,Kerbin
-	8 = Die
-	9 = Flight,Kerbin
-	9 = Land,Kerbin
-	9 = Die
 }
 FLIGHT_LOG
 {
-	flight = 7
-	7 = Spawn
+	flight = 2
 }

@@ -2,4 +2,39 @@ name = KerbalAlarmClockScenario
 scene = 5, 6, 7, 8
 KACAlarmListStorage
 {
+	list
+	{
+		Item
+		{
+			VesselID = 62a2a1a4-3913-4c72-b373-86468a7a1480
+			ID = 3f641af59fdc4bfbb92deed7a1cdb4a7
+			Name = gmx-6.6
+			NotesStorage = Time to pay attention to\r\n    gmx-6.6\r\nNearing Target Distance
+			TypeOfAlarm = Distance
+			AlarmTimeStorage = 527848.64755017287
+			AlarmMarginSecs = 60
+			Enabled = True
+			AlarmAction = Converted
+			AlarmActionConverted = True
+			ManNodesStorage = 
+			XferOriginBodyName = 
+			XferTargetBodyName = 
+			RepeatAlarm = False
+			RepeatAlarmPeriodStorage = 0
+			PlaySound = False
+			TargetObjectStorage = 
+			ContractGUIDStorage = 00000000-0000-0000-0000-000000000000
+			ContractAlarmType = Expire
+			Triggered = True
+			Actioned = True
+			AlarmWindowClosed = True
+			Actions
+			{
+				Warp = KillWarp
+				Message = Yes
+				DeleteWhenDone = False
+				PlaySound = False
+			}
+		}
+	}
 }

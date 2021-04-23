@@ -1,6 +1,6 @@
-pid = 2832aa11635440dfa618323e6dbd7673
-persistentId = 2195361875
-name = Ast. ZMN-040
+pid = e0929e5f10734f6996f8f04ece0aebc2
+persistentId = 1386686220
+name = Ast. GME-010
 type = SpaceObject
 sit = ORBITING
 landed = False
@@ -11,17 +11,17 @@ launchedFrom =
 landedAt = 
 displaylandedAt = 
 splashed = False
-met = 59094.886849495197
-lct = 59094.886849495197
+met = 476247.39899202355
+lct = 476247.39899202355
 lastUT = -1
 distanceTraveled = 0
 root = 0
-lat = -0.45738819921387519
-lon = 133.13531653979368
-alt = 13379547060.300573
+lat = -0.5966457637254402
+lon = 170.86880157230806
+alt = 15129756570.752031
 hgt = -1
 nrm = 0,1,0
-rot = 0.819384158,0.183086142,0.371950537,0.395906389
+rot = -0.712361395,0.584337771,0.364727646,0.134403229
 CoM = 0,0,0
 stg = 0
 prst = False
@@ -37,13 +37,13 @@ OverrideGroupNames = ,,,
 altDispState = DEFAULT
 ORBIT
 {
-	SMA = 13644309306.231272
-	ECC = 0.0028539452772008227
-	INC = 0.50460151056359381
-	LPE = 20.487534098153752
-	LAN = 247.39766786962133
-	MNA = -0.24261784571377748
-	EPH = 1890291.6092616045
+	SMA = 14663883944.126377
+	ECC = 0.076299358260149663
+	INC = 0.60757239117149442
+	LPE = 32.918967953882323
+	LAN = 308.62468332051333
+	MNA = -0.16999605855926014
+	EPH = 3839392.0523123359
 	REF = 0
 	IDENT = Squad/Sun
 }
@@ -51,9 +51,9 @@ PART
 {
 	name = PotatoRoid
 	cid = 0
-	uid = 450524159
-	mid = 450524159
-	persistentId = 3278267838
+	uid = 1891124564
+	mid = 1891124564
+	persistentId = 189450605
 	launchID = 0
 	parent = 0
 	position = 0,0,0
@@ -93,10 +93,10 @@ ACTIONGROUPS
 DISCOVERY
 {
 	state = 1
-	lastObservedTime = 59094.886849495197
-	lifetime = 137672.21145629883
+	lastObservedTime = 476247.39899202355
+	lifetime = 1189164.5233154297
 	refTime = 1728000
-	size = 7
+	size = 4
 }
 FLIGHTPLAN
 {

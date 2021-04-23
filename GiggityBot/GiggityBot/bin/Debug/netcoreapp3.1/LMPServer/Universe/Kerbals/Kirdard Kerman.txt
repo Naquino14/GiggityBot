@@ -1,80 +1,31 @@
-name = Bob Kerman
+name = Kirdard Kerman
 gender = Male
 type = Crew
-trait = Scientist
-brave = 0.300000012
-dumb = 0.100000001
+trait = Engineer
+brave = 0.3664729
+dumb = 0.471755743
 badS = False
-veteran = True
+veteran = False
 tour = False
-state = Assigned
+state = Available
 inactive = False
 inactiveTimeEnd = 0
 gExperienced = 0
 outDueToG = False
-ToD = 2000.02
-idx = 1
+ToD = 570314.75156078418
+idx = -1
 extraXP = 0
-hasHelmetOn = True
-hasNeckRingOn = True
+hasHelmetOn = False
+hasNeckRingOn = False
 hasVisorDown = False
 lightR = 1
 lightG = 0.5176
 lightB = 0
-completedFirstEVA = True
+completedFirstEVA = False
 hero = False
-EVACHUTE
-{
-	name = ModuleEvaChute
-	isEnabled = True
-	chuteYawRateAtMaxSpeed = 1
-	chuteMaxSpeedForYawRate = 50
-	chuteYawRateAtMinSpeed = 1
-	chuteMinSpeedForYawRate = 1
-	chuteRollRate = 1
-	chutePitchRate = 1
-	chuteDefaultForwardPitch = 9
-	semiDeployedChuteForwardPitch = 25
-	chutePitchRateDivisorWhenTurning = 1
-	chuteRollRateDivisorWhenPitching = 1
-	chuteYawRateDivisorWhenPitching = 1
-	persistentState = STOWED
-	animTime = 0
-	minAirPressureToOpen = 0.0399999991
-	deployAltitude = 30
-	spreadAngle = 7
-	automateSafeDeploy = 0
-	stagingEnabled = False
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-		DeployAction
-		{
-			actionGroup = None
-		}
-		CutAction
-		{
-			actionGroup = None
-		}
-	}
-	UPGRADESAPPLIED
-	{
-	}
-}
 INVENTORY
 {
-	name = ModuleInventoryPart
-	isEnabled = True
-	stagingEnabled = True
 	inventory = evaChute,evaJetpack
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
 	STOREDPARTS
 	{
 		STOREDPART
@@ -87,10 +38,10 @@ INVENTORY
 			PART
 			{
 				name = evaChute
-				cid = 4294775626
+				cid = 4294809740
 				uid = 0
 				mid = 0
-				persistentId = 140195474
+				persistentId = 0
 				launchID = 0
 				parent = 0
 				position = 0,0,0
@@ -213,10 +164,10 @@ INVENTORY
 			PART
 			{
 				name = evaJetpack
-				cid = 4294775732
+				cid = 4294809810
 				uid = 0
 				mid = 0
-				persistentId = 769385388
+				persistentId = 0
 				launchID = 0
 				parent = 0
 				position = 0,0,0
@@ -341,42 +292,12 @@ INVENTORY
 			}
 		}
 	}
-	UPGRADESAPPLIED
-	{
-	}
 }
 CAREER_LOG
 {
-	flight = 7
-	0 = Recover
-	1 = Recover
-	2 = Recover
-	3 = Flight,Kerbin
-	3 = Suborbit,Kerbin
-	3 = Orbit,Kerbin
-	3 = Land,Kerbin
-	3 = ExitVessel,Kerbin
-	3 = Recover
-	4 = Land,Kerbin
-	4 = Flight,Kerbin
-	4 = ExitVessel,Kerbin
-	4 = Recover
-	5 = Recover
-	6 = Land,Kerbin
-	6 = Recover
-	6 = Recover
-	7 = Land,Kerbin
-	7 = Flight,Kerbin
-	7 = Recover
-	8 = Land,Kerbin
-	8 = Flight,Kerbin
-	8 = Die
-	9 = Flight,Kerbin
-	9 = Land,Kerbin
-	9 = Die
+	flight = 0
 }
 FLIGHT_LOG
 {
-	flight = 7
-	7 = Spawn
+	flight = 0
 }
