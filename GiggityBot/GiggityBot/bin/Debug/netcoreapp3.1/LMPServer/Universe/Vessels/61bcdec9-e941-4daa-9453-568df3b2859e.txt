@@ -1,0 +1,121 @@
+pid = 61bcdec9e9414daa9453568df3b2859e
+persistentId = 4009630876
+name = Ast. ASD-882
+type = SpaceObject
+sit = ORBITING
+landed = False
+skipGroundPositioning = False
+skipGroundPositioningForDroppedPart = False
+vesselSpawning = True
+launchedFrom = 
+landedAt = 
+displaylandedAt = 
+splashed = False
+met = 58515.917499197596
+lct = 58515.917499197596
+lastUT = -1
+distanceTraveled = 0
+root = 0
+lat = 0.70737095816418583
+lon = 162.19464808080909
+alt = 18539496721.268784
+hgt = -1
+nrm = 0,1,0
+rot = 0.537658513,-0.498114973,0.180835843,0.655822575
+CoM = 0,0,0
+stg = 0
+prst = False
+ref = 0
+ctrl = False
+PQSMin = 0
+PQSMax = 0
+GroupOverride = 0
+OverrideDefault = False,False,False,False
+OverrideActionControl = 0,0,0,0
+OverrideAxisControl = 0,0,0,0
+OverrideGroupNames = ,,,
+altDispState = DEFAULT
+ORBIT
+{
+	SMA = 16761205528.984421
+	ECC = 0.19103080073253972
+	INC = 0.89962680483363555
+	LPE = 189.42570101313899
+	LAN = 159.11970459185875
+	MNA = -0.085815180871552904
+	EPH = 4123851.4033390414
+	REF = 0
+	IDENT = Squad/Sun
+}
+PART
+{
+	name = PotatoRoid
+	cid = 0
+	uid = 2049631249
+	mid = 2049631249
+	persistentId = 674924487
+	launchID = 0
+	parent = 0
+	position = 0,0,0
+	rotation = 0,0,0,1
+	mirror = 1,1,1
+	symMethod = Radial
+	istg = 0
+	resPri = 0
+	dstg = 0
+	sqor = 0
+	sepI = 0
+	sidx = 0
+	attm = 0
+	sameVesselCollision = False
+	srfN = None, -1
+	mass = 150
+	shielded = False
+	temp = -1
+	tempExt = 0
+	tempExtUnexp = 0
+	staticPressureAtm = 0
+	expt = 1
+	state = 0
+	attached = True
+	autostrutMode = Off
+	rigidAttachment = False
+	flag = 
+	rTrf = 
+	modCost = 0
+	modMass = 0
+	moduleVariantName = 
+	moduleCargoStackableQuantity = 1
+}
+ACTIONGROUPS
+{
+}
+DISCOVERY
+{
+	state = 1
+	lastObservedTime = 58515.917499197596
+	lifetime = 1385016.1193847656
+	refTime = 1728000
+	size = 7
+}
+FLIGHTPLAN
+{
+}
+CTRLSTATE
+{
+}
+VESSELMODULES
+{
+	ModularFlightIntegrator
+	{
+	}
+	AxisGroupsModule
+	{
+	}
+	ParallaxPhysicsManager
+	{
+	}
+	PartEventsManager
+	{
+	}
+}

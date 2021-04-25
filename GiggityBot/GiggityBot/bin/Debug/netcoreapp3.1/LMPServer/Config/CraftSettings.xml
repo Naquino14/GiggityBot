@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<CraftSettingsDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--Minimum interval between uploading/requesting crafts in milliseconds-->
+  <MinCraftLibraryRequestIntervalMs>5000</MinCraftLibraryRequestIntervalMs>
+  <!--Maximum crafts kept per user per type (VAB,SPH and Subassembly)-->
+  <MaxCraftsPerUser>10</MaxCraftsPerUser>
+  <!--Maximum crafts folders kept-->
+  <MaxCraftFolders>50</MaxCraftFolders>
+</CraftSettingsDefinition>

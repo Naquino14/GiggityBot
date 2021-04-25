@@ -1,0 +1,413 @@
+[19:04:29][Info]: Remember! Quit the server by using 'Control + C' so a backup is properly made before closing!
+[19:04:29][LMP]: Luna Server version: 0.27.0 (D:\Users\naqui\Desktop\LMPServer)
+[19:04:29][Debug]: Loading universe... 0.621KB
+[19:04:29][Debug]: Loading groups...
+[19:04:29][Debug]: Loading settings...
+[19:04:29][Debug]: Loading mod control...
+[19:04:29][Debug]: Loading plugins...
+[19:04:29][Error]: Subspace.txt should not contain more than 1 subspace line!
+[19:04:29][LMP]: Starting 'Luna Server' on Port 8800... 
+[19:04:30][Debug]: UPnP active. Port: 8800 Udp opened!
+[19:04:30][Debug]: UPnP + Website active. Port: 8900 Tcp opened!
+[19:04:30][LMP]: All systems up and running. Поехали!
+[19:04:30][LMP]: Registering with master servers...
+[19:04:30][Debug]: Performing a GarbageCollection...
+[19:04:35][LMP]: New client Connection from 68.239.44.86:51490
+[19:04:35][Debug]: Online Players: 0, connected: 1
+[19:04:38][LMP]: Client Vinetta (bb868fdd0f8cff48e5b08dd25e80ad3976d7fd3d) handshake successfully, Version: 0.27.0
+[19:04:38][Debug]: Online Players: 1, connected: 1
+[19:04:38][Debug]: Sending Vinetta 7 vessels
+[19:04:38][Debug]: Sending Vinetta 4 kerbals...
+[19:04:38][Debug]: Sending Vinetta 1 possible subspaces
+[19:04:39][Debug]: Saving kerbal Bob Kerman from Vinetta
+[19:04:56][Debug]: Saving kerbal Bob Kerman from Vinetta
+[19:04:57][Debug]: Sending 1 screenshot folders to: Vinetta
+[19:04:59][Debug]: Vinetta acquired lock UnloadedUpdate - 19ca150e-7af2-46bc-a821-ea70e641cc34 - Vinetta
+[19:04:59][Debug]: Vinetta acquired lock UnloadedUpdate - d90efe40-6e7b-454d-aee2-7e00683a5be7 - Vinetta
+[19:04:59][Debug]: Vinetta acquired lock UnloadedUpdate - d16944a6-5b23-467d-98bd-db4f9a0ada80 - Vinetta
+[19:04:59][Debug]: Vinetta acquired lock UnloadedUpdate - 2832aa11-6354-40df-a618-323e6dbd7673 - Vinetta
+[19:04:59][Debug]: Vinetta acquired lock UnloadedUpdate - 720c308c-67af-4b32-b18c-28e08d7d76c4 - Vinetta
+[19:04:59][Debug]: Vinetta acquired lock UnloadedUpdate - 61bcdec9-e941-4daa-9453-568df3b2859e - Vinetta
+[19:04:59][Debug]: Vinetta acquired lock UnloadedUpdate - a1f60b0f-d835-4afe-8ced-6367fa4c475a - Vinetta
+[19:04:59][Debug]: Vinetta acquired lock AsteroidComet - Vinetta
+[19:05:00][Debug]: Vinetta synced with subspace '10' created by Server
+[19:05:00][Debug]: Performing backups...
+[19:05:08][Debug]: Saving 9 scenario modules from Vinetta
+[19:05:30][Debug]: Performing backups...
+[19:05:32][Debug]: Saving kerbal Bill Kerman from Vinetta
+[19:05:32][Debug]: Saving kerbal Jebediah Kerman from Vinetta
+[19:05:42][Debug]: Vinetta acquired lock Control - a0d62acf-9429-43a3-8d59-82e158842df2 - Vinetta
+[19:05:48][Debug]: Vinetta acquired lock Update - a0d62acf-9429-43a3-8d59-82e158842df2 - Vinetta
+[19:05:48][Debug]: Vinetta acquired lock UnloadedUpdate - a0d62acf-9429-43a3-8d59-82e158842df2 - Vinetta
+[19:05:58][Debug]: Saving vessel a0d62acf-9429-43a3-8d59-82e158842df2 (908.6611328125 KB) from Vinetta.
+[19:06:00][Debug]: Performing backups...
+[19:06:30][Debug]: Performing backups...
+[19:07:00][Debug]: Performing backups...
+[19:07:30][Debug]: Performing backups...
+[19:08:00][Debug]: Performing backups...
+[19:08:30][Debug]: Performing backups...
+[19:09:00][Debug]: Performing backups...
+[19:09:30][Debug]: Performing backups...
+[19:09:56][Debug]: Vinetta acquired lock UnloadedUpdate - ab4c0a42-2f47-4f25-b310-2e17ea3fe5f6 - Vinetta
+[19:09:56][Debug]: Vinetta acquired lock Update - ab4c0a42-2f47-4f25-b310-2e17ea3fe5f6 - Vinetta
+[19:09:57][Debug]: Saving vessel ab4c0a42-2f47-4f25-b310-2e17ea3fe5f6 (5.19140625 KB) from Vinetta.
+[19:09:59][Error]: Error deserializing message! System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Lidgren.Network.NetBitWriter.ReadBytes(Byte[] fromBuffer, Int32 numberOfBytes, Int32 readBitOffset, Byte[] destination, Int32 destinationByteOffset)
+   at Lidgren.Network.NetBuffer.ReadBytes(Byte[] into, Int32 offset, Int32 numberOfBytes)
+   at Lidgren.Network.NetBuffer.ReadDouble()
+   at LmpCommon.Message.Data.Vessel.VesselResourceInfo.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Data.Vessel.VesselResourceMsgData.InternalDeserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.MessageData.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.FactoryBase.Deserialize(NetIncomingMessage lidgrenMsg, Int64 receiveTime)
+   at Server.Server.MessageReceiver.DeserializeMessage(NetIncomingMessage msg)
+[19:09:59][Warning]: Connection received unhandled library message: 196
+[19:09:59][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:09:59][Debug]: Lidgren: ERRORMESSAGE -- Packet parsing error: Attempted to divide by zero. from 68.239.44.86:51490
+[19:09:59][Warning]: Malformed packet; stated payload length 4777, remaining bytes 732
+[19:09:59][LMP]: Removing debris vessel: ab4c0a42-2f47-4f25-b310-2e17ea3fe5f6
+[19:09:59][LMP]: Removed 1 debris
+[19:10:01][Debug]: Performing backups...
+[19:10:01][Error]: Error deserializing message! System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Lidgren.Network.NetBitWriter.ReadBytes(Byte[] fromBuffer, Int32 numberOfBytes, Int32 readBitOffset, Byte[] destination, Int32 destinationByteOffset)
+   at Lidgren.Network.NetBuffer.ReadBytes(Byte[] into, Int32 offset, Int32 numberOfBytes)
+   at Lidgren.Network.NetBuffer.ReadDouble()
+   at LmpCommon.Message.Data.Vessel.VesselResourceInfo.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Data.Vessel.VesselResourceMsgData.InternalDeserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.MessageData.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.FactoryBase.Deserialize(NetIncomingMessage lidgrenMsg, Int64 receiveTime)
+   at Server.Server.MessageReceiver.DeserializeMessage(NetIncomingMessage msg)
+[19:10:01][Warning]: Connection received unhandled library message: 196
+[19:10:01][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:10:01][Warning]: Malformed packet; stated payload length 4777, remaining bytes 732
+[19:10:04][Error]: Error deserializing message! System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Lidgren.Network.NetBitWriter.ReadBytes(Byte[] fromBuffer, Int32 numberOfBytes, Int32 readBitOffset, Byte[] destination, Int32 destinationByteOffset)
+   at Lidgren.Network.NetBuffer.ReadBytes(Byte[] into, Int32 offset, Int32 numberOfBytes)
+   at Lidgren.Network.NetBuffer.ReadDouble()
+   at LmpCommon.Message.Data.Vessel.VesselResourceInfo.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Data.Vessel.VesselResourceMsgData.InternalDeserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.MessageData.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.FactoryBase.Deserialize(NetIncomingMessage lidgrenMsg, Int64 receiveTime)
+   at Server.Server.MessageReceiver.DeserializeMessage(NetIncomingMessage msg)
+[19:10:04][Warning]: Connection received unhandled library message: 196
+[19:10:04][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:10:04][Warning]: Malformed packet; stated payload length 4777, remaining bytes 732
+[19:10:06][Error]: Error deserializing message! System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Lidgren.Network.NetBitWriter.ReadBytes(Byte[] fromBuffer, Int32 numberOfBytes, Int32 readBitOffset, Byte[] destination, Int32 destinationByteOffset)
+   at Lidgren.Network.NetBuffer.ReadBytes(Byte[] into, Int32 offset, Int32 numberOfBytes)
+   at Lidgren.Network.NetBuffer.ReadDouble()
+   at LmpCommon.Message.Data.Vessel.VesselResourceInfo.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Data.Vessel.VesselResourceMsgData.InternalDeserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.MessageData.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.FactoryBase.Deserialize(NetIncomingMessage lidgrenMsg, Int64 receiveTime)
+   at Server.Server.MessageReceiver.DeserializeMessage(NetIncomingMessage msg)
+[19:10:06][Warning]: Connection received unhandled library message: 196
+[19:10:06][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:10:06][Warning]: Malformed packet; stated payload length 4777, remaining bytes 732
+[19:10:09][Error]: Error deserializing message! System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Lidgren.Network.NetBitWriter.ReadBytes(Byte[] fromBuffer, Int32 numberOfBytes, Int32 readBitOffset, Byte[] destination, Int32 destinationByteOffset)
+   at Lidgren.Network.NetBuffer.ReadBytes(Byte[] into, Int32 offset, Int32 numberOfBytes)
+   at Lidgren.Network.NetBuffer.ReadDouble()
+   at LmpCommon.Message.Data.Vessel.VesselResourceInfo.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Data.Vessel.VesselResourceMsgData.InternalDeserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.MessageData.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.FactoryBase.Deserialize(NetIncomingMessage lidgrenMsg, Int64 receiveTime)
+   at Server.Server.MessageReceiver.DeserializeMessage(NetIncomingMessage msg)
+[19:10:09][Warning]: Connection received unhandled library message: 196
+[19:10:09][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:10:09][Warning]: Malformed packet; stated payload length 4777, remaining bytes 732
+[19:10:11][Error]: Error deserializing message! System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Lidgren.Network.NetBitWriter.ReadBytes(Byte[] fromBuffer, Int32 numberOfBytes, Int32 readBitOffset, Byte[] destination, Int32 destinationByteOffset)
+   at Lidgren.Network.NetBuffer.ReadBytes(Byte[] into, Int32 offset, Int32 numberOfBytes)
+   at Lidgren.Network.NetBuffer.ReadDouble()
+   at LmpCommon.Message.Data.Vessel.VesselResourceInfo.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Data.Vessel.VesselResourceMsgData.InternalDeserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.MessageData.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.FactoryBase.Deserialize(NetIncomingMessage lidgrenMsg, Int64 receiveTime)
+   at Server.Server.MessageReceiver.DeserializeMessage(NetIncomingMessage msg)
+[19:10:11][Warning]: Connection received unhandled library message: 196
+[19:10:11][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:10:11][Warning]: Malformed packet; stated payload length 4777, remaining bytes 732
+[19:10:14][Error]: Error deserializing message! System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Lidgren.Network.NetBitWriter.ReadBytes(Byte[] fromBuffer, Int32 numberOfBytes, Int32 readBitOffset, Byte[] destination, Int32 destinationByteOffset)
+   at Lidgren.Network.NetBuffer.ReadBytes(Byte[] into, Int32 offset, Int32 numberOfBytes)
+   at Lidgren.Network.NetBuffer.ReadDouble()
+   at LmpCommon.Message.Data.Vessel.VesselResourceInfo.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Data.Vessel.VesselResourceMsgData.InternalDeserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.MessageData.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.FactoryBase.Deserialize(NetIncomingMessage lidgrenMsg, Int64 receiveTime)
+   at Server.Server.MessageReceiver.DeserializeMessage(NetIncomingMessage msg)
+[19:10:14][Warning]: Connection received unhandled library message: 196
+[19:10:14][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:10:14][Warning]: Malformed packet; stated payload length 4777, remaining bytes 732
+[19:10:17][Error]: Error deserializing message! System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Lidgren.Network.NetBitWriter.ReadBytes(Byte[] fromBuffer, Int32 numberOfBytes, Int32 readBitOffset, Byte[] destination, Int32 destinationByteOffset)
+   at Lidgren.Network.NetBuffer.ReadBytes(Byte[] into, Int32 offset, Int32 numberOfBytes)
+   at Lidgren.Network.NetBuffer.ReadDouble()
+   at LmpCommon.Message.Data.Vessel.VesselResourceInfo.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Data.Vessel.VesselResourceMsgData.InternalDeserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.MessageData.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.FactoryBase.Deserialize(NetIncomingMessage lidgrenMsg, Int64 receiveTime)
+   at Server.Server.MessageReceiver.DeserializeMessage(NetIncomingMessage msg)
+[19:10:17][Warning]: Connection received unhandled library message: 196
+[19:10:17][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:10:17][Warning]: Malformed packet; stated payload length 4777, remaining bytes 732
+[19:10:19][Warning]: Connection received unhandled library message: 196
+[19:10:19][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:10:19][Warning]: Malformed packet; stated payload length 4777, remaining bytes 732
+[19:10:22][Error]: Error deserializing message! System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Lidgren.Network.NetBitWriter.ReadBytes(Byte[] fromBuffer, Int32 numberOfBytes, Int32 readBitOffset, Byte[] destination, Int32 destinationByteOffset)
+   at Lidgren.Network.NetBuffer.ReadBytes(Byte[] into, Int32 offset, Int32 numberOfBytes)
+   at Lidgren.Network.NetBuffer.ReadDouble()
+   at LmpCommon.Message.Data.Vessel.VesselResourceInfo.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Data.Vessel.VesselResourceMsgData.InternalDeserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.MessageData.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.FactoryBase.Deserialize(NetIncomingMessage lidgrenMsg, Int64 receiveTime)
+   at Server.Server.MessageReceiver.DeserializeMessage(NetIncomingMessage msg)
+[19:10:22][Warning]: Connection received unhandled library message: 196
+[19:10:22][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:10:22][Warning]: Malformed packet; stated payload length 4777, remaining bytes 732
+[19:10:24][Error]: Error deserializing message! System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Lidgren.Network.NetBitWriter.ReadBytes(Byte[] fromBuffer, Int32 numberOfBytes, Int32 readBitOffset, Byte[] destination, Int32 destinationByteOffset)
+   at Lidgren.Network.NetBuffer.ReadBytes(Byte[] into, Int32 offset, Int32 numberOfBytes)
+   at Lidgren.Network.NetBuffer.ReadDouble()
+   at LmpCommon.Message.Data.Vessel.VesselResourceInfo.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Data.Vessel.VesselResourceMsgData.InternalDeserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.MessageData.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.FactoryBase.Deserialize(NetIncomingMessage lidgrenMsg, Int64 receiveTime)
+   at Server.Server.MessageReceiver.DeserializeMessage(NetIncomingMessage msg)
+[19:10:24][Warning]: Connection received unhandled library message: 196
+[19:10:24][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:10:24][Warning]: Malformed packet; stated payload length 4777, remaining bytes 732
+[19:10:27][Error]: Error deserializing message! System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Lidgren.Network.NetBitWriter.ReadBytes(Byte[] fromBuffer, Int32 numberOfBytes, Int32 readBitOffset, Byte[] destination, Int32 destinationByteOffset)
+   at Lidgren.Network.NetBuffer.ReadBytes(Byte[] into, Int32 offset, Int32 numberOfBytes)
+   at Lidgren.Network.NetBuffer.ReadDouble()
+   at LmpCommon.Message.Data.Vessel.VesselResourceInfo.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Data.Vessel.VesselResourceMsgData.InternalDeserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.MessageData.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.FactoryBase.Deserialize(NetIncomingMessage lidgrenMsg, Int64 receiveTime)
+   at Server.Server.MessageReceiver.DeserializeMessage(NetIncomingMessage msg)
+[19:10:27][Warning]: Connection received unhandled library message: 196
+[19:10:27][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:10:27][Warning]: Malformed packet; stated payload length 4777, remaining bytes 732
+[19:10:29][Error]: Error deserializing message! System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Lidgren.Network.NetBitWriter.ReadBytes(Byte[] fromBuffer, Int32 numberOfBytes, Int32 readBitOffset, Byte[] destination, Int32 destinationByteOffset)
+   at Lidgren.Network.NetBuffer.ReadBytes(Byte[] into, Int32 offset, Int32 numberOfBytes)
+   at Lidgren.Network.NetBuffer.ReadDouble()
+   at LmpCommon.Message.Data.Vessel.VesselResourceInfo.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Data.Vessel.VesselResourceMsgData.InternalDeserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.MessageData.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.FactoryBase.Deserialize(NetIncomingMessage lidgrenMsg, Int64 receiveTime)
+   at Server.Server.MessageReceiver.DeserializeMessage(NetIncomingMessage msg)
+[19:10:29][Warning]: Connection received unhandled library message: 196
+[19:10:29][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:10:29][Warning]: Malformed packet; stated payload length 4777, remaining bytes 732
+[19:10:31][Debug]: Performing backups...
+[19:10:32][Warning]: Connection received unhandled library message: 196
+[19:10:32][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:10:32][Warning]: Malformed packet; stated payload length 4777, remaining bytes 732
+[19:10:34][Error]: Error deserializing message! System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Lidgren.Network.NetBitWriter.ReadBytes(Byte[] fromBuffer, Int32 numberOfBytes, Int32 readBitOffset, Byte[] destination, Int32 destinationByteOffset)
+   at Lidgren.Network.NetBuffer.ReadBytes(Byte[] into, Int32 offset, Int32 numberOfBytes)
+   at Lidgren.Network.NetBuffer.ReadDouble()
+   at LmpCommon.Message.Data.Vessel.VesselResourceInfo.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Data.Vessel.VesselResourceMsgData.InternalDeserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.MessageData.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.FactoryBase.Deserialize(NetIncomingMessage lidgrenMsg, Int64 receiveTime)
+   at Server.Server.MessageReceiver.DeserializeMessage(NetIncomingMessage msg)
+[19:10:34][Warning]: Connection received unhandled library message: 196
+[19:10:34][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:10:34][Warning]: Malformed packet; stated payload length 4777, remaining bytes 732
+[19:10:37][Error]: Error deserializing message! System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Lidgren.Network.NetBitWriter.ReadBytes(Byte[] fromBuffer, Int32 numberOfBytes, Int32 readBitOffset, Byte[] destination, Int32 destinationByteOffset)
+   at Lidgren.Network.NetBuffer.ReadBytes(Byte[] into, Int32 offset, Int32 numberOfBytes)
+   at Lidgren.Network.NetBuffer.ReadDouble()
+   at LmpCommon.Message.Data.Vessel.VesselResourceInfo.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Data.Vessel.VesselResourceMsgData.InternalDeserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.MessageData.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.FactoryBase.Deserialize(NetIncomingMessage lidgrenMsg, Int64 receiveTime)
+   at Server.Server.MessageReceiver.DeserializeMessage(NetIncomingMessage msg)
+[19:10:37][Warning]: Connection received unhandled library message: 196
+[19:10:37][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:10:37][Warning]: Malformed packet; stated payload length 4777, remaining bytes 732
+[19:10:40][Debug]: Vinetta acquired lock Update - 461c4755-c81c-4ac9-9c6d-623e7f940303 - Vinetta
+[19:10:40][Debug]: Vinetta acquired lock UnloadedUpdate - 461c4755-c81c-4ac9-9c6d-623e7f940303 - Vinetta
+[19:10:40][Error]: Error deserializing message! System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Lidgren.Network.NetBitWriter.ReadBytes(Byte[] fromBuffer, Int32 numberOfBytes, Int32 readBitOffset, Byte[] destination, Int32 destinationByteOffset)
+   at Lidgren.Network.NetBuffer.ReadBytes(Byte[] into, Int32 offset, Int32 numberOfBytes)
+   at Lidgren.Network.NetBuffer.ReadDouble()
+   at LmpCommon.Message.Data.Vessel.VesselResourceInfo.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Data.Vessel.VesselResourceMsgData.InternalDeserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.MessageData.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.FactoryBase.Deserialize(NetIncomingMessage lidgrenMsg, Int64 receiveTime)
+   at Server.Server.MessageReceiver.DeserializeMessage(NetIncomingMessage msg)
+[19:10:40][Warning]: Connection received unhandled library message: 196
+[19:10:40][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:10:40][Warning]: Malformed packet; stated payload length 4777, remaining bytes 732
+[19:10:40][Debug]: Saving vessel 461c4755-c81c-4ac9-9c6d-623e7f940303 (4.158203125 KB) from Vinetta.
+[19:10:40][Debug]: Vinetta acquired lock UnloadedUpdate - a210dc4d-27c8-484f-b947-eca568e53700 - Vinetta
+[19:10:40][Debug]: Vinetta acquired lock Update - a210dc4d-27c8-484f-b947-eca568e53700 - Vinetta
+[19:10:40][Debug]: Vinetta acquired lock UnloadedUpdate - fb6ab93c-c681-4621-acc8-d79c1d128ca4 - Vinetta
+[19:10:40][Debug]: Vinetta acquired lock Update - fb6ab93c-c681-4621-acc8-d79c1d128ca4 - Vinetta
+[19:10:41][Debug]: Saving vessel a210dc4d-27c8-484f-b947-eca568e53700 (133.072265625 KB) from Vinetta.
+[19:10:41][Debug]: Saving vessel fb6ab93c-c681-4621-acc8-d79c1d128ca4 (4.716796875 KB) from Vinetta.
+[19:10:42][Debug]: Vinetta acquired lock UnloadedUpdate - ddf42c3c-f905-4d5c-a8e7-32d79e1277f6 - Vinetta
+[19:10:42][Debug]: Vinetta acquired lock Update - ddf42c3c-f905-4d5c-a8e7-32d79e1277f6 - Vinetta
+[19:10:43][Error]: Error deserializing message! System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Lidgren.Network.NetBitWriter.ReadByte(Byte[] fromBuffer, Int32 numberOfBits, Int32 readBitOffset)
+   at Lidgren.Network.NetBitWriter.ReadUInt32(Byte[] fromBuffer, Int32 numberOfBits, Int32 readBitOffset)
+   at LmpCommon.Message.Data.Vessel.VesselResourceInfo.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Data.Vessel.VesselResourceMsgData.InternalDeserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.MessageData.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.FactoryBase.Deserialize(NetIncomingMessage lidgrenMsg, Int64 receiveTime)
+   at Server.Server.MessageReceiver.DeserializeMessage(NetIncomingMessage msg)
+[19:10:43][Warning]: Connection received unhandled library message: 153
+[19:10:43][Warning]: Malformed packet; stated payload length 7514, remaining bytes 2703
+[19:10:43][Debug]: Saving vessel ddf42c3c-f905-4d5c-a8e7-32d79e1277f6 (5.666015625 KB) from Vinetta.
+[19:10:45][Error]: Error deserializing message! System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Lidgren.Network.NetBitWriter.ReadBytes(Byte[] fromBuffer, Int32 numberOfBytes, Int32 readBitOffset, Byte[] destination, Int32 destinationByteOffset)
+   at Lidgren.Network.NetBuffer.ReadBytes(Byte[] into, Int32 offset, Int32 numberOfBytes)
+   at Lidgren.Network.NetBuffer.ReadDouble()
+   at LmpCommon.Message.Data.Vessel.VesselResourceInfo.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Data.Vessel.VesselResourceMsgData.InternalDeserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.MessageData.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.FactoryBase.Deserialize(NetIncomingMessage lidgrenMsg, Int64 receiveTime)
+   at Server.Server.MessageReceiver.DeserializeMessage(NetIncomingMessage msg)
+[19:10:45][Debug]: Lidgren: ERRORMESSAGE -- Packet parsing error: Index was outside the bounds of the array. from 68.239.44.86:51490
+[19:10:45][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:10:45][Warning]: Malformed packet; stated payload length 3697, remaining bytes 2868
+[19:10:47][Debug]: Vinetta acquired lock UnloadedUpdate - cafa782f-f161-44dd-9590-df501189ec26 - Vinetta
+[19:10:47][Debug]: Vinetta acquired lock Update - cafa782f-f161-44dd-9590-df501189ec26 - Vinetta
+[19:10:47][Debug]: Saving vessel cafa782f-f161-44dd-9590-df501189ec26 (4.0830078125 KB) from Vinetta.
+[19:10:47][Debug]: Removing vessel cafa782f-f161-44dd-9590-df501189ec26 from Vinetta
+[19:10:47][Debug]: Vinetta acquired lock UnloadedUpdate - 55f3d9a8-18e9-4bf9-8570-a9632ac8ecdb - Vinetta
+[19:10:47][Debug]: Vinetta acquired lock Update - 55f3d9a8-18e9-4bf9-8570-a9632ac8ecdb - Vinetta
+[19:10:47][Debug]: Saving vessel 55f3d9a8-18e9-4bf9-8570-a9632ac8ecdb (4.86328125 KB) from Vinetta.
+[19:10:48][Error]: Error deserializing message! System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Lidgren.Network.NetBitWriter.ReadBytes(Byte[] fromBuffer, Int32 numberOfBytes, Int32 readBitOffset, Byte[] destination, Int32 destinationByteOffset)
+   at Lidgren.Network.NetBuffer.ReadBytes(Byte[] into, Int32 offset, Int32 numberOfBytes)
+   at Lidgren.Network.NetBuffer.ReadDouble()
+   at LmpCommon.Message.Data.Vessel.VesselResourceInfo.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Data.Vessel.VesselResourceMsgData.InternalDeserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.MessageData.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.FactoryBase.Deserialize(NetIncomingMessage lidgrenMsg, Int64 receiveTime)
+   at Server.Server.MessageReceiver.DeserializeMessage(NetIncomingMessage msg)
+[19:10:48][Warning]: Index out of bounds for chunk 21 (total chunks 0)
+[19:10:48][Debug]: Lidgren: UNCONNECTEDDATA -- q�����(l     *hj���T�Y�Y�ۙћ��TLL        �[{w�2�7���9     �<�J���RefundingForKSP111x     
+[19:10:48][Warning]: Malformed packet; stated payload length 7379, remaining bytes 4894
+[19:10:48][Debug]: Vinetta released lock UnloadedUpdate - cafa782f-f161-44dd-9590-df501189ec26 - Vinetta
+[19:10:48][Debug]: Vinetta released lock Update - cafa782f-f161-44dd-9590-df501189ec26 - Vinetta
+[19:10:50][Error]: Error deserializing message! System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Lidgren.Network.NetBitWriter.ReadBytes(Byte[] fromBuffer, Int32 numberOfBytes, Int32 readBitOffset, Byte[] destination, Int32 destinationByteOffset)
+   at Lidgren.Network.NetBuffer.ReadBytes(Byte[] into, Int32 offset, Int32 numberOfBytes)
+   at Lidgren.Network.NetBuffer.ReadDouble()
+   at LmpCommon.Message.Data.Vessel.VesselResourceInfo.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Data.Vessel.VesselResourceMsgData.InternalDeserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.MessageData.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.FactoryBase.Deserialize(NetIncomingMessage lidgrenMsg, Int64 receiveTime)
+   at Server.Server.MessageReceiver.DeserializeMessage(NetIncomingMessage msg)
+[19:10:50][Warning]: Connection received unhandled library message: 204
+[19:10:50][Debug]: Lidgren: UNCONNECTEDDATA -- �MH��չ������-MA���
+[19:10:50][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:10:50][Debug]: Lidgren: ERRORMESSAGE -- Unexpected NetMessageType: Unused5
+[19:10:53][Error]: Error deserializing message! System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Lidgren.Network.NetBitWriter.ReadBytes(Byte[] fromBuffer, Int32 numberOfBytes, Int32 readBitOffset, Byte[] destination, Int32 destinationByteOffset)
+   at Lidgren.Network.NetBuffer.ReadBytes(Byte[] into, Int32 offset, Int32 numberOfBytes)
+   at Lidgren.Network.NetBuffer.ReadDouble()
+   at LmpCommon.Message.Data.Vessel.VesselResourceInfo.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Data.Vessel.VesselResourceMsgData.InternalDeserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.MessageData.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.FactoryBase.Deserialize(NetIncomingMessage lidgrenMsg, Int64 receiveTime)
+   at Server.Server.MessageReceiver.DeserializeMessage(NetIncomingMessage msg)
+[19:10:53][Warning]: Connection received unhandled library message: 204
+[19:10:53][Debug]: Lidgren: UNCONNECTEDDATA -- �MH��չ������-MA���
+[19:10:53][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:10:53][Debug]: Lidgren: ERRORMESSAGE -- Unexpected NetMessageType: Unused5
+[19:10:55][Error]: Error deserializing message! System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Lidgren.Network.NetBitWriter.ReadBytes(Byte[] fromBuffer, Int32 numberOfBytes, Int32 readBitOffset, Byte[] destination, Int32 destinationByteOffset)
+   at Lidgren.Network.NetBuffer.ReadBytes(Byte[] into, Int32 offset, Int32 numberOfBytes)
+   at Lidgren.Network.NetBuffer.ReadDouble()
+   at LmpCommon.Message.Data.Vessel.VesselResourceInfo.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Data.Vessel.VesselResourceMsgData.InternalDeserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.MessageData.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.FactoryBase.Deserialize(NetIncomingMessage lidgrenMsg, Int64 receiveTime)
+   at Server.Server.MessageReceiver.DeserializeMessage(NetIncomingMessage msg)
+[19:10:55][Warning]: Connection received unhandled library message: 237
+[19:10:55][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:10:55][Warning]: Malformed packet; stated payload length 7142, remaining bytes 3680
+[19:10:58][Error]: Error deserializing message! System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Lidgren.Network.NetBitWriter.ReadBytes(Byte[] fromBuffer, Int32 numberOfBytes, Int32 readBitOffset, Byte[] destination, Int32 destinationByteOffset)
+   at Lidgren.Network.NetBuffer.ReadBytes(Byte[] into, Int32 offset, Int32 numberOfBytes)
+   at Lidgren.Network.NetBuffer.ReadDouble()
+   at LmpCommon.Message.Data.Vessel.VesselResourceInfo.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Data.Vessel.VesselResourceMsgData.InternalDeserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.MessageData.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.FactoryBase.Deserialize(NetIncomingMessage lidgrenMsg, Int64 receiveTime)
+   at Server.Server.MessageReceiver.DeserializeMessage(NetIncomingMessage msg)
+[19:10:58][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:10:58][Debug]: Lidgren: UNCONNECTEDDATA -- !UfV�F��vf�&�4�        �i�wB�̬΍,����Mni
+*
+[19:10:58][Warning]: Malformed packet; stated payload length 7514, remaining bytes 730
+[19:10:59][LMP]: Removing debris vessel: fb6ab93c-c681-4621-acc8-d79c1d128ca4
+[19:10:59][LMP]: Removing debris vessel: ddf42c3c-f905-4d5c-a8e7-32d79e1277f6
+[19:10:59][LMP]: Removing debris vessel: 461c4755-c81c-4ac9-9c6d-623e7f940303
+[19:10:59][LMP]: Removing debris vessel: 55f3d9a8-18e9-4bf9-8570-a9632ac8ecdb
+[19:10:59][LMP]: Removing debris vessel: a210dc4d-27c8-484f-b947-eca568e53700
+[19:10:59][LMP]: Removed 5 debris
+[19:11:01][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:11:01][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:11:01][Warning]: Malformed packet; stated payload length 6992, remaining bytes 1709
+[19:11:01][Debug]: Performing backups...
+[19:11:03][Error]: Error deserializing message! System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Lidgren.Network.NetBitWriter.ReadBytes(Byte[] fromBuffer, Int32 numberOfBytes, Int32 readBitOffset, Byte[] destination, Int32 destinationByteOffset)
+   at Lidgren.Network.NetBuffer.ReadBytes(Byte[] into, Int32 offset, Int32 numberOfBytes)
+   at Lidgren.Network.NetBuffer.ReadDouble()
+   at LmpCommon.Message.Data.Vessel.VesselResourceInfo.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Data.Vessel.VesselResourceMsgData.InternalDeserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.MessageData.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.FactoryBase.Deserialize(NetIncomingMessage lidgrenMsg, Int64 receiveTime)
+   at Server.Server.MessageReceiver.DeserializeMessage(NetIncomingMessage msg)
+[19:11:03][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:11:03][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:11:03][Warning]: Malformed packet; stated payload length 6992, remaining bytes 1709
+[19:11:06][Error]: Error deserializing message! System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Lidgren.Network.NetBitWriter.ReadBytes(Byte[] fromBuffer, Int32 numberOfBytes, Int32 readBitOffset, Byte[] destination, Int32 destinationByteOffset)
+   at Lidgren.Network.NetBuffer.ReadBytes(Byte[] into, Int32 offset, Int32 numberOfBytes)
+   at Lidgren.Network.NetBuffer.ReadDouble()
+   at LmpCommon.Message.Data.Vessel.VesselResourceInfo.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Data.Vessel.VesselResourceMsgData.InternalDeserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.MessageData.Deserialize(NetIncomingMessage lidgrenMsg)
+   at LmpCommon.Message.Base.FactoryBase.Deserialize(NetIncomingMessage lidgrenMsg, Int64 receiveTime)
+   at Server.Server.MessageReceiver.DeserializeMessage(NetIncomingMessage msg)
+[19:11:06][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:11:06][Debug]: Lidgren: UNCONNECTEDDATA -- 
+[19:11:06][Warning]: Malformed packet; stated payload length 6992, remaining bytes 1709
+[19:11:06][Debug]: Vinetta sent Connection end message, reason: Quit to main menu
+[19:11:06][Debug]: Online Players: 0, connected: 0
+[19:11:06][Debug]: Vinetta released lock Control - a0d62acf-9429-43a3-8d59-82e158842df2 - Vinetta
+[19:11:06][Debug]: Vinetta released lock Update - 461c4755-c81c-4ac9-9c6d-623e7f940303 - Vinetta
+[19:11:06][Debug]: Vinetta released lock Update - a210dc4d-27c8-484f-b947-eca568e53700 - Vinetta
+[19:11:06][Debug]: Vinetta released lock Update - 55f3d9a8-18e9-4bf9-8570-a9632ac8ecdb - Vinetta
+[19:11:06][Debug]: Vinetta released lock Update - a0d62acf-9429-43a3-8d59-82e158842df2 - Vinetta
+[19:11:06][Debug]: Vinetta released lock Update - fb6ab93c-c681-4621-acc8-d79c1d128ca4 - Vinetta
+[19:11:06][Debug]: Vinetta released lock Update - ddf42c3c-f905-4d5c-a8e7-32d79e1277f6 - Vinetta
+[19:11:06][Debug]: Vinetta released lock Update - ab4c0a42-2f47-4f25-b310-2e17ea3fe5f6 - Vinetta
+[19:11:06][Debug]: Vinetta released lock UnloadedUpdate - ab4c0a42-2f47-4f25-b310-2e17ea3fe5f6 - Vinetta
+[19:11:06][Debug]: Vinetta released lock UnloadedUpdate - fb6ab93c-c681-4621-acc8-d79c1d128ca4 - Vinetta
+[19:11:06][Debug]: Vinetta released lock UnloadedUpdate - 19ca150e-7af2-46bc-a821-ea70e641cc34 - Vinetta
+[19:11:06][Debug]: Vinetta released lock UnloadedUpdate - 2832aa11-6354-40df-a618-323e6dbd7673 - Vinetta
+[19:11:06][Debug]: Vinetta released lock UnloadedUpdate - ddf42c3c-f905-4d5c-a8e7-32d79e1277f6 - Vinetta
+[19:11:06][Debug]: Vinetta released lock UnloadedUpdate - a1f60b0f-d835-4afe-8ced-6367fa4c475a - Vinetta
+[19:11:06][Debug]: Vinetta released lock UnloadedUpdate - 461c4755-c81c-4ac9-9c6d-623e7f940303 - Vinetta
+[19:11:06][Debug]: Vinetta released lock UnloadedUpdate - 55f3d9a8-18e9-4bf9-8570-a9632ac8ecdb - Vinetta
+[19:11:06][Debug]: Vinetta released lock UnloadedUpdate - a210dc4d-27c8-484f-b947-eca568e53700 - Vinetta
+[19:11:06][Debug]: Vinetta released lock UnloadedUpdate - d90efe40-6e7b-454d-aee2-7e00683a5be7 - Vinetta
+[19:11:06][Debug]: Vinetta released lock UnloadedUpdate - 61bcdec9-e941-4daa-9453-568df3b2859e - Vinetta
+[19:11:06][Debug]: Vinetta released lock UnloadedUpdate - 720c308c-67af-4b32-b18c-28e08d7d76c4 - Vinetta
+[19:11:06][Debug]: Vinetta released lock UnloadedUpdate - a0d62acf-9429-43a3-8d59-82e158842df2 - Vinetta
+[19:11:06][Debug]: Vinetta released lock UnloadedUpdate - d16944a6-5b23-467d-98bd-db4f9a0ada80 - Vinetta
+[19:11:06][Debug]: Vinetta released lock AsteroidComet - Vinetta
+[19:11:06][Debug]: Performing backups...
+[19:11:13][LMP]: Exiting... Please wait until all threads are finished
+[19:11:13][Debug]: Performing backups...
+[19:11:13][LMP]: So long and thanks for all the fish!

@@ -116,6 +116,12 @@ namespace GiggityBot.Resources
             funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/759825412343201792/789505356325716008/y2mate.com_-_Shitpost_status_480p_2.mp4");
             funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/811773568005439508/820793733456330802/056f596b611b8dce7ae93ec1dd132ae049fee66e70cc13c65d8cb9adb1ee4314_1.MP4");
             funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/472407264700006420/826221277835427890/really.mp4");
+            funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/505818199749558290/826587084030345226/video0-17.mp4");
+            funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/770094079102681198/828754152002945044/x0W3fvGCTRjACcmV.mp4");
+            funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/811773568005439508/829090900180336770/chris_where_have_you_been.mp4");
+            funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/811773568005439508/830185960578744360/video0.mov");
+            funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/811773568005439508/830262354138759208/video0.mp4");
+            funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/336402396026765313/830570495375835136/video0-16.mp4");
         }
 
     }

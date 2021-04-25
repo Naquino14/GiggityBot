@@ -1,0 +1,121 @@
+pid = 2f2de0985e5e49d6b497b8a40e274b1f
+persistentId = 3800051045
+name = Ast. LXY-292
+type = SpaceObject
+sit = ORBITING
+landed = False
+skipGroundPositioning = False
+skipGroundPositioningForDroppedPart = False
+vesselSpawning = True
+launchedFrom = 
+landedAt = 
+displaylandedAt = 
+splashed = False
+met = 477041.50346162438
+lct = 477041.50346162438
+lastUT = -1
+distanceTraveled = 0
+root = 0
+lat = 0.037966448144991553
+lon = 160.64284253660503
+alt = 13667861905.745737
+hgt = -1
+nrm = 0,1,0
+rot = 0.631353259,-0.335585326,-0.121859454,0.68842274
+CoM = 0,0,0
+stg = 0
+prst = False
+ref = 0
+ctrl = False
+PQSMin = 0
+PQSMax = 0
+GroupOverride = 0
+OverrideDefault = False,False,False,False
+OverrideActionControl = 0,0,0,0
+OverrideAxisControl = 0,0,0,0
+OverrideGroupNames = ,,,
+altDispState = DEFAULT
+ORBIT
+{
+	SMA = 13861574478.053122
+	ECC = 0.023144817838097853
+	INC = 0.092563383785183612
+	LPE = 127.72470359729923
+	LAN = 173.96211965221323
+	MNA = 0.57905997464601189
+	EPH = 4004752.0137155307
+	REF = 0
+	IDENT = Squad/Sun
+}
+PART
+{
+	name = PotatoRoid
+	cid = 0
+	uid = 1506153483
+	mid = 1506153483
+	persistentId = 69607731
+	launchID = 0
+	parent = 0
+	position = 0,0,0
+	rotation = 0,0,0,1
+	mirror = 1,1,1
+	symMethod = Radial
+	istg = 0
+	resPri = 0
+	dstg = 0
+	sqor = 0
+	sepI = 0
+	sidx = 0
+	attm = 0
+	sameVesselCollision = False
+	srfN = None, -1
+	mass = 150
+	shielded = False
+	temp = -1
+	tempExt = 0
+	tempExtUnexp = 0
+	staticPressureAtm = 0
+	expt = 1
+	state = 0
+	attached = True
+	autostrutMode = Off
+	rigidAttachment = False
+	flag = 
+	rTrf = 
+	modCost = 0
+	modMass = 0
+	moduleVariantName = 
+	moduleCargoStackableQuantity = 1
+}
+ACTIONGROUPS
+{
+}
+DISCOVERY
+{
+	state = 1
+	lastObservedTime = 477041.50346162438
+	lifetime = 362854.93469238281
+	refTime = 1728000
+	size = 8
+}
+FLIGHTPLAN
+{
+}
+CTRLSTATE
+{
+}
+VESSELMODULES
+{
+	ModularFlightIntegrator
+	{
+	}
+	AxisGroupsModule
+	{
+	}
+	ParallaxPhysicsManager
+	{
+	}
+	PartEventsManager
+	{
+	}
+}

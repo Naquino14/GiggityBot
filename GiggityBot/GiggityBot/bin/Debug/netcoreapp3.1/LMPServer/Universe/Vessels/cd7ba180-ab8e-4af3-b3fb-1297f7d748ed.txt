@@ -1,0 +1,113 @@
+pid = cd7ba180ab8e4af3b3fb1297f7d748ed
+persistentId = 665171662
+name = pee
+type = Flag
+sit = LANDED
+landed = True
+skipGroundPositioning = True
+skipGroundPositioningForDroppedPart = False
+vesselSpawning = False
+launchedFrom = 
+landedAt = Island_Airfield
+displaylandedAt = Island Airfield
+splashed = False
+met = 147704.34822677367
+lct = 366253.89588083699
+lastUT = 493877.19331775588
+distanceTraveled = 175.02549887920901
+root = 0
+lat = -2.0712120974700885
+lon = 71.392432514690356
+alt = 572591821.33598757
+hgt = 572591808
+nrm = -0.844746172,-0.30762729,-0.437914848
+rot = 0.742341399,-0.198971167,-0.584674597,-0.259798706
+CoM = 0,0,0
+stg = 0
+prst = False
+ref = 0
+ctrl = False
+PQSMin = 2
+PQSMax = 9
+GroupOverride = 0
+OverrideDefault = False,False,False,False
+OverrideActionControl = 0,0,0,0
+OverrideAxisControl = 0,0,0,0
+OverrideGroupNames = ,,,
+altDispState = ASL
+cPch = 0
+cHdg = 0
+cMod = 0
+ORBIT
+{
+	SMA = 0
+	ECC = 1
+	INC = 91.527487344596807
+	LPE = 90
+	LAN = 195.35260564762422
+	MNA = 0
+	EPH = 511638.64672700153
+	REF = 1
+	IDENT = Squad/Kerbin
+}
+ACTIONGROUPS
+{
+	Stage = False, 0
+	Gear = False, 0
+	Light = False, 0
+	RCS = False, 0
+	SAS = False, 0
+	Brakes = False, 0
+	Abort = False, 0
+	Custom01 = False, 0
+	Custom02 = False, 0
+	Custom03 = False, 0
+	Custom04 = False, 0
+	Custom05 = False, 0
+	Custom06 = False, 0
+	Custom07 = False, 0
+	Custom08 = False, 0
+	Custom09 = False, 0
+	Custom10 = False, 0
+}
+DISCOVERY
+{
+	state = -1
+	lastObservedTime = 0
+	lifetime = Infinity
+	refTime = Infinity
+	size = 2
+}
+FLIGHTPLAN
+{
+}
+TARGET
+{
+	type = Vessel
+	vesselID = f684c42b-5f5c-4bd3-adf3-24ff6fd61c49
+}
+CTRLSTATE
+{
+	pitch = 0
+	yaw = 0
+	roll = 0
+	trimPitch = 0
+	trimYaw = 0
+	trimRoll = 0
+	mainThrottle = 0
+}
+VESSELMODULES
+{
+	ModularFlightIntegrator
+	{
+	}
+	AxisGroupsModule
+	{
+	}
+	ParallaxPhysicsManager
+	{
+	}
+	PartEventsManager
+	{
+	}
+}

@@ -1,0 +1,5 @@
+#Incorrectly editing this file will cause weirdness. If there is any errors, the universe time will be reset.
+#This file can only be edited if the server is stopped.
+#It must always contain ONLY 1 subspace which will be the most advanced in the future
+#The value is defined as: subspaceId:server_time_difference_in_seconds.
+67:269427.489089651

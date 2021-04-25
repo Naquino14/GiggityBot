@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-16"?>
+<MasterServerSettingsDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--Set to false if you don't want to appear on the server list-->
+  <RegisterWithMasterServer>true</RegisterWithMasterServer>
+  <!--Specify in miliseconds how often we will update the info with masterserver. Min value = 5000-->
+  <MasterServerRegistrationMsInterval>5000</MasterServerRegistrationMsInterval>
+</MasterServerSettingsDefinition>

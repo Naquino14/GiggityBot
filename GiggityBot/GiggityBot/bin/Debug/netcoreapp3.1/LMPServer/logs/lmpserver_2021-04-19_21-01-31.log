@@ -1,0 +1,33 @@
+[01:01:31][Info]: Remember! Quit the server by using 'Control + C' so a backup is properly made before closing!
+[01:01:31][LMP]: Luna Server version: 0.27.0 (D:\Users\naqui\Desktop\LMPServer)
+[01:01:31][Debug]: Loading universe... 0KB
+[01:01:31][LMP]: Creating file Jebediah Kerman.txt
+[01:01:31][LMP]: Creating file Bill Kerman.txt
+[01:01:31][LMP]: Creating file Bob Kerman.txt
+[01:01:31][LMP]: Creating file Valentina Kerman.txt
+[01:01:31][Debug]: Loading groups...
+[01:01:31][Debug]: Loading settings...
+[01:01:31][Debug]: Loading mod control...
+[01:01:31][LMP]: Creating file ROCScenario.txt
+[01:01:31][LMP]: Creating file DeployedScience.txt
+[01:01:31][LMP]: Creating file CommNetScenario.txt
+[01:01:31][LMP]: Creating file PartUpgradeManager.txt
+[01:01:31][LMP]: Creating file ProgressTracking.txt
+[01:01:31][LMP]: Creating file ResourceScenario.txt
+[01:01:31][LMP]: Creating file ScenarioAchievements.txt
+[01:01:31][LMP]: Creating file ScenarioDestructibles.txt
+[01:01:31][LMP]: Creating file SentinelScenario.txt
+[01:01:31][LMP]: Creating file VesselRecovery.txt
+[01:01:31][LMP]: Creating file ScenarioNewGameIntro.txt
+[01:01:31][Debug]: Loading plugins...
+[01:01:31][Debug]: Creating new subspace file
+[01:01:31][Debug]: Creating new start time file
+[01:01:31][LMP]: Starting 'Luna Server' on Port 8800... 
+[01:01:32][Debug]: UPnP active. Port: 8800 Udp opened!
+[01:01:32][Debug]: UPnP + Website active. Port: 8900 Tcp opened!
+[01:01:32][LMP]: Registering with master servers...
+[01:01:32][LMP]: All systems up and running. Поехали!
+[01:01:32][Debug]: Performing a GarbageCollection...
+[01:03:15][LMP]: Exiting... Please wait until all threads are finished
+[01:03:23][Debug]: Performing backups...
+[01:03:23][LMP]: So long and thanks for all the fish!

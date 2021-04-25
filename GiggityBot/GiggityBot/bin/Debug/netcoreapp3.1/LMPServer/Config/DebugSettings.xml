@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<DebugSettingsDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--A percentage value to simulate the probability of a packet loss. From 0.0% to 100.0%-->
+  <SimulatedLossChance>0</SimulatedLossChance>
+  <!--A percentage value to simulate the probability of a packet duplication. From 0.0% to 100.0%-->
+  <SimulatedDuplicatesChance>0</SimulatedDuplicatesChance>
+  <!--Max random latency that a packet may have-->
+  <MaxSimulatedRandomLatencyMs>0</MaxSimulatedRandomLatencyMs>
+  <!--Minimum latency that a packet will have-->
+  <MinSimulatedLatencyMs>0</MinSimulatedLatencyMs>
+</DebugSettingsDefinition>

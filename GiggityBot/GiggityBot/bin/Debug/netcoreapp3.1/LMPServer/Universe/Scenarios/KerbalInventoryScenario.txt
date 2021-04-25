@@ -1,0 +1,2 @@
+name = KerbalInventoryScenario
+scene = 7, 8, 5, 21, 6
