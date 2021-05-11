@@ -58,6 +58,10 @@ namespace GiggityBot.Modules
 
         private const string mcServerExecutable = "java.exe";
         private const string mcServerExecutableWindowName = @"t - """ + mod16serverPath + @""" ";
+
+        private const string kspServerExecutable = "luna.exe"; // MIGHT BE WRONG!!!!!!!!!!!!!!
+        private const string kspServerExecutableWindowName = @"t - """ + ksp11serverPath + @""" ";
+
         // @"t - """ + mod16serverPath + @""" "
         // "Minecraft server"
         private const ulong gamingChannelId = 615369865305260047;
@@ -158,7 +162,7 @@ namespace GiggityBot.Modules
         [Command("help")]
         public async Task Help(string parameter = null)
         {
-            if (parameter == "server" && Context.Channel.Id == gamingChannelId)
+            if (parameter == "minecraft" && Context.Channel.Id == gamingChannelId)
             {
                 embedBuilder.WithTitle("MC Server Commands");
                 embedBuilder.WithImageUrl("https://cdn.iconscout.com/icon/free/png-512/minecraft-15-282774.png");
@@ -176,9 +180,9 @@ namespace GiggityBot.Modules
             {
                 embedBuilder.WithTitle("Ksp Server Commands");
                 embedBuilder.WithImageUrl("https://external-preview.redd.it/CJvMs4PptcN1uypfZslT1wT5HA46a8xX5THWZr9AIoQ.jpg?auto=webp&s=abf2bb515a55a5be6c1a609f38d0ed1c36a72d95");
-                embedBuilder.AddField("q!kspstart", "Start the ksp server. (moded 1.11.1)", true);
-                embedBuilder.AddField("q!kspstop", "Stop the ksp server.", true);
-                embedBuilder.AddField("q!kspstat", "Returns wether or not the server executable is running on the host.", true);
+                embedBuilder.AddField("q!startserver ksp11", "Start the ksp server. (moded 1.11.1)", true);
+                embedBuilder.AddField("q!stopserver", "Stop the ksp server.", true);
+                embedBuilder.AddField("q!serverstatus", "Returns wether or not the server executable is running on the host.", true);
                 embedBuilder.WithColor(Discord.Color.Green);
                 await ReplyAsync("", false, embedBuilder.Build());
                 return;
@@ -298,7 +302,7 @@ namespace GiggityBot.Modules
         public async Task Penis() => await ReplyAsync("cokc and balls");
 
         [Command("serverstatus")]
-        public async Task McStat()
+        public async Task ServerStat()
         {
             if (Context.Channel.Id != gamingChannelId)
             {
@@ -312,10 +316,21 @@ namespace GiggityBot.Modules
             }
             if (Context.Channel.Id == gamingChannelId)
             {
-                if (Process.GetProcessesByName(mcServerExecutable.Split('.')[0]).Length == 0)
-                    await ReplyAsync("Server Executable for Thot Obliterators is offline.");
-                if (Process.GetProcessesByName(mcServerExecutable.Split('.')[0]).Length > 0)
-                    await ReplyAsync("The Thot Obliterators MC Server is currently running `" + currentServerType.ToString() + "`");
+                if (currentServerType == ServerType.ksp11)
+                {
+                    if (Process.GetProcessesByName(kspServerExecutable.Split('.')[0]).Length == 0)
+                        await ReplyAsync("KSP Server Executable for Thot Obliterators is offline.");
+                    if (Process.GetProcessesByName(kspServerExecutable.Split('.')[0]).Length > 0)
+                        await ReplyAsync("The Thot Obliterators KSP Server is currently running `" + currentServerType.ToString() + "`");
+                }
+                else if (currentServerType == ServerType.mod12 || currentServerType == ServerType.mod16 || currentServerType == ServerType.van12)
+                {
+                    if (Process.GetProcessesByName(mcServerExecutable.Split('.')[0]).Length == 0)
+                        await ReplyAsync("Minectaft Server Executable for Thot Obliterators is offline.");
+                    if (Process.GetProcessesByName(mcServerExecutable.Split('.')[0]).Length > 0)
+                        await ReplyAsync("The Thot Obliterators MC Server is currently running `" + currentServerType.ToString() + "`");
+                } else
+                    await ReplyAsync("No servers are currently running.");
             }
         }
 
@@ -337,7 +352,7 @@ namespace GiggityBot.Modules
                 await ReplyAsync("Bro which one? type q!help server for a list.");
                 return;
             }
-            if (serverType != ServerType.mod16.ToString() ^ serverType != ServerType.mod12.ToString() ^ serverType != ServerType.van12.ToString())
+            if (serverType != ServerType.mod16.ToString() ^ serverType != ServerType.mod12.ToString() ^ serverType != ServerType.van12.ToString() ^ serverType != ServerType.ksp11.ToString())
             {
                 await ReplyAsync("Dood thats not a valid server type, see q!help server for a list.");
                 return;
@@ -367,19 +382,25 @@ namespace GiggityBot.Modules
                         {
                             currentServerType = ServerType.mod16;
                             await ReplyAsync("Starting Server `" + currentServerType.ToString() + "`...");
-                            Process.Start(mod16serverPath);
+                            _serverProcess = Process.Start(mod16serverPath);
                         }
                         if (serverType == ServerType.mod12.ToString())
                         {
                             currentServerType = ServerType.mod12;
                             await ReplyAsync("Starting Server `" + currentServerType.ToString() + "`...");
-                            Process.Start(mod12serverPath);
+                            _serverProcess = Process.Start(mod12serverPath);
                         }
                         if (serverType == ServerType.van12.ToString())
                         {
                             currentServerType = ServerType.van12;
                             await ReplyAsync("Starting Server `" + currentServerType.ToString() + "`...");
-                            Process.Start(van12serverPath);
+                             _serverProcess = Process.Start(van12serverPath);
+                        }
+                        if (serverType == ServerType.ksp11.ToString())
+                        {
+                            currentServerType = ServerType.ksp11;
+                            await ReplyAsync("Starting Server `" + currentServerType.ToString() + "`...");
+                            _serverProcess = Process.Start(ksp11serverPath);
                         }
                         _moveAlong = false;
                     } else if (role.Id != mcServerGangRoleId)
@@ -414,8 +435,12 @@ namespace GiggityBot.Modules
                         Process serverProcess;
                         try
                         {
-                            serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
-                        } catch (Exception unused)
+                            if (currentServerType == ServerType.ksp11)
+                                serverProcess = Process.GetProcessesByName(kspServerExecutable.Split('.')[0])[0];
+                            else
+                                serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
+                        }
+                        catch (Exception unused)
                         {
                             await ReplyAsync("Server is not running, start it with q!startserver.");
                             return;
@@ -429,24 +454,39 @@ namespace GiggityBot.Modules
                                 for (int i = 0; (i < 60) && (_zero == IntPtr.Zero); i++ /* 60 window max scan */)
                                 {
                                     await Task.Delay(20); // delay to not murder the laptop
-                                    _zero = FindWindow(null, mcServerExecutableWindowName);
+                                    if (currentServerType == ServerType.ksp11)
+                                        _zero = FindWindow(null, kspServerExecutableWindowName);
+                                    else
+                                        _zero = FindWindow(null, mcServerExecutableWindowName);
                                 }
                                 if (_zero != null) // keypress issued here
                                 {
-                                    SetForegroundWindow(_zero);
-                                    SendKeys.SendWait("save-all");
-                                    SendKeys.SendWait("{ENTER}");
-                                    SendKeys.Flush();
-                                    await Task.Delay(3000);
+                                    if (currentServerType != ServerType.ksp11)
+                                    {
+                                        SetForegroundWindow(_zero);
+                                        SendKeys.SendWait("save-all");
+                                        SendKeys.SendWait("{ENTER}");
+                                        SendKeys.Flush();
+                                        await Task.Delay(3000);
+                                        serverProcess.Kill();
+                                        _serverProcess = null;
+                                    }
+                                    else
+                                    {
+                                        await Task.Delay(100);
+                                        serverProcess.Close();
+                                        _serverProcess = null;
+                                    }
                                 }
-                                serverProcess.Kill();
                                 await ReplyAsync("Saved and killed server. Starting...");
                                 if (currentServerType == ServerType.mod16)
-                                    Process.Start(mod16serverPath);
-                                if(currentServerType == ServerType.mod12)
-                                    Process.Start(mod12serverPath);
-                                if(currentServerType == ServerType.van12)
-                                    Process.Start(van12serverPath);
+                                    _serverProcess = Process.Start(mod16serverPath);
+                                if (currentServerType == ServerType.mod12)
+                                    _serverProcess = Process.Start(mod12serverPath);
+                                if (currentServerType == ServerType.van12)
+                                    _serverProcess = Process.Start(van12serverPath);
+                                if (currentServerType == ServerType.ksp11)
+                                    _serverProcess = Process.Start(ksp11serverPath);
                                 _moveAlong = false;
                             }
                             catch (Exception ex)
@@ -485,8 +525,12 @@ namespace GiggityBot.Modules
                     Process serverProcess;
                     try
                     {
-                        serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
-                    } catch (Exception unused)
+                        if (currentServerType == ServerType.ksp11)
+                            serverProcess = Process.GetProcessesByName(kspServerExecutable.Split('.')[0])[0];
+                        else
+                            serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
+                    }
+                    catch (Exception unused)
                     {
                         await ReplyAsync("Server cannot be stopped because it is not running.");
                         return;
@@ -509,8 +553,16 @@ namespace GiggityBot.Modules
                                 SendKeys.SendWait("{ENTER}");
                                 SendKeys.Flush();
                                 await Task.Delay(3000);
+                                serverProcess.Kill();
+                                _serverProcess = null;
                             }
-                            serverProcess.Kill();
+                            else
+                            {
+                                await Task.Delay(100);
+                                serverProcess.Close();
+                                _serverProcess = null;
+                                
+                            }
                             _moveAlong = false;
                         }
                         catch (Exception ex)
@@ -539,6 +591,11 @@ namespace GiggityBot.Modules
             if (isDev)
             {
                 await ReplyAsync("Unable to comply. I am currently in Dev mode so I may or may not be running on the host.");
+                return;
+            }
+            if (currentServerType == ServerType.ksp11)
+            {
+                await ReplyAsync("KSP server saves automatically, use q!stopserver instead.");
                 return;
             }
             Process serverProcess;
@@ -607,7 +664,10 @@ namespace GiggityBot.Modules
             Process serverProcess;
             try
             {
-                serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
+                if (currentServerType == ServerType.ksp11)
+                    serverProcess = Process.GetProcessesByName(kspServerExecutable.Split('.')[0])[0];
+                else
+                    serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
             }
             catch (Exception unused)
             {
@@ -620,7 +680,10 @@ namespace GiggityBot.Modules
                 for (int i = 0; (i < 60) && (_zero == IntPtr.Zero); i++ /* 60 window max scan */)
                 {
                     await Task.Delay(20); // delay to not murder the laptop
-                    _zero = FindWindow(null, mcServerExecutableWindowName);
+                    if (currentServerType == ServerType.ksp11)
+                        _zero = FindWindow(null, kspServerExecutableWindowName);
+                    else
+                        _zero = FindWindow(null, mcServerExecutableWindowName);
                 }
                 if (_zero != null) // keypress issued here
                 {
