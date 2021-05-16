@@ -10,9 +10,6 @@
     <PackageReference Include="Microsoft.ML.Vision" Version="1.5.2" />
 	<PackageReference Include="SciSharp.TensorFlow.Redist" Version="1.14.0" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GiggityBotML.Model\GiggityBotML.Model.csproj" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectCapability Include="ModelBuilderGenerated" />

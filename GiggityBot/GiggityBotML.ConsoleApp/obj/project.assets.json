@@ -1735,22 +1735,6 @@
         "runtime": {
           "lib/netstandard2.0/TensorFlow.NET.dll": {}
         }
-      },
-      "GiggityBotML.Model/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Microsoft.ML": "1.5.2",
-          "Microsoft.ML.ImageAnalytics": "1.5.2",
-          "Microsoft.ML.Vision": "1.5.2",
-          "SciSharp.TensorFlow.Redist": "1.14.0"
-        },
-        "compile": {
-          "bin/placeholder/GiggityBotML.Model.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/GiggityBotML.Model.dll": {}
-        }
       }
     }
   },
@@ -6045,16 +6029,10 @@
         "tensorflow.net.0.11.8.1.nupkg.sha512",
         "tensorflow.net.nuspec"
       ]
-    },
-    "GiggityBotML.Model/1.0.0": {
-      "type": "project",
-      "path": "../GiggityBotML.Model/GiggityBotML.Model.csproj",
-      "msbuildProject": "../GiggityBotML.Model/GiggityBotML.Model.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "GiggityBotML.Model >= 1.0.0",
       "Microsoft.ML >= 1.5.2",
       "Microsoft.ML.ImageAnalytics >= 1.5.2",
       "Microsoft.ML.Vision >= 1.5.2",
@@ -6088,11 +6066,7 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {
-            "D:\\CSharp Projects\\GiggityBot\\GiggityBot\\GiggityBotML.Model\\GiggityBotML.Model.csproj": {
-              "projectPath": "D:\\CSharp Projects\\GiggityBot\\GiggityBot\\GiggityBotML.Model\\GiggityBotML.Model.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

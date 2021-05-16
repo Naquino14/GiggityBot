@@ -28,6 +28,7 @@ namespace GiggityBot
                 checkArgsFO = false;
             }
             new Base().RunBotAsync().GetAwaiter().GetResult();
+            Console.ReadKey();
         }
 
         public static DiscordSocketClient _client;

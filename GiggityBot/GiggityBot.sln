@@ -5,10 +5,6 @@ VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GiggityBot", "GiggityBot\GiggityBot.csproj", "{127D3E54-BFF8-492E-9C8D-F49667560AF8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GiggityBotML.Model", "GiggityBotML.Model\GiggityBotML.Model.csproj", "{B208FFDD-8CFA-41F1-8EFD-4AC18F248065}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GiggityBotML.ConsoleApp", "GiggityBotML.ConsoleApp\GiggityBotML.ConsoleApp.csproj", "{E2869E16-98B2-4E1D-8F23-3DAD7633CE8D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,14 +15,6 @@ Global
 		{127D3E54-BFF8-492E-9C8D-F49667560AF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{127D3E54-BFF8-492E-9C8D-F49667560AF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{127D3E54-BFF8-492E-9C8D-F49667560AF8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B208FFDD-8CFA-41F1-8EFD-4AC18F248065}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B208FFDD-8CFA-41F1-8EFD-4AC18F248065}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B208FFDD-8CFA-41F1-8EFD-4AC18F248065}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B208FFDD-8CFA-41F1-8EFD-4AC18F248065}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E2869E16-98B2-4E1D-8F23-3DAD7633CE8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E2869E16-98B2-4E1D-8F23-3DAD7633CE8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E2869E16-98B2-4E1D-8F23-3DAD7633CE8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E2869E16-98B2-4E1D-8F23-3DAD7633CE8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

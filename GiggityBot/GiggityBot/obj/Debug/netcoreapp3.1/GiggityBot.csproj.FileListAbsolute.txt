@@ -54,7 +54,6 @@ D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\bin\Debug\netcore
 D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\bin\Debug\netcoreapp3.1\GiggityBotML.ConsoleApp.exe
 D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\bin\Debug\netcoreapp3.1\GiggityBotML.ConsoleApp.dll
 D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\GiggityBot\bin\Debug\netcoreapp3.1\GiggityBotML.ConsoleApp.pdb
-D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\obj\Debug\netcoreapp3.1\GiggityBot.csprojAssemblyReference.cache
 D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\obj\Debug\netcoreapp3.1\GiggityBot.AssemblyInfoInputs.cache
 D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\obj\Debug\netcoreapp3.1\GiggityBot.AssemblyInfo.cs
 D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\obj\Debug\netcoreapp3.1\GiggityBot.csproj.CoreCompileInputs.cache
