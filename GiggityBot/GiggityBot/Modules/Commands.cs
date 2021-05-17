@@ -14,7 +14,8 @@ using GiggityBot.Modules;
 using System.Runtime.InteropServices;
 using System.Linq;
 using System.IO;
-using System.Windows.Forms;
+using System.Windows;
+using WindowsInput;
 
 namespace GiggityBot.Modules
 {
@@ -464,9 +465,9 @@ namespace GiggityBot.Modules
                                     if (currentServerType != ServerType.ksp11)
                                     {
                                         SetForegroundWindow(_zero);
-                                        SendKeys.SendWait("save-all");
-                                        SendKeys.SendWait("{ENTER}");
-                                        SendKeys.Flush();
+                                        //SendKeys.SendWait("save-all");
+                                        //SendKeys.SendWait("{ENTER}");
+                                        //SendKeys.Flush();
                                         await Task.Delay(3000);
                                         serverProcess.Kill();
                                         _serverProcess = null;
@@ -549,9 +550,9 @@ namespace GiggityBot.Modules
                             if (_zero != null) // keypress issued here
                             {
                                 SetForegroundWindow(_zero);
-                                SendKeys.SendWait("save-all");
-                                SendKeys.SendWait("{ENTER}");
-                                SendKeys.Flush();
+                                //SendKeys.SendWait("save-all");
+                                //SendKeys.SendWait("{ENTER}");
+                                //SendKeys.Flush();
                                 await Task.Delay(3000);
                                 serverProcess.Kill();
                                 _serverProcess = null;
@@ -626,9 +627,9 @@ namespace GiggityBot.Modules
                             if (_zero != null) // keypress issued here
                             {
                                 SetForegroundWindow(_zero);
-                                SendKeys.SendWait("save-all");
-                                SendKeys.SendWait("{ENTER}");
-                                SendKeys.Flush();
+                                //SendKeys.SendWait("save-all");
+                                //SendKeys.SendWait("{ENTER}");
+                                //SendKeys.Flush();
                                 await Task.Delay(3000);
                             }
                             await ReplyAsync("Successfully sent save command.");
@@ -689,9 +690,9 @@ namespace GiggityBot.Modules
                 {
                     await ReplyAsync("Issuing command `" + args + "`.");
                     SetForegroundWindow(_zero);
-                    SendKeys.SendWait(args);
-                    SendKeys.SendWait("{ENTER}");
-                    SendKeys.Flush();
+                    //SendKeys.SendWait(args);
+                    //SendKeys.SendWait("{ENTER}");
+                    //SendKeys.Flush();
                 }
             }
             catch (Exception ex)

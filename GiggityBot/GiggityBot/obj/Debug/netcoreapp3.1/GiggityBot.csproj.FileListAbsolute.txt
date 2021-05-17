@@ -78,3 +78,5 @@ D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\bin\Debug\netcoreapp3.1\Syst
 D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\bin\Debug\netcoreapp3.1\System.Linq.Async.dll
 D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\obj\Debug\netcoreapp3.1\GiggityBot.csproj.CopyComplete
 D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\obj\Debug\netcoreapp3.1\GiggityBot.genruntimeconfig.cache
+D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\obj\Debug\netcoreapp3.1\GiggityBot.csprojAssemblyReference.cache
+D:\CSharp Projects\GiggityBot\GiggityBot\GiggityBot\bin\Debug\netcoreapp3.1\WindowsInput.dll
