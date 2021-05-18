@@ -31,6 +31,7 @@ namespace GiggityBot.Modules
         public static Commands commands; // ex use only
         private Random random;
         public SaveData saveData = new SaveData();
+        private InputSimulator inputSimulator = new InputSimulator();
         #endregion
 
         #region dll import
@@ -468,6 +469,8 @@ namespace GiggityBot.Modules
                                         //SendKeys.SendWait("save-all");
                                         //SendKeys.SendWait("{ENTER}");
                                         //SendKeys.Flush();
+                                        inputSimulator.Keyboard.TextEntry("save-all");
+                                        inputSimulator.Keyboard.KeyPress(WindowsInput.Native.VirtualKeyCode.RETURN);
                                         await Task.Delay(3000);
                                         serverProcess.Kill();
                                         _serverProcess = null;
@@ -553,6 +556,8 @@ namespace GiggityBot.Modules
                                 //SendKeys.SendWait("save-all");
                                 //SendKeys.SendWait("{ENTER}");
                                 //SendKeys.Flush();
+                                inputSimulator.Keyboard.TextEntry("save-all");
+                                inputSimulator.Keyboard.KeyPress(WindowsInput.Native.VirtualKeyCode.RETURN);
                                 await Task.Delay(3000);
                                 serverProcess.Kill();
                                 _serverProcess = null;
@@ -630,6 +635,8 @@ namespace GiggityBot.Modules
                                 //SendKeys.SendWait("save-all");
                                 //SendKeys.SendWait("{ENTER}");
                                 //SendKeys.Flush();
+                                inputSimulator.Keyboard.TextEntry("save-all");
+                                inputSimulator.Keyboard.KeyPress(WindowsInput.Native.VirtualKeyCode.RETURN);
                                 await Task.Delay(3000);
                             }
                             await ReplyAsync("Successfully sent save command.");
@@ -693,6 +700,8 @@ namespace GiggityBot.Modules
                     //SendKeys.SendWait(args);
                     //SendKeys.SendWait("{ENTER}");
                     //SendKeys.Flush();
+                    inputSimulator.Keyboard.TextEntry(args);
+                    inputSimulator.Keyboard.KeyPress(WindowsInput.Native.VirtualKeyCode.RETURN);
                 }
             }
             catch (Exception ex)
@@ -720,7 +729,7 @@ namespace GiggityBot.Modules
         }
 
         [Command("debug")]
-        public async Task Debug(string args, string parameter1)
+        public async Task Debug(string args, string parameter1, string parameter2)
         {
             if (args == "curl") {
                 try
@@ -742,6 +751,14 @@ namespace GiggityBot.Modules
                 {
                     await ReplyAsync(ex.ToString());
                 }
+            }
+            if (args == "tryflush" && parameter1 == "override")
+            {
+                if (parameter2 == null)
+                    inputSimulator.Keyboard.TextEntry("This is a forced message sent by quagmire to the host.");
+                else
+                    inputSimulator.Keyboard.TextEntry(parameter2);
+                inputSimulator.Keyboard.KeyPress(WindowsInput.Native.VirtualKeyCode.RETURN);
             }
         }
 
