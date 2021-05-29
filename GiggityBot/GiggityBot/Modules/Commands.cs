@@ -1,20 +1,12 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
 using System.Diagnostics;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
 using GiggityBot.Resources;
-using GiggityBot.Modules;
 using System.Runtime.InteropServices;
-using System.Linq;
-using System.IO;
-using System.Windows;
 using WindowsInput;
 
 namespace GiggityBot.Modules
@@ -55,8 +47,8 @@ namespace GiggityBot.Modules
 
         public static bool isDev;
 
-        private string serverWithBlacklist;
-        private uint channelBlacklist;
+        //private string serverWithBlacklist;
+        //private uint channelBlacklist;
 
         private const string mcServerExecutable = "java.exe";
         private const string mcServerExecutableWindowName = @"t - """ + mod16serverPath + @""" ";
@@ -87,8 +79,8 @@ namespace GiggityBot.Modules
 
         #region media variables
 
-        private readonly string funny = "https://cdn.discordapp.com/attachments/566874876296691712/799042385485103124/video0.mp4";
-        private readonly string funny2 = "https://cdn.discordapp.com/attachments/388795923360120834/798924241256972318/speak.mp4";
+        //private readonly string funny = "https://cdn.discordapp.com/attachments/566874876296691712/799042385485103124/video0.mp4";
+        //private readonly string funny2 = "https://cdn.discordapp.com/attachments/388795923360120834/798924241256972318/speak.mp4";
 
         #endregion
 
@@ -752,14 +744,14 @@ namespace GiggityBot.Modules
                     await ReplyAsync(ex.ToString());
                 }
             }
-            if (args == "tryflush" && parameter1 == "override")
-            {
-                if (parameter2 == null)
-                    inputSimulator.Keyboard.TextEntry("This is a forced message sent by quagmire to the host.");
-                else
-                    inputSimulator.Keyboard.TextEntry(parameter2);
-                inputSimulator.Keyboard.KeyPress(WindowsInput.Native.VirtualKeyCode.RETURN);
-            }
+            //if (args == "tryflush" && parameter1 == "override")
+            //{
+            //    if (parameter2 == null)
+            //        inputSimulator.Keyboard.TextEntry("This is a forced message sent by quagmire to the host.");
+            //    else
+            //        inputSimulator.Keyboard.TextEntry(parameter2);
+            //    inputSimulator.Keyboard.KeyPress(WindowsInput.Native.VirtualKeyCode.RETURN);
+            //}
         }
 
         [Command("compare")]
@@ -804,24 +796,13 @@ namespace GiggityBot.Modules
         }
 
         [Command("kspstart")]
-        public async Task StartKsp()
-        {
-            await ReplyAsync("not implimented");
-        }
+        public async Task StartKsp() => await ReplyAsync("not implimented");
 
         [Command("stopksp")]
-        public async Task StopKsp()
-        {
-            await ReplyAsync("not implimented");
-
-        }
+        public async Task StopKsp() => await ReplyAsync("not implimented");
 
         [Command("kspstat")]
-        public async Task KspStat()
-        {
-            await ReplyAsync("not implimented");
-
-        }
+        public async Task KspStat() => await ReplyAsync("not implimented");
 
         #endregion
 
@@ -839,11 +820,8 @@ namespace GiggityBot.Modules
             string randS = (string)wordArrays.funnyResponses[rand];
             await _context.Channel.SendMessageAsync(randS);
         }
-        private async Task Fart()
-        {
-            string _user = _context.User.Username;
-            await _context.Channel.SendMessageAsync("**[ATTENTION ALL PERSONELL]:** " + _user + " has relieved himself of his pain, and has fumed a gigantic **FART!**");
-        }
+        
+        private async Task Fart() => await _context.Channel.SendMessageAsync("**[ATTENTION ALL PERSONELL]:** " + _context.User.Username + " has relieved himself of his pain, and has fumed a gigantic **FART!**");
 
         private async Task Bike() => await _context.Channel.SendMessageAsync("https://cdn.discordapp.com/attachments/388795923360120834/795146188432080926/bike.mp4");
         private async Task Booba()
@@ -916,8 +894,8 @@ namespace GiggityBot.Modules
 
         }
 
-        private async Task Troll() { await _context.Channel.SendFileAsync(@"video0.mp4"); }
-        private async Task Speak() { await _context.Channel.SendFileAsync(@"speak.mp4"); }
+        private async Task Troll() => await _context.Channel.SendFileAsync(@"video0.mp4");
+        private async Task Speak() => await _context.Channel.SendFileAsync(@"speak.mp4");
 
 
         private async Task RealOrFake()
@@ -1015,7 +993,7 @@ namespace GiggityBot.Modules
             // read json
             
         }
-        // ayyyyyy
+        // ayyyyyy 1k lines
         #endregion
        
     }
