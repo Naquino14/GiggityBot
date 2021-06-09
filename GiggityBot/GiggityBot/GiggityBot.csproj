@@ -1,9 +1,11 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <UseWindowsForms>true</UseWindowsForms>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>quagssexykeyfile.pfx</AssemblyOriginatorKeyFile>
+    <ApplicationIcon>quag.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,24 +18,10 @@
 
   <ItemGroup>
     <PackageReference Include="Discord.Net" Version="2.2.0" />
+    <PackageReference Include="InputSimulator" Version="1.0.4" />
     <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="System.Collections.NonGeneric" Version="4.3.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="NumSharp.Core">
-      <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\NumSharp.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Channels">
-      <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll</HintPath>
-    </Reference>
-    <Reference Include="TensorFlow.NET">
-      <HintPath>..\..\..\..\Gian Detector\Gian-Detector\GianDetector\GianDetectorML.ConsoleApp\bin\Debug\netcoreapp3.1\TensorFlow.NET.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>
