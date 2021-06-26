@@ -13,6 +13,11 @@ namespace GiggityBot
 {
     class Base
     {
+        public static Saver saver;
+        public static QuagData data;
+
+        static readonly string dataPath = @"nate pls add path here k thx";
+
         private static bool checkArgsFO = true;
         static void Main(string[] args)
         {
@@ -66,6 +71,8 @@ namespace GiggityBot
 
             await _client.StartAsync();
 
+            saver = new Saver(dataPath);
+
             await Task.Delay(3000);
             await StartBot();
 
@@ -98,6 +105,7 @@ namespace GiggityBot
                 if (!result.IsSuccess)
                     Console.WriteLine(result.Error);
             }
+
 
             await Commands.Scan(message, context);
 
@@ -143,6 +151,14 @@ namespace GiggityBot
             if (currentMode == RunMode.anncmnt)
                 throw new NotImplementedException();
 
+            var save = saver.Load();
+            if (save.state != Saver.DataState.ok)
+            {
+                Console.WriteLine("Quag failed to initialize. Shutting down...");
+                throw new Exception();
+            }
+            data = save.data;
+
             _wordArrays = new WordArrays();
             _wordArrays.InitArrays();
 
@@ -150,5 +166,8 @@ namespace GiggityBot
             
             Console.WriteLine("Finished starting up...");
         }
+
+        public static void Exit(int ec = 0)
+        { saver.Save(data); Environment.Exit(ec); }
     }
 }

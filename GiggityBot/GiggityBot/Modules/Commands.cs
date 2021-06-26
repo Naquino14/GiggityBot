@@ -14,7 +14,7 @@ using GiggityBot.Modules;
 using System.Runtime.InteropServices;
 using System.Linq;
 using System.IO;
-using System.Windows.Forms;
+using WindowsInput;
 
 namespace GiggityBot.Modules
 {
@@ -30,6 +30,8 @@ namespace GiggityBot.Modules
         public static Commands commands; // ex use only
         private Random random;
         public SaveData saveData = new SaveData();
+        Saver saver;
+        private InputSimulator inputSimulator = new InputSimulator();
         #endregion
 
         #region dll import
@@ -58,8 +60,10 @@ namespace GiggityBot.Modules
 
         private const string mcServerExecutable = "java.exe";
         private const string mcServerExecutableWindowName = @"t - """ + mod16serverPath + @""" ";
-        // @"t - """ + mod16serverPath + @""" "
-        // "Minecraft server"
+
+        private const string kspServerExecutable = "luna.exe"; // MIGHT BE WRONG!!!!!!!!!!!!!!
+        private const string kspServerExecutableWindowName = @"t - """ + ksp11serverPath + @""" ";
+
         private const ulong gamingChannelId = 615369865305260047;
         private const ulong mcServerGangRoleId = 736043415875223574;
         private const string van12serverPath = @"C:\Users\QuagmireServer\Desktop\mc server\TOMCServer\Minecraft server survuival 1.12.2\start.bat";
@@ -414,8 +418,12 @@ namespace GiggityBot.Modules
                         Process serverProcess;
                         try
                         {
-                            serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
-                        } catch (Exception unused)
+                            if (currentServerType == ServerType.ksp11)
+                                serverProcess = Process.GetProcessesByName(kspServerExecutable.Split('.')[0])[0];
+                            else
+                                serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
+                        }
+                        catch (Exception unused)
                         {
                             await ReplyAsync("Server is not running, start it with q!startserver.");
                             return;
@@ -429,24 +437,41 @@ namespace GiggityBot.Modules
                                 for (int i = 0; (i < 60) && (_zero == IntPtr.Zero); i++ /* 60 window max scan */)
                                 {
                                     await Task.Delay(20); // delay to not murder the laptop
-                                    _zero = FindWindow(null, mcServerExecutableWindowName);
+                                    if (currentServerType == ServerType.ksp11)
+                                        _zero = FindWindow(null, kspServerExecutableWindowName);
+                                    else
+                                        _zero = FindWindow(null, mcServerExecutableWindowName);
                                 }
                                 if (_zero != null) // keypress issued here
                                 {
-                                    SetForegroundWindow(_zero);
-                                    SendKeys.SendWait("save-all");
-                                    SendKeys.SendWait("{ENTER}");
-                                    SendKeys.Flush();
-                                    await Task.Delay(3000);
+                                    if (currentServerType != ServerType.ksp11)
+                                    {
+                                        SetForegroundWindow(_zero);
+                                        //SendKeys.SendWait("save-all");
+                                        //SendKeys.SendWait("{ENTER}");
+                                        //SendKeys.Flush();
+                                        inputSimulator.Keyboard.TextEntry("save-all");
+                                        inputSimulator.Keyboard.KeyPress(WindowsInput.Native.VirtualKeyCode.RETURN);
+                                        await Task.Delay(3000);
+                                        serverProcess.Kill();
+                                        _serverProcess = null;
+                                    }
+                                    else
+                                    {
+                                        await Task.Delay(100);
+                                        serverProcess.Close();
+                                        _serverProcess = null;
+                                    }
                                 }
-                                serverProcess.Kill();
                                 await ReplyAsync("Saved and killed server. Starting...");
                                 if (currentServerType == ServerType.mod16)
-                                    Process.Start(mod16serverPath);
-                                if(currentServerType == ServerType.mod12)
-                                    Process.Start(mod12serverPath);
-                                if(currentServerType == ServerType.van12)
-                                    Process.Start(van12serverPath);
+                                    _serverProcess = Process.Start(mod16serverPath);
+                                if (currentServerType == ServerType.mod12)
+                                    _serverProcess = Process.Start(mod12serverPath);
+                                if (currentServerType == ServerType.van12)
+                                    _serverProcess = Process.Start(van12serverPath);
+                                if (currentServerType == ServerType.ksp11)
+                                    _serverProcess = Process.Start(ksp11serverPath);
                                 _moveAlong = false;
                             }
                             catch (Exception ex)
@@ -485,8 +510,12 @@ namespace GiggityBot.Modules
                     Process serverProcess;
                     try
                     {
-                        serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
-                    } catch (Exception unused)
+                        if (currentServerType == ServerType.ksp11)
+                            serverProcess = Process.GetProcessesByName(kspServerExecutable.Split('.')[0])[0];
+                        else
+                            serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
+                    }
+                    catch (Exception unused)
                     {
                         await ReplyAsync("Server cannot be stopped because it is not running.");
                         return;
@@ -505,12 +534,22 @@ namespace GiggityBot.Modules
                             if (_zero != null) // keypress issued here
                             {
                                 SetForegroundWindow(_zero);
-                                SendKeys.SendWait("save-all");
-                                SendKeys.SendWait("{ENTER}");
-                                SendKeys.Flush();
+                                //SendKeys.SendWait("save-all");
+                                //SendKeys.SendWait("{ENTER}");
+                                //SendKeys.Flush();
+                                inputSimulator.Keyboard.TextEntry("save-all");
+                                inputSimulator.Keyboard.KeyPress(WindowsInput.Native.VirtualKeyCode.RETURN);
                                 await Task.Delay(3000);
+                                serverProcess.Kill();
+                                _serverProcess = null;
                             }
-                            serverProcess.Kill();
+                            else
+                            {
+                                await Task.Delay(100);
+                                serverProcess.Close();
+                                _serverProcess = null;
+
+                            }
                             _moveAlong = false;
                         }
                         catch (Exception ex)
@@ -519,14 +558,14 @@ namespace GiggityBot.Modules
                         }
                         await ReplyAsync("Successfully saved and stopped the server");
                     }
-                    else if (role.Id != mcServerGangRoleId) 
+                    else if (role.Id != mcServerGangRoleId)
                         moveAlong = true;
                 }
                 if (moveAlong && _moveAlong)
                     await ReplyAsync("You do not meet the requirements to execute this command.");
             }
-        } 
-        
+        }
+
 
         [Command("saveserver")]
         public async Task SaveServer()
@@ -539,6 +578,11 @@ namespace GiggityBot.Modules
             if (isDev)
             {
                 await ReplyAsync("Unable to comply. I am currently in Dev mode so I may or may not be running on the host.");
+                return;
+            }
+            if (currentServerType == ServerType.ksp11)
+            {
+                await ReplyAsync("KSP server saves automatically, use q!stopserver instead.");
                 return;
             }
             Process serverProcess;
@@ -569,9 +613,11 @@ namespace GiggityBot.Modules
                             if (_zero != null) // keypress issued here
                             {
                                 SetForegroundWindow(_zero);
-                                SendKeys.SendWait("save-all");
-                                SendKeys.SendWait("{ENTER}");
-                                SendKeys.Flush();
+                                //SendKeys.SendWait("save-all");
+                                //SendKeys.SendWait("{ENTER}");
+                                //SendKeys.Flush();
+                                inputSimulator.Keyboard.TextEntry("save-all");
+                                inputSimulator.Keyboard.KeyPress(WindowsInput.Native.VirtualKeyCode.RETURN);
                                 await Task.Delay(3000);
                             }
                             await ReplyAsync("Successfully sent save command.");
@@ -585,6 +631,7 @@ namespace GiggityBot.Modules
                 }
             }
         }
+
         [Command("servercommand")]
         public async Task ServerCommand(string args)
         {
@@ -607,7 +654,10 @@ namespace GiggityBot.Modules
             Process serverProcess;
             try
             {
-                serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
+                if (currentServerType == ServerType.ksp11)
+                    serverProcess = Process.GetProcessesByName(kspServerExecutable.Split('.')[0])[0];
+                else
+                    serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
             }
             catch (Exception unused)
             {
@@ -620,15 +670,20 @@ namespace GiggityBot.Modules
                 for (int i = 0; (i < 60) && (_zero == IntPtr.Zero); i++ /* 60 window max scan */)
                 {
                     await Task.Delay(20); // delay to not murder the laptop
-                    _zero = FindWindow(null, mcServerExecutableWindowName);
+                    if (currentServerType == ServerType.ksp11)
+                        _zero = FindWindow(null, kspServerExecutableWindowName);
+                    else
+                        _zero = FindWindow(null, mcServerExecutableWindowName);
                 }
                 if (_zero != null) // keypress issued here
                 {
                     await ReplyAsync("Issuing command `" + args + "`.");
                     SetForegroundWindow(_zero);
-                    SendKeys.SendWait(args);
-                    SendKeys.SendWait("{ENTER}");
-                    SendKeys.Flush();
+                    //SendKeys.SendWait(args);
+                    //SendKeys.SendWait("{ENTER}");
+                    //SendKeys.Flush();
+                    inputSimulator.Keyboard.TextEntry(args);
+                    inputSimulator.Keyboard.KeyPress(WindowsInput.Native.VirtualKeyCode.RETURN);
                 }
             }
             catch (Exception ex)
@@ -636,6 +691,7 @@ namespace GiggityBot.Modules
                 await ReplyAsync(ex.ToString());
             }
         }
+
 
         [Command("familyguy")]
         public async Task FamilyGuy()
@@ -855,7 +911,8 @@ namespace GiggityBot.Modules
             {
                 await _context.Channel.SendMessageAsync("ight, imma head out");
                 await _context.Channel.SendMessageAsync("https://cdn.discordapp.com/emojis/741089413626331176.gif?v=1");
-                Environment.Exit(0); // successfully die lol
+
+                Base.Exit(0);
             } else
             {
                 await _context.Channel.SendMessageAsync("Why dont you kill yourself?");
@@ -934,6 +991,8 @@ namespace GiggityBot.Modules
             // read json
             
         }
+
+        public async Task ExternalReport(string message) => await _context.Channel.SendMessageAsync(message);
 
         #endregion
        
