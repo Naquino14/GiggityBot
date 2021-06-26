@@ -16,7 +16,7 @@ namespace GiggityBot
         public static Saver saver;
         public static QuagData data;
 
-        static readonly string dataPath = @"nate pls add path here k thx";
+        static readonly string dataPath = "\\main.qdata";
 
         private static bool checkArgsFO = true;
         static void Main(string[] args)
@@ -145,7 +145,7 @@ namespace GiggityBot
             }
             if (currentMode == RunMode.normal)
             {
-                await _client.SetGameAsync("Get. Fucking. Real...", null, ActivityType.Playing);
+                await _client.SetGameAsync("Get. Fucking. Real.", null, ActivityType.Playing);
                 await _client.SetStatusAsync(UserStatus.Online);
             }
             if (currentMode == RunMode.anncmnt)

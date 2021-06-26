@@ -149,7 +149,7 @@ namespace GiggityBot.Modules
                 await _commands.Suicide();
             if (message.Content.Contains("quag restart") || message.Content.Contains("quag restart host"))
                 await _commands.RestartHost();
-            if (message.Content.Contains("quag cancel") || message.Content.Contains("actually cancel"))
+            if (message.Content.Contains("quag cancel") || message.Content.Contains("actually cancel") || message.Content.Contains("nvm"))
                 await _commands.CancelHostRestart();
 
         }
@@ -995,6 +995,6 @@ namespace GiggityBot.Modules
         public async Task ExternalReport(string message) => await _context.Channel.SendMessageAsync(message);
 
         #endregion
-       
+
     }
-}
+} // ayo 1k lines again!

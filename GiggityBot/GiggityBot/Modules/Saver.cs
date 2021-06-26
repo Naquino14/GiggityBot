@@ -1,4 +1,5 @@
 ﻿using GiggityBot.Modules;
+using GiggityBot.Resources;
 using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -6,7 +7,6 @@ using System.Security.Cryptography;
 
 public class Saver
 {
-
     private string dataPath;
 
     private bool secondAttempt = false;

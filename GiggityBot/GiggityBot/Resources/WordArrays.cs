@@ -122,6 +122,13 @@ namespace GiggityBot.Resources
             funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/811773568005439508/830185960578744360/video0.mov");
             funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/811773568005439508/830262354138759208/video0.mp4");
             funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/336402396026765313/830570495375835136/video0-16.mp4");
+            funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/745069366868967434/854675252315553802/video0.mov");
+            funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/811773568005439508/852304047783411732/video0.mp4");
+            funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/229925297506615297/846231739336097792/toilets.mp4");
+            funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/745069366868967434/840984438312665088/Family_Guy_S8E3___Have_sex_with_children_and_kill_them_.mp4");
+            funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/557831750659866626/840233848985747496/5f22f4f2914c208f3190f6db9b0f2e626c60e8e53ac7244db6827f8086c59ff6_1.mp4");
+            funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/617120220661678080/835283091059769344/video0-3-4.mp4");
+            funnyFamilyGuyClips.Add("https://cdn.discordapp.com/attachments/811773568005439508/833699481027477535/video0.mp4");
         }
 
     }
