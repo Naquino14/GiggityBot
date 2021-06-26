@@ -60,9 +60,9 @@ namespace GiggityBot.Modules
         // "Minecraft server"
         private const ulong gamingChannelId = 615369865305260047;
         private const ulong mcServerGangRoleId = 736043415875223574;
-        private const string van12serverPath = @"C:\Users\naqui\Desktop\mc server\TOMCServer\Minecraft server survuival 1.12.2\start.bat";
-        private const string mod12serverPath = @"C:\Users\naqui\Desktop\mc server\TOMCServer\Minecraft 1.12.2 Modded\start.bat";
-        private const string mod16serverPath = @"C:\Users\naqui\Desktop\mc server\TOMCServer\Minecraft 1.16.5 Modded\start.bat";
+        private const string van12serverPath = @"C:\Users\QuagmireServer\Desktop\mc server\TOMCServer\Minecraft server survuival 1.12.2\start.bat";
+        private const string mod12serverPath = @"C:\Users\QuagmireServer\Desktop\mc server\TOMCServer\Minecraft 1.12.2 Modded\start.bat";
+        private const string mod16serverPath = @"C:\Users\QuagmireServer\Desktop\mc server\TOMCServer\Minecraft 1.16.5 Modded\start.bat";
         private const string ksp11serverPath = "LMPServer\\Server.exe";
         private Process _serverProcess;
         enum ServerType
