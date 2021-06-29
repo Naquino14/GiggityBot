@@ -81,6 +81,8 @@ namespace GiggityBot.Modules
         private static ServerType currentServerType;
 
         const ulong vinettaId = 388440073219211265;
+
+        static bool shutdownFlag = false;
         #endregion
 
         #region media variables
@@ -149,7 +151,7 @@ namespace GiggityBot.Modules
                 await _commands.Suicide();
             if (message.Content.Contains("quag restart") || message.Content.Contains("quag restart host"))
                 await _commands.RestartHost();
-            if (message.Content.Contains("quag cancel") || message.Content.Contains("actually cancel") || message.Content.Contains("nvm"))
+            if ((message.Content.Contains("quag cancel") || message.Content.Contains("actually cancel") || message.Content.Contains("nvm")) && shutdownFlag)
                 await _commands.CancelHostRestart();
 
         }
@@ -302,7 +304,7 @@ namespace GiggityBot.Modules
         public async Task Penis() => await ReplyAsync("cokc and balls");
 
         [Command("serverstatus")]
-        public async Task McStat()
+        public async Task ServerStat()
         {
             if (Context.Channel.Id != gamingChannelId)
             {
@@ -341,7 +343,7 @@ namespace GiggityBot.Modules
                 await ReplyAsync("Bro which one? type q!help server for a list.");
                 return;
             }
-            if (serverType != ServerType.mod16.ToString() ^ serverType != ServerType.mod12.ToString() ^ serverType != ServerType.van12.ToString() ^ serverType != ServerType.ksp11.ToString())
+            if ((serverType != ServerType.mod16.ToString()) ^ (serverType != ServerType.mod12.ToString()) ^ (serverType != ServerType.van12.ToString()) ^ (serverType != ServerType.ksp11.ToString()))
             {
                 await ReplyAsync("Dood thats not a valid server type, see q!help server for a list.");
                 return;
@@ -940,6 +942,7 @@ namespace GiggityBot.Modules
                 } else
                 {
                     await _context.Channel.SendMessageAsync("Aight, restarting host... (this may take awhile)");
+                    shutdownFlag = true;
                     Process.Start("cmd.exe", "/c shutdown /r");
                 }
             } else
@@ -962,6 +965,7 @@ namespace GiggityBot.Modules
                 {
                     await _context.Channel.SendMessageAsync("Cancelling host restart.");
                     Process.Start("cmd.exe", "/c shutdown /a");
+                    shutdownFlag = false;
                 }
             } else
             {

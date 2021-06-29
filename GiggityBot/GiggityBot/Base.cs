@@ -16,7 +16,7 @@ namespace GiggityBot
         public static Saver saver;
         public static QuagData data;
 
-        static readonly string dataPath = "\\main.qdata";
+        static readonly string dataPath = "main.qdata";
 
         private static bool checkArgsFO = true;
         static void Main(string[] args)
