@@ -151,13 +151,13 @@ namespace GiggityBot
             if (currentMode == RunMode.anncmnt)
                 throw new NotImplementedException();
 
-            var save = saver.Load();
-            if (save.state != Saver.DataState.ok)
-            {
-                Console.WriteLine("Quag failed to initialize. Shutting down...");
-                throw new Exception();
-            }
-            data = save.data;
+            //var save = saver.Load();
+            //if (save.state != Saver.DataState.ok)
+            //{
+            //    Console.WriteLine("Quag failed to initialize. Shutting down...");
+            //    throw new Exception();
+            //}
+            //data = save.data;
 
             _wordArrays = new WordArrays();
             _wordArrays.InitArrays();
