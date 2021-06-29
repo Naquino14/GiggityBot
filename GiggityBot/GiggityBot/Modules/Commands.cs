@@ -83,6 +83,7 @@ namespace GiggityBot.Modules
         const ulong vinettaId = 388440073219211265;
 
         static bool shutdownFlag = false;
+        static bool banEnabled = true;
         #endregion
 
         #region media variables
@@ -156,6 +157,10 @@ namespace GiggityBot.Modules
                 await _commands.RestartHost();
             if ((message.Content.Contains("quag cancel", StringComparison.OrdinalIgnoreCase) || message.Content.Contains("actually cancel", StringComparison.OrdinalIgnoreCase) || message.Content.Contains("nvm", StringComparison.OrdinalIgnoreCase)) && shutdownFlag)
                 await _commands.CancelHostRestart();
+            if (message.Content.Contains("quag", StringComparison.OrdinalIgnoreCase) && message.Content.Contains("enable", StringComparison.OrdinalIgnoreCase) && (message.Content.Contains("ban", StringComparison.OrdinalIgnoreCase) || message.Content.Contains("banning", StringComparison.OrdinalIgnoreCase)))
+                await _commands.EnableBan();
+            if (message.Content.Contains("quag", StringComparison.OrdinalIgnoreCase) && (message.Content.Contains("disable", StringComparison.OrdinalIgnoreCase) || message.Content.Contains("stop", StringComparison.OrdinalIgnoreCase)) && (message.Content.Contains("ban", StringComparison.OrdinalIgnoreCase) || message.Content.Contains("banning", StringComparison.OrdinalIgnoreCase)))
+                await _commands.DisableBan();
 
         }
 
@@ -987,12 +992,38 @@ namespace GiggityBot.Modules
 
         private async Task GetFucked()
         {
-            await _context.Channel.SendMessageAsync("Aight, see you later dumbass.");
-            Thread.Sleep(1000);
-            IUser user = _context.Message.Author;
-            await _context.Guild.AddBanAsync(_context.Message.Author, 0, "asked me to ban em lol what an idiot.");
+            if (banEnabled)
+            {
+                await _context.Channel.SendMessageAsync("Aight, see you later dumbass.");
+                Thread.Sleep(1000);
+                IUser user = _context.Message.Author;
+                await _context.Guild.AddBanAsync(_context.Message.Author, 0, "asked me to ban em lol what an idiot.");
+            }
+            else
+                await _context.Channel.SendMessageAsync("Sorry, no can do rn.");
         }
 
+        private async Task EnableBan()
+        {
+            if (_context.Message.Author.Id == vinettaId)
+            {
+                await _context.Channel.SendMessageAsync("Aight, enabeling.");
+                banEnabled = true;
+            }
+            else
+                await _context.Channel.SendMessageAsync("Bro you arent my boss shut the fuck up.");
+        }
+
+        private async Task DisableBan()
+        {
+            if (_context.Message.Author.Id == vinettaId)
+            {
+                await _context.Channel.SendMessageAsync("Aight, disabling.");
+                banEnabled = false;
+            }
+            else
+                await _context.Channel.SendMessageAsync("Bro you arent my boss shut the fuck up.");
+        }
         #endregion
 
         #region other functions
