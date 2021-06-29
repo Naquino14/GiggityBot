@@ -105,23 +105,26 @@ namespace GiggityBot.Modules
             _commands._message = message;
             _commands.wordArrays = Base._wordArrays;
 
-            if (message.Content.Contains("giggity")) // if giggity is said
+            if (message.Content.Contains("giggity", StringComparison.OrdinalIgnoreCase)) // if giggity is said
                 await _commands.Giggity();
-            if (message.Content.Contains("/fart")) // if /fart is said
+            if (message.Content.Contains("/fart", StringComparison.OrdinalIgnoreCase)) // if /fart is said
                 await _commands.Fart();
-            if (message.Content.Contains("/bike"))
+            if (message.Content.Contains("/bike", StringComparison.OrdinalIgnoreCase))
                 await _commands.Bike();
-            if (message.Content.Contains("trollface video"))
+            if (message.Content.Contains("trollface video", StringComparison.OrdinalIgnoreCase))
                 await _commands.Troll();
-            if (message.Content.Contains("remy speak"))
+            if (message.Content.Contains("remy speak", StringComparison.OrdinalIgnoreCase))
                 await _commands.Speak();
 
 
-            if ((message.Content.Contains("quag") || message.Content.Contains("quagmire")) && (message.Content.Contains("real") || message.Content.Contains("true")))
+            if ((message.Content.Contains("quag", StringComparison.OrdinalIgnoreCase) || message.Content.Contains("quagmire", StringComparison.OrdinalIgnoreCase)) && (message.Content.Contains("real", StringComparison.OrdinalIgnoreCase) || message.Content.Contains("true", StringComparison.OrdinalIgnoreCase)))
                 await _commands.RealOrFake();
 
             if (context.IsPrivate)
                 await _commands.AnswerDm();
+
+            if ((message.Content.Contains("quag") || message.Content.Contains("quagmire", StringComparison.OrdinalIgnoreCase)) && message.Content.Contains("ban", StringComparison.OrdinalIgnoreCase) && message.Content.Contains("me", StringComparison.OrdinalIgnoreCase))
+                await _commands.GetFucked();
 
             foreach (string word in _commands.wordArrays.funnyWords) // giggity response triggers
                 if (message.Content.Contains(word))
@@ -147,11 +150,11 @@ namespace GiggityBot.Modules
                 _commands._char++;
             }
 
-            if ((message.Content.Contains("quag kill yourself") || message.Content.Contains("quag kys")))
+            if ((message.Content.Contains("quag kill yourself", StringComparison.OrdinalIgnoreCase) || message.Content.Contains("quag kys", StringComparison.OrdinalIgnoreCase)))
                 await _commands.Suicide();
-            if (message.Content.Contains("quag restart") || message.Content.Contains("quag restart host"))
+            if (message.Content.Contains("quag restart", StringComparison.OrdinalIgnoreCase) || message.Content.Contains("quag restart host", StringComparison.OrdinalIgnoreCase))
                 await _commands.RestartHost();
-            if ((message.Content.Contains("quag cancel") || message.Content.Contains("actually cancel") || message.Content.Contains("nvm")) && shutdownFlag)
+            if ((message.Content.Contains("quag cancel", StringComparison.OrdinalIgnoreCase) || message.Content.Contains("actually cancel", StringComparison.OrdinalIgnoreCase) || message.Content.Contains("nvm", StringComparison.OrdinalIgnoreCase)) && shutdownFlag)
                 await _commands.CancelHostRestart();
 
         }
@@ -980,6 +983,14 @@ namespace GiggityBot.Modules
         {
             await _context.Channel.SendMessageAsync("Dude, Nate literally explained that the bot doesnt asnwer dms, or if you did this accidentally or out of curiosity, what makes you think");
             await _context.Channel.SendMessageAsync("that a discord bot will be useful answering dms like, you are just wasting my server's resources bro. Kinda cringe...");
+        }
+
+        private async Task GetFucked()
+        {
+            await _context.Channel.SendMessageAsync("Aight, see you later dumbass.");
+            Thread.Sleep(1000);
+            IUser user = _context.Message.Author;
+            await _context.Guild.AddBanAsync(_context.Message.Author, 0, "asked me to ban em lol what an idiot.");
         }
 
         #endregion
