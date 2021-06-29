@@ -341,7 +341,7 @@ namespace GiggityBot.Modules
                 await ReplyAsync("Bro which one? type q!help server for a list.");
                 return;
             }
-            if (serverType != ServerType.mod16.ToString() ^ serverType != ServerType.mod12.ToString() ^ serverType != ServerType.van12.ToString())
+            if (serverType != ServerType.mod16.ToString() ^ serverType != ServerType.mod12.ToString() ^ serverType != ServerType.van12.ToString() ^ serverType != ServerType.ksp11.ToString())
             {
                 await ReplyAsync("Dood thats not a valid server type, see q!help server for a list.");
                 return;
@@ -352,7 +352,8 @@ namespace GiggityBot.Modules
             try
             {
                 _serverProcess = Process.GetProcessesByName(mcServerExecutable.Split('.')[0])[0];
-            } catch (Exception unused)
+            }
+            catch (Exception unused)
             {
                 // unused, but important, dont delete
             }
@@ -363,7 +364,7 @@ namespace GiggityBot.Modules
             }
             if (Context.Channel.Id == gamingChannelId)
             {
-                foreach(SocketRole role in ((SocketGuildUser)Context.Message.Author).Roles)
+                foreach (SocketRole role in ((SocketGuildUser)Context.Message.Author).Roles)
                 {
                     if (role.Id == mcServerGangRoleId)
                     {
@@ -371,22 +372,29 @@ namespace GiggityBot.Modules
                         {
                             currentServerType = ServerType.mod16;
                             await ReplyAsync("Starting Server `" + currentServerType.ToString() + "`...");
-                            Process.Start(mod16serverPath);
+                            _serverProcess = Process.Start(mod16serverPath);
                         }
                         if (serverType == ServerType.mod12.ToString())
                         {
                             currentServerType = ServerType.mod12;
                             await ReplyAsync("Starting Server `" + currentServerType.ToString() + "`...");
-                            Process.Start(mod12serverPath);
+                            _serverProcess = Process.Start(mod12serverPath);
                         }
                         if (serverType == ServerType.van12.ToString())
                         {
                             currentServerType = ServerType.van12;
                             await ReplyAsync("Starting Server `" + currentServerType.ToString() + "`...");
-                            Process.Start(van12serverPath);
+                            _serverProcess = Process.Start(van12serverPath);
+                        }
+                        if (serverType == ServerType.ksp11.ToString())
+                        {
+                            currentServerType = ServerType.ksp11;
+                            await ReplyAsync("Starting Server `" + currentServerType.ToString() + "`...");
+                            _serverProcess = Process.Start(ksp11serverPath);
                         }
                         _moveAlong = false;
-                    } else if (role.Id != mcServerGangRoleId)
+                    }
+                    else if (role.Id != mcServerGangRoleId)
                         moveAlong = true;
                 }
                 if (moveAlong && _moveAlong)
