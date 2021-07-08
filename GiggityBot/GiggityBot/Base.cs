@@ -145,7 +145,7 @@ namespace GiggityBot
             }
             if (currentMode == RunMode.normal)
             {
-                await _client.SetGameAsync("Get. Fucking. Real.", null, ActivityType.Playing);
+                await _client.SetGameAsync("Bad Software", null, ActivityType.Playing);
                 await _client.SetStatusAsync(UserStatus.Online);
             }
             if (currentMode == RunMode.anncmnt)
