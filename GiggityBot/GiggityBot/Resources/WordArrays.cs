@@ -52,6 +52,9 @@ namespace GiggityBot.Resources
             funnyResponses.Add("All i want for christmas is a bunch of asian chicks to choke me unconcious.");
             funnyResponses.Add("You aren't the same horse from last night.");
             funnyResponses.Add("Hot shit bro.");
+            funnyResponses.Add("Fuck ima stack overflow...");
+            funnyResponses.Add("Holy fucking shit bro just stomp on my balls already.");
+            funnyResponses.Add("I mistyped corn on google and I was not dissapointed.");
         }
         private void InitBooba() // scan words
         {
@@ -59,6 +62,7 @@ namespace GiggityBot.Resources
             hotBoob.Add("honkers");
             hotBoob.Add("booba");
             hotBoob.Add("milkers");
+            funnyResponses.Add("Got DAMN tiddies.");
         }
         private void InitBoobaResponse() // responses
         {
