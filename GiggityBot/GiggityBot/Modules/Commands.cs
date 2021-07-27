@@ -578,6 +578,7 @@ namespace GiggityBot.Modules
                     }
                     else if (role.Id != mcServerGangRoleId)
                         moveAlong = true;
+                    ;
                 }
                 if (moveAlong && _moveAlong)
                     await ReplyAsync("You do not meet the requirements to execute this command.");
