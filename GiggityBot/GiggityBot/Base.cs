@@ -61,7 +61,7 @@ namespace GiggityBot
                 .AddSingleton(_commands)
                 .BuildServiceProvider();
 
-            string token = "Nzk0OTc3NjYxNTE1NDY0NzM2.X_CqpA.wDBfdy9sokrVHq7XWDOFVNR9gQk";
+            string token = "";
 
             _client.Log += _client_Log;
 
